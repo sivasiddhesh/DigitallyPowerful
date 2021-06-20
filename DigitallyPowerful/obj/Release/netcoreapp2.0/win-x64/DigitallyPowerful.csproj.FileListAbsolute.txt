@@ -1,0 +1,16 @@
+D:\Prabhakar G\Projects\DigitallyPowerful\DigitallyPowerful\bin\Release\netcoreapp2.0\win-x64\appsettings.Development.json
+D:\Prabhakar G\Projects\DigitallyPowerful\DigitallyPowerful\bin\Release\netcoreapp2.0\win-x64\appsettings.json
+D:\Prabhakar G\Projects\DigitallyPowerful\DigitallyPowerful\bin\Release\netcoreapp2.0\win-x64\bundleconfig.json
+D:\Prabhakar G\Projects\DigitallyPowerful\DigitallyPowerful\bin\Release\netcoreapp2.0\win-x64\DigitallyPowerful.deps.json
+D:\Prabhakar G\Projects\DigitallyPowerful\DigitallyPowerful\bin\Release\netcoreapp2.0\win-x64\DigitallyPowerful.runtimeconfig.json
+D:\Prabhakar G\Projects\DigitallyPowerful\DigitallyPowerful\bin\Release\netcoreapp2.0\win-x64\DigitallyPowerful.runtimeconfig.dev.json
+D:\Prabhakar G\Projects\DigitallyPowerful\DigitallyPowerful\bin\Release\netcoreapp2.0\win-x64\DigitallyPowerful.dll
+D:\Prabhakar G\Projects\DigitallyPowerful\DigitallyPowerful\bin\Release\netcoreapp2.0\win-x64\DigitallyPowerful.pdb
+D:\Prabhakar G\Projects\DigitallyPowerful\DigitallyPowerful\obj\Release\netcoreapp2.0\win-x64\DigitallyPowerful.csprojAssemblyReference.cache
+D:\Prabhakar G\Projects\DigitallyPowerful\DigitallyPowerful\obj\Release\netcoreapp2.0\win-x64\DigitallyPowerful.AssemblyInfoInputs.cache
+D:\Prabhakar G\Projects\DigitallyPowerful\DigitallyPowerful\obj\Release\netcoreapp2.0\win-x64\DigitallyPowerful.AssemblyInfo.cs
+D:\Prabhakar G\Projects\DigitallyPowerful\DigitallyPowerful\obj\Release\netcoreapp2.0\win-x64\DigitallyPowerful.csproj.CoreCompileInputs.cache
+D:\Prabhakar G\Projects\DigitallyPowerful\DigitallyPowerful\obj\Release\netcoreapp2.0\win-x64\UserSecretsAssemblyInfo.cs
+D:\Prabhakar G\Projects\DigitallyPowerful\DigitallyPowerful\obj\Release\netcoreapp2.0\win-x64\DigitallyPowerful.dll
+D:\Prabhakar G\Projects\DigitallyPowerful\DigitallyPowerful\obj\Release\netcoreapp2.0\win-x64\DigitallyPowerful.pdb
+D:\Prabhakar G\Projects\DigitallyPowerful\DigitallyPowerful\obj\Release\netcoreapp2.0\win-x64\DigitallyPowerful.genruntimeconfig.cache
