@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\User1\\Downloads\\DigitallyPowerful\\DigitallyPowerful\\DigitallyPowerful\\DigitallyPowerful.csproj": {}
+    "C:\\Users\\User1\\Desktop\\Siva\\Digitallypowerful\\DigitallyPowerful\\DigitallyPowerful.csproj": {}
   },
   "projects": {
-    "C:\\Users\\User1\\Downloads\\DigitallyPowerful\\DigitallyPowerful\\DigitallyPowerful\\DigitallyPowerful.csproj": {
+    "C:\\Users\\User1\\Desktop\\Siva\\Digitallypowerful\\DigitallyPowerful\\DigitallyPowerful.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\User1\\Downloads\\DigitallyPowerful\\DigitallyPowerful\\DigitallyPowerful\\DigitallyPowerful.csproj",
+        "projectUniqueName": "C:\\Users\\User1\\Desktop\\Siva\\Digitallypowerful\\DigitallyPowerful\\DigitallyPowerful.csproj",
         "projectName": "DigitallyPowerful",
-        "projectPath": "C:\\Users\\User1\\Downloads\\DigitallyPowerful\\DigitallyPowerful\\DigitallyPowerful\\DigitallyPowerful.csproj",
+        "projectPath": "C:\\Users\\User1\\Desktop\\Siva\\Digitallypowerful\\DigitallyPowerful\\DigitallyPowerful.csproj",
         "packagesPath": "C:\\Users\\User1\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\User1\\Downloads\\DigitallyPowerful\\DigitallyPowerful\\DigitallyPowerful\\obj\\",
+        "outputPath": "C:\\Users\\User1\\Desktop\\Siva\\Digitallypowerful\\DigitallyPowerful\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
