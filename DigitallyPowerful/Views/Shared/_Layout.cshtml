@@ -28,7 +28,28 @@
     <link href="~/css/style.css" rel="stylesheet">
 </head>
 <body>
-   
+    <!-- ======= Header ======= -->
+    <header id="header" class="fixed-top ">
+        <div class="container d-flex align-items-center">
+
+            <h1 class="logo me-auto"><a asp-controller="Home" asp-action="Index">Digitally Powerful</a></h1>
+            <!-- Uncomment below if you prefer to use an image logo -->
+            <!-- <a href="index.html" class="logo me-auto"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
+
+            <nav id="navbar" class="navbar">
+                <ul>
+                    <li><a class="nav-link scrollto active" asp-controller="Home" asp-action="Index">Home</a></li>
+                    <li><a class="nav-link scrollto" href="#about">About</a></li>
+                    <li><a class="nav-link scrollto" href="#portfolio">Portfolio</a></li>
+                    <li><a class="nav-link scrollto" href="#team">Team</a></li>
+                    <li><a class="nav-link scrollto" asp-controller="Home" asp-action="Contact" target="_blank">Contact</a></li>
+                    <li><a class="getstarted scrollto" asp-controller="User" asp-action="Login">Login</a></li>
+                </ul>
+                <i class="bi bi-list mobile-nav-toggle"></i>
+            </nav><!-- .navbar -->
+
+        </div>
+    </header><!-- End Header -->
     <div>
         @RenderBody()
         <hr />
@@ -41,18 +62,21 @@
                         <div class="col-lg-3 col-md-6 footer-contact">
                             <h3>Digitally Powerful</h3>
                             <p>
-                                A108 Adam Street <br>
-                                New York, NY 535022<br>
-                                United States <br><br>
-                                <strong>Phone:</strong> +1 5589 55488 55<br>
-                                <strong>Email:</strong> contact@digitallypowerful.com<br>
+                                291, Alapakkam <br />
+                                10th St Ashtalakshmi Nagar <br>
+                                Valasaravakkam, Chennai - 600095<br>
+                                Tamil Nadu, India <br><br>
+                                <strong>Phone: </strong>+91 93420 38434<br>
+                                <strong>Email: </strong><a href="mailto:contact@digitallypowerful.com">contact@digitallypowerful.com</a><br>
                             </p>
                         </div>
-
+                        <div class="col-lg-3 col-md-6">
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d242.9251646957934!2d80.17026672125154!3d13.048231311570767!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a52613c729c67f3%3A0x64ce58d3fdb23306!2s10th%20St%2C%20Ashtalakshmi%20Nagar%2C%20Chennai%2C%20Tamil%20Nadu%20600087!5e0!3m2!1sen!2sin!4v1624207173906!5m2!1sen!2sin" frameborder="0" style="border:0; width: 100%; height: 230px;" allowfullscreen></iframe>
+                        </div>
                         <div class="col-lg-3 col-md-6 footer-links">
                             <h4>Useful Links</h4>
                             <ul>
-                                <li><i class="bx bx-chevron-right"></i> <a href="#">Home</a></li>
+                                <li><i class="bx bx-chevron-right"></i> <a asp-controller="Home" asp-action="Index">Home</a></li>
                                 <li><i class="bx bx-chevron-right"></i> <a href="#">About us</a></li>
                                 <li><i class="bx bx-chevron-right"></i> <a href="#">Services</a></li>
                                 <li><i class="bx bx-chevron-right"></i> <a href="#">Terms of service</a></li>
@@ -68,9 +92,8 @@
                             <div class="social-links mt-3">
                                 <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
                                 <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
-                                <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
-                                <a href="#" class="google-plus"><i class="bx bxl-skype"></i></a>
-                                <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+                                <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>                              
+                                <a href="https://api.whatsapp.com/send?phone=+919342038434" target="_blank" class="whatsapp"><i class="bx bxl-whatsapp"></i></a>
                             </div>
                         </div>
 
@@ -80,7 +103,8 @@
 
             <div class="container footer-bottom clearfix">
                 <div class="copyright">
-                    &copy; Copyright <strong><span>TechiePods</span></strong>. All Rights Reserved
+                    &copy;
+                    <script>document.write(new Date().getFullYear())</script>  Copyright <strong><span>Digitally Powerful</span></strong>. All Rights Reserved.
                 </div>
                 <div class="credits">
                     Designed by <a href="https://techiepods.com/">TechiePods</a>
@@ -105,7 +129,6 @@
     <script src="~/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
     <script src="~/vendor/glightbox/js/glightbox.min.js"></script>
     <script src="~/vendor/isotope-layout/isotope.pkgd.min.js"></script>
-    <script src="~/vendor/php-email-form/validate.js"></script>
     <script src="~/vendor/swiper/swiper-bundle.min.js"></script>
     <script src="~/vendor/waypoints/noframework.waypoints.js"></script>
 

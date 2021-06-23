@@ -1,17 +1,127 @@
 ﻿@{
     ViewData["Title"] = "Contact";
+    Layout = null;
 }
-<h2>@ViewData["Title"]</h2>
-<h3>@ViewData["Message"]</h3>
 
-<address>
-    One Microsoft Way<br />
-    Redmond, WA 98052-6399<br />
-    <abbr title="Phone">P:</abbr>
-    425.555.0100
-</address>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Favicons -->
+    <link href="~/images/favicon.png" rel="icon">
+    <link href="~/images/apple-touch-icon.png" rel="apple-touch-icon">
 
-<address>
-    <strong>Support:</strong> <a href="mailto:Support@example.com">Support@example.com</a><br />
-    <strong>Marketing:</strong> <a href="mailto:Marketing@example.com">Marketing@example.com</a>
-</address>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Jost:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+    <!-- Vendor CSS Files -->
+    <link href="~/vendor/aos/aos.css" rel="stylesheet">
+    <link href="~/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="~/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+    <link href="~/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+    <link href="~/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+    <link href="~/vendor/remixicon/remixicon.css" rel="stylesheet">
+    <link href="~/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+    <!-- Template Main CSS File -->
+    <link href="~/css/style.css" rel="stylesheet">
+</head>
+<body>
+    <main id="main">
+        <!-- ======= Contact Section ======= -->
+        <section id="contact" class="contact">
+            <div class="container" data-aos="fade-up">
+
+                <div class="section-title">
+                    <h2>Contact Us</h2>
+                    <p>We would love to help you. Just write us a message!</p>
+                </div>
+
+                <div class="row">
+
+                    <div class="col-lg-5 d-flex align-items-stretch">
+                        <div class="info">
+                            <div class="address">
+                                <i class="bi bi-geo-alt"></i>
+                                <h4>Location:</h4>
+                                <p>291, Alapakkam 10th St, Valasaravakkam, Chennai 600095</p>
+                            </div>
+
+                            <div class="email">
+                                <i class="bi bi-envelope"></i>
+                                <h4>Email:</h4>
+                                <p>contact@digitallypowerful.com</p>
+                            </div>
+
+                            <div class="phone">
+                                <i class="bi bi-phone"></i>
+                                <h4>Call:</h4>
+                                <p>+91 93420 38434</p>
+                            </div>
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d242.9251646957934!2d80.17026672125154!3d13.048231311570767!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a52613c729c67f3%3A0x64ce58d3fdb23306!2s10th%20St%2C%20Ashtalakshmi%20Nagar%2C%20Chennai%2C%20Tamil%20Nadu%20600087!5e0!3m2!1sen!2sin!4v1624207173906!5m2!1sen!2sin" frameborder="0" style="border:0; width: 100%; height: 290px;" allowfullscreen></iframe>
+                        </div>
+
+                    </div>
+
+                    <div class="col-lg-7 mt-5 mt-lg-0 d-flex align-items-stretch">
+                        <form action="forms/contact.php" method="post" role="form" class="php-email-form">
+                            <div class="row">
+                                <div class="form-group col-md-6">
+                                    <label for="Contact_name">Your Name</label>
+                                    <input type="text" name="Contact_name" class="form-control" id="Contact_name" required>
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <label for="Contact_email">Your Email</label>
+                                    <input type="email" class="form-control" name="Contact_email" id="Contact_email" required>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="Contact_subject">Subject</label>
+                                <input type="text" class="form-control" name="Contact_subject" id="Contact_subject" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="Contact_message">Message</label>
+                                <textarea class="form-control" name="Contact_message" rows="8" required></textarea>
+                            </div>
+                            <div class="my-3">
+                                <div class="loading">Loading</div>
+                                <div class="error-message"></div>
+                                <div class="sent-message">Your message has been sent. Thank you!</div>
+                            </div>
+                            <div class="text-center"><button type="submit">Send Message</button></div>
+                        </form>
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+        <!-- End Contact Section -->
+    </main><!-- End #main -->
+
+    <div>
+        <footer id="footer">
+            <div class="container footer-bottom clearfix">
+                <div class="copyright">
+                    &copy;
+                    <script>document.write(new Date().getFullYear())</script>  Copyright <strong><span>Digitally Powerful</span></strong>. All Rights Reserved.
+                </div>
+                <div class="credits">
+                    Designed by <a href="https://techiepods.com/">TechiePods</a>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Vendor JS Files -->
+    <script src="~/vendor/aos/aos.js"></script>
+    <script src="~/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="~/vendor/glightbox/js/glightbox.min.js"></script>
+    <script src="~/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+    <script src="~/vendor/swiper/swiper-bundle.min.js"></script>
+    <script src="~/vendor/waypoints/noframework.waypoints.js"></script>
+
+    <!-- Template Main JS File -->
+    <script src="~/js/main.js"></script>
+</body>
+
+</html>

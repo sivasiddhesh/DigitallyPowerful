@@ -1,0 +1,217 @@
+﻿@{
+    ViewData["Title"] = "Contact";
+    Layout = "~/Views/Shared/_UserLayout.cshtml";
+}
+<body>
+    <header id="header" class="fixed-top " style="background: #36517e">
+        <div class="container d-flex align-items-center">
+            <h1 class="logo me-auto"><a asp-controller="Home" asp-action="Index">Digitally Powerful</a></h1>
+            <!-- Uncomment below if you prefer to use an image logo -->
+            <!-- <a href="index.html" class="logo me-auto"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
+        </div>
+    </header><!-- End Header -->
+    <div class="container">
+        <div class="page-inner">
+            <h4 class="page-title">Profile</h4>
+            <div class="row">
+                <div class="col-md-8">
+                    <div class="card card-with-nav">
+                        <div class="card-body">
+                            <div class="row mt-3">
+                                <div class="col-md-6">
+                                    <div class="form-group form-floating-label">
+                                        <input id="FirstName" type="text" class="form-control" required="">
+                                        <label for="FirstName" class="placeholder">First Name</label>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group form-floating-label">
+                                        <input id="LastName" type="text" class="form-control" required="">
+                                        <label for="LastName" class="placeholder">Last Name</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row mt-3">
+                                <div class="col-md-6">
+                                    <div class="form-group form-floating-label">
+                                        <input type="text" class="form-control" id="Email" required="">
+                                        <label for="Email" class="placeholder">Email</label>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group form-floating-label">
+                                        <input type="text" class="form-control" id="Mobile" required="">
+                                        <label for="Mobile" class="placeholder">Mobile</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row mt-3">
+                                <div class="col-md-6">
+                                    <div class="form-group form-floating-label">
+                                        <input type="text" class="form-control" id="BirthDate" required="">
+                                        <label for="BirthDate" class="placeholder">Birth Date</label>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <div class="row">
+                                            <div class="col-md-3">
+                                                <label class="form-label d-block">Gender</label>
+                                            </div>
+
+                                            <div class="col-md-9">
+                                                <div class="selectgroup selectgroup-secondary selectgroup-pills">
+                                                    <label class="selectgroup-item">
+                                                        <input type="radio" name="icon-input" value="Female" class="selectgroup-input" checked="">
+                                                        <span class="selectgroup-button selectgroup-button-icon"><i class="fas fa-venus"></i></span>
+                                                    </label>
+                                                    <label class="selectgroup-item">
+                                                        <input type="radio" name="icon-input" value="Male" class="selectgroup-input">
+                                                        <span class="selectgroup-button selectgroup-button-icon"><i class="fas fa-mars"></i></span>
+                                                    </label>
+                                                    <label class="selectgroup-item">
+                                                        <input type="radio" name="icon-input" value="Transgender" class="selectgroup-input">
+                                                        <span class="selectgroup-button selectgroup-button-icon"><i class="fas fa-transgender"></i></span>
+                                                    </label>
+                                                    <label class="selectgroup-item">
+                                                        <input type="radio" name="icon-input" value="PreferNotToSay" class="selectgroup-input">
+                                                        <span class="selectgroup-button selectgroup-button-icon"><i class="fas fa-neuter"></i></span>
+                                                    </label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card card-profile">
+                        <div class="card-header" style="background-image: url('https://via.placeholder.com/150')">
+                            <div class="profile-picture">
+                                <div class="avatar avatar-xl">
+                                    <img src="https://via.placeholder.com/50" alt="..." class="avatar-img rounded-circle">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <div class="user-profile text-center">
+                                <div class="name">Hizrian, 19</div>
+                                <div class="job">Frontend Developer</div>
+                                <div class="desc"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="card">
+                        <div class="card-header">
+                            <div class="card-title">Social Networks</div>
+                        </div>
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-md-1">
+                                    <button type="button" class="btn btn-icon btn-round btn-danger">
+                                        <i class="fab fa-instagram"></i>
+                                    </button>
+                                </div>
+                                <div class="col-md-7">
+                                    <div class="form-group form-floating-label">
+                                        <input id="InstaLink" type="text" class="form-control" required="">
+                                        <label for="InstaLink" class="placeholder">Instagram Link</label>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-group form-floating-label">
+                                        <input id="InstaCount" type="number" class="form-control" required="">
+                                        <label for="InstaCount" class="placeholder">Followers Count</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-1">
+                                    <button type="button" class="btn btn-icon btn-round btn-danger">
+                                        <i class="fab fa-youtube"></i>
+                                    </button>
+                                </div>
+                                <div class="col-md-7">
+                                    <div class="form-group form-floating-label">
+                                        <input id="YouTubeLink" type="text" class="form-control" required="">
+                                        <label for="YouTubeLink" class="placeholder">YouTube Link</label>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-group form-floating-label">
+                                        <input id="YouTubeCount" type="number" class="form-control" required="">
+                                        <label for="YouTubeCount" class="placeholder">Followers Count</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-1">
+                                    <button type="button" class="btn btn-icon btn-round btn-primary">
+                                        <i class="fab fa-facebook"></i>
+                                    </button>
+                                </div>
+                                <div class="col-md-7">
+                                    <div class="form-group form-floating-label">
+                                        <input id="FBLink" type="text" class="form-control" required="">
+                                        <label for="FBLink" class="placeholder">Facebook Link</label>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-group form-floating-label">
+                                        <input id="FBCount" type="number" class="form-control" required="">
+                                        <label for="FBCount" class="placeholder">Followers Count</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-1">
+                                    <button type="button" class="btn btn-icon btn-round btn-info">
+                                        <i class="fab fa-twitter"></i>
+                                    </button>
+                                </div>
+                                <div class="col-md-7">
+                                    <div class="form-group form-floating-label">
+                                        <input id="TwitterLink" type="text" class="form-control" required="">
+                                        <label for="TwitterLink" class="placeholder">Twitter Link</label>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-group form-floating-label">
+                                        <input id="TwitterCount" type="number" class="form-control" required="">
+                                        <label for="TwitterCount" class="placeholder">Followers Count</label>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="card-footer">
+
+                            <div class="text-right mt-3 mb-3">
+                                <button class="btn btn-success btn-round">
+                                    <span class="btn-label">
+                                        <i class="fa fa-check"></i>
+                                    </span>
+                                    Save
+                                </button>
+                                <button class="btn btn-danger btn-round">
+                                    <span class="btn-label">
+                                        <i class="fa fa-times"></i>
+                                    </span>
+                                    Cancel
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
