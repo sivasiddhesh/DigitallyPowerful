@@ -1,0 +1,145 @@
+﻿@{
+    ViewData["Title"] = "Contact";
+    Layout = "~/Views/Shared/_UserLayout.cshtml";
+}
+<body>
+    <header id="header" class="fixed-top " style="background: #36517e">
+        <div class="container d-flex align-items-center">
+            <h1 class="logo me-auto"><a asp-controller="Home" asp-action="Index">Digitally Powerful</a></h1>
+            <!-- Uncomment below if you prefer to use an image logo -->
+            <!-- <a href="index.html" class="logo me-auto"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
+        </div>
+    </header><!-- End Header -->
+    <div class="container">
+        <div class="page-inner">
+            <h4 class="page-title">Profile</h4>
+            <div class="row">
+                <div class="col-md-8">
+                    <div class="card card-with-nav">
+                        <div class="card-body">
+                            <div class="row mt-3">
+                                <div class="col-md-6">
+                                    <div class="form-group form-floating-label">
+                                        <input id="BrandProfile_BrandName" type="text" class="form-control" required="">
+                                        <label for="BrandProfile_BrandName" class="placeholder">Brand Name</label>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group form-floating-label">
+                                        <input id="BrandProfile_Name" type="text" class="form-control" required="">
+                                        <label for="BrandProfile_Name" class="placeholder">Your Name</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row mt-3">
+                                <div class="col-md-6">
+                                    <div class="form-group form-floating-label">
+                                        <input type="text" class="form-control" id="BrandProfile_Email" required="">
+                                        <label for="BrandProfile_Email" class="placeholder">Email</label>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group form-floating-label">
+                                        <input type="text" class="form-control" id="BrandProfile_Mobile" required="">
+                                        <label for="BrandProfile_Mobile" class="placeholder">Mobile</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row mt-3">
+                                <div class="col-md-6">
+                                    <div class="form-group form-floating-label">
+                                        <select class="form-control form-control" id="BrandProfile_Project">
+                                            <option>Influencer Marketing</option>
+                                            <option>Others</option>
+                                        </select>
+                                        <label for="BirthDate" class="placeholder">Project Type</label>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group form-floating-label">
+                                        <input type="text" class="form-control" id="BrandProfile_Category" required="">
+                                        <label for="BrandProfile_Category" class="placeholder">Category</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card card-profile">
+                        <div class="card-header" style="background-image: url('https://via.placeholder.com/150')">
+                            <div class="profile-picture">
+                                <div class="avatar avatar-xl">
+                                    <img src="https://via.placeholder.com/50" alt="..." class="avatar-img rounded-circle">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <div class="user-profile text-center">
+                                <div class="name">Hizrian, 19</div>
+                                <div class="job">Frontend Developer</div>
+                                <div class="desc"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="card">
+                        <div class="card-header">
+                            <div class="card-title">Contact</div>
+                        </div>
+                        <div class="card-body">
+                            <div class="form-group row">
+                                <label for="BrandProfile_subject" class="col-form-label col-md-1">Subject :</label>
+                                <div class="col-md-11">
+                                    <input type="text" class="form-control" id="BrandProfile_subject" name="BrandProfile_subject">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="BrandProfile__message" class="col-form-label col-md-1">Message :</label>
+                                <div class="col-md-11">
+                                    <textarea id="BrandProfile__message" class="form-control" name="BrandProfile__message" rows="8" required></textarea>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-footer">
+                            <div class="text-right mt-3 mb-3">
+                                <button class="btn btn-success btn-round">
+                                    <span class="btn-label">
+                                        <i class="fa fa-check"></i>
+                                    </span>
+                                    Send
+                                </button>
+                                <button class="btn btn-danger btn-round">
+                                    <span class="btn-label">
+                                        <i class="fa fa-times"></i>
+                                    </span>
+                                    Cancel
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="card">
+                        <div class="card-header">
+                            <div class="card-title">Influencers</div>
+                        </div>
+                        <div class="card-body">
+
+                        </div>
+                        <div class="card-footer">
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+

@@ -1,0 +1,187 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+    <title>Digitally Powerful</title>
+    <meta content="" name="description">
+    <meta content="" name="keywords">
+
+    <!-- Favicons -->
+    <link href="~/images/favicon.png" rel="icon">
+    <link href="~/images/apple-touch-icon.png" rel="apple-touch-icon">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Jost:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+    <!-- Vendor CSS Files -->
+    <link href="~/vendor/aos/aos.css" rel="stylesheet">
+    <link href="~/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+    <link href="~/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+    <link href="~/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+    <link href="~/vendor/remixicon/remixicon.css" rel="stylesheet">
+    <link href="~/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+    <!-- Template Main CSS File -->
+    <link href="~/css/style.css" rel="stylesheet">
+
+    <!-- Fonts and icons -->
+    <script src="~/assets/js/plugin/webfont/webfont.min.js"></script>
+    <script>
+        WebFont.load({
+            google: { "families": ["Lato:300,400,700,900"] },
+            custom: { "families": ["Flaticon", "Font Awesome 5 Solid", "Font Awesome 5 Regular", "Font Awesome 5 Brands", "simple-line-icons"], urls: ['/assets/css/fonts.min.css'] },
+            active: function () {
+                sessionStorage.fonts = true;
+            }
+        });
+    </script>
+    <link href="~/assets/css/fonts.css" rel="stylesheet" />
+
+    <!-- CSS Files -->
+    <link href="~/assets/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/assets/css/atlantis.css" rel="stylesheet" />
+
+    <link href="~/css/site.css" rel="stylesheet" asp-append-version="true" />
+    <link href="~/css/Influencer.css" rel="stylesheet" asp-append-version="true" />
+</head>
+<body>
+    
+    <div>
+        @RenderBody()
+        <hr />
+        <!-- ======= Footer ======= -->
+        <footer id="footer">
+            <div class="footer-top">
+                <div class="container">
+                    <div class="row">
+
+                        <div class="col-lg-3 col-md-6 footer-contact">
+                            <h3>Digitally Powerful</h3>
+                            <p>
+                                291, Alapakkam <br />
+                                10th St Ashtalakshmi Nagar <br>
+                                Valasaravakkam, Chennai - 600095<br>
+                                Tamil Nadu, India <br><br>
+                                <strong>Phone: </strong>+91 93420 38434<br>
+                                <strong>Email: </strong><a href="mailto:contact@digitallypowerful.com">contact@digitallypowerful.com</a><br>
+                            </p>
+                        </div>
+                        <div class="col-lg-3 col-md-6">
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d242.9251646957934!2d80.17026672125154!3d13.048231311570767!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a52613c729c67f3%3A0x64ce58d3fdb23306!2s10th%20St%2C%20Ashtalakshmi%20Nagar%2C%20Chennai%2C%20Tamil%20Nadu%20600087!5e0!3m2!1sen!2sin!4v1624207173906!5m2!1sen!2sin" frameborder="0" style="border:0; width: 100%; height: 230px;" allowfullscreen></iframe>
+                        </div>
+                        <div class="col-lg-3 col-md-6 footer-links">
+                            <h4>Useful Links</h4>
+                            <ul>
+                                <li><i class="bx bx-chevron-right"></i> <a asp-controller="Home" asp-action="Index">Home</a></li>
+                                <li><i class="bx bx-chevron-right"></i> <a href="#">About us</a></li>
+                                <li><i class="bx bx-chevron-right"></i> <a href="#">Services</a></li>
+                                <li><i class="bx bx-chevron-right"></i> <a href="#">Terms of service</a></li>
+                                <li><i class="bx bx-chevron-right"></i> <a href="#">Privacy policy</a></li>
+                            </ul>
+                        </div>
+
+                        <div class="col-lg-3 col-md-6 footer-links">
+                            <h4>Our Social Networks</h4>
+                            <p>
+                                Influencer led marketing platform for campaigns on Instagram, Youtube, Facebook and more social networks.
+                            </p>
+                            <div class="social-links mt-3">
+                                <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
+                                <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
+                                <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
+                                <a href="https://api.whatsapp.com/send?phone=+919342038434" class="whatsapp"><i class="bx bxl-whatsapp"></i></a>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="container footer-bottom clearfix">
+                <div class="copyright">
+                    &copy;
+                    <script>document.write(new Date().getFullYear())</script>  Copyright <strong><span>Digitally Powerful</span></strong>. All Rights Reserved.
+                </div>
+                <div class="credits">
+                    Designed by <a href="https://techiepods.com/">TechiePods</a>
+                </div>
+            </div>
+
+        </footer>
+        <!-- End Footer -->
+    </div>
+
+    <environment include="Development">
+        <script src="~/lib/jquery/dist/jquery.js"></script>
+        <script src="~/lib/bootstrap/dist/js/bootstrap.js"></script>
+        <script src="~/js/site.js" asp-append-version="true"></script>
+    </environment>
+
+    <div id="preloader"></div>
+    <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+    <!-- Vendor JS Files -->
+    <script src="~/vendor/aos/aos.js"></script>
+    <script src="~/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="~/vendor/glightbox/js/glightbox.min.js"></script>
+    <script src="~/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+    <script src="~/vendor/swiper/swiper-bundle.min.js"></script>
+    <script src="~/vendor/waypoints/noframework.waypoints.js"></script>
+
+    <!-- Template Main JS File -->
+    <script src="~/js/main.js"></script>
+
+    <!--   Core JS Files   -->
+    <script src="~/assets/js/core/bootstrap.min.js"></script>
+    <script src="~/assets/js/core/jquery.3.2.1.min.js"></script>
+    <script src="~/assets/js/core/popper.min.js"></script>
+
+    <!-- jQuery UI -->
+    <script src="~/assets/js/plugin/jquery-ui-1.12.1.custom/jquery-ui.min.js"></script>
+    <script src="~/assets/js/plugin/jquery-ui-touch-punch/jquery.ui.touch-punch.min.js"></script>
+
+    <!-- jQuery Scrollbar -->
+    <script src="~/assets/js//plugin/jquery-scrollbar/jquery.scrollbar.min.js"></script>
+
+    <!-- Moment JS -->
+    <script src="~/assets/js//plugin/moment/moment.min.js"></script>
+
+    <!-- jQuery Sparkline -->
+    <script src="~/assets/js//plugin/jquery.sparkline/jquery.sparkline.min.js"></script>
+
+    <!-- Datatables -->
+    <script src="~/assets/js//plugin/datatables/datatables.min.js"></script>
+
+    <!-- Bootstrap Notify -->
+    <script src="~/assets/js//plugin/bootstrap-notify/bootstrap-notify.min.js"></script>
+
+    <!-- Bootstrap Toggle -->
+    <script src="~/assets/js//plugin/bootstrap-toggle/bootstrap-toggle.min.js"></script>
+
+    <!-- DateTimePicker -->
+    <script src="~/assets/js//plugin/datepicker/bootstrap-datetimepicker.min.js"></script>
+
+    <!-- Bootstrap Tagsinput -->
+    <script src="~/assets/js//plugin/bootstrap-tagsinput/bootstrap-tagsinput.min.js"></script>
+
+    <!-- Bootstrap Wizard -->
+    <script src="~/assets/js//plugin/bootstrap-wizard/bootstrapwizard.js"></script>
+
+    <!-- jQuery Validation -->
+    <script src="~/assets/js//plugin/jquery.validate/jquery.validate.min.js"></script>
+
+    <!-- Owl Carousel -->
+    <script src="~/assets/js/plugin/owl-carousel/owl.carousel.min.js"></script>
+
+    <!-- Magnific Popup -->
+    <script src="~/assets/js//plugin/jquery.magnific-popup/jquery.magnific-popup.min.js"></script>
+
+    <!-- Atlantis JS -->
+    <script src="~/assets/js//atlantis.min.js"></script>
+
+
+    @RenderSection("Scripts", required: false)
+</body>
+</html>

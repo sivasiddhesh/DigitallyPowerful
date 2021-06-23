@@ -1,0 +1,143 @@
+﻿@{
+    ViewData["Title"] = "Signup";
+    Layout = "~/Views/Shared/_UserLayout.cshtml";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<body class="login">
+    <header id="header" class="fixed-top " style="background: #36517e">
+        <div class="container d-flex align-items-center">
+            <h1 class="logo me-auto"><a asp-controller="Home" asp-action="Index">Digitally Powerful</a></h1>
+            <!-- Uncomment below if you prefer to use an image logo -->
+            <!-- <a href="index.html" class="logo me-auto"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
+        </div>
+    </header><!-- End Header -->
+
+    <div class="wrapper wrapper-login wrapper-login-full p-0">
+        <div class="login-aside w-50 d-flex flex-column align-items-center text-center bg-secondary-gradient">
+            <h1 class="title fw-bold text-white mb-3"></h1>
+            <p class="subtitle text-white op-7">Sign up to view the list of influencers associated with us and create tailored campaign! or use the below option to contact us.</p>
+            <div class="w-100">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="BrandContact_Brand">Brand Name</label>
+                                    <input type="email" class="form-control" id="BrandContact_Brand" placeholder="Enter Brand Name">
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="BrandContact_Name">Your Name</label>
+                                    <input type="email" class="form-control" id="BrandContact_Name" placeholder="Enter Your Name">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="BrandContact_Email">Email</label>
+                                    <input type="email" class="form-control" id="BrandContact_Email" placeholder="Enter Email">
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="BrandContact_Mobile">Mobile</label>
+                                    <input type="tel" class="form-control" id="BrandContact_Mobile" placeholder="Enter Mobile Number">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="BrandContact_Project">Project Type</label>
+                                    <select class="form-control form-control" id="BrandContact_Project">
+                                        <option>Influencer Marketing</option>
+                                        <option>Others</option>                      
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="BrandContact_Category">Category</label>
+                                    <input type="email" class="form-control" id="BrandContact_Category" placeholder="Enter Category">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label for="BrandContact_message">Message</label>
+                                    <textarea id="BrandContact_message" class="form-control" name="BrandContact_message" rows="8" required></textarea>
+                                </div>
+                            </div>                           
+                        </div>
+                        <div class="row">
+                            <div class="col-md-4 ml-auto mr-auto">
+                                <button class="btn btn-success btn-round">
+                                    <span class="btn-label">
+                                        <i class="far fa-paper-plane"></i>
+                                    </span>
+                                    Submit
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="login-aside w-50 d-flex align-items-center justify-content-center bg-white">
+            <div class="container container-login animated fadeIn">
+                <h3 class="text-center">Sign Up</h3>
+                <div class="login-form">
+                    <div class="form-group form-floating-label">
+                        <input id="Brandname_Brand" name="Brandname_Brand" type="text" class="form-control input-border-bottom" required="">
+                        <label for="Brandname_Brand" class="placeholder">Brand Name</label>
+                    </div>
+                    <div class="form-group form-floating-label">
+                        <input id="Contactname_Brand" name="Contactname_Brand" type="text" class="form-control input-border-bottom" required="">
+                        <label for="Contactname_Brand" class="placeholder">Your Name</label>
+                    </div>
+                    <div class="form-group form-floating-label">
+                        <input id="Mobile_Brand" name="Mobile_Brand" type="tel" class="form-control input-border-bottom" required="">
+                        <label for="Mobile_Brand" class="placeholder">Mobile</label>
+                    </div>
+                    <div class="form-group form-floating-label">
+                        <input id="email_Brand" name="email_Brand" type="email" class="form-control input-border-bottom" required="">
+                        <label for="email_Brand" class="placeholder">Email</label>
+                    </div>
+                    <div class="form-group form-floating-label">
+                        <input id="passwordsignin_Brand" name="passwordsignin_Brand" type="password" class="form-control input-border-bottom" required="">
+                        <label for="passwordsignin_Brand" class="placeholder">Password</label>
+                        <div class="show-password">
+                            <i class="icon-eye"></i>
+                        </div>
+                    </div>
+                    <div class="form-group form-floating-label">
+                        <input id="confirmpassword_Brand" name="confirmpassword_Brand" type="password" class="form-control input-border-bottom" required="">
+                        <label for="confirmpassword_Brand" class="placeholder">Confirm Password</label>
+                        <div class="show-password">
+                            <i class="icon-eye"></i>
+                        </div>
+                    </div>
+                    <div class="row form-sub m-0">
+                        <div class="custom-control custom-checkbox">
+                            <input type="checkbox" class="custom-control-input" name="agree_Brand" id="agree_Brand">
+                            <label class="custom-control-label" for="agree_Brand">I Agree to the terms and conditions.</label>
+                        </div>
+                    </div>
+                    <div class="form-action">
+                        <a asp-controller="User" asp-action="Influencer" class="btn btn-primary btn-rounded btn-login">Sign Up</a>
+                        <a asp-controller="User" asp-action="Login" id="show-signin" class="btn btn-danger btn-link btn-login mr-3">Cancel</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+
+</html>
