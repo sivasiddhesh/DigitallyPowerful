@@ -39,3 +39,13 @@
     background: linear-gradient(to right, #ee5a6f, #f29263);
 }
 
+#VerifiedLogo {
+    color: blue;
+    font-size: larger;
+    font-weight: bolder;
+}
+#UnverifiedLogo {
+    color: red;
+    font-size: larger;
+    font-weight: bolder;
+}

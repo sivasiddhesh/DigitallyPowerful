@@ -34,7 +34,7 @@
                             <div class="row mt-3">
                                 <div class="col-md-6">
                                     <div class="form-group form-floating-label">
-                                        <input type="text" class="form-control" id="Email" required="">
+                                        <input type="email" class="form-control" id="Email" required="">
                                         <label for="Email" class="placeholder">Email</label>
                                     </div>
                                 </div>
@@ -47,9 +47,15 @@
                             </div>
                             <div class="row mt-3">
                                 <div class="col-md-6">
-                                    <div class="form-group form-floating-label">
-                                        <input type="text" class="form-control" id="BirthDate" required="">
-                                        <label for="BirthDate" class="placeholder">Birth Date</label>
+                                    <div class="form-group">
+                                        <div class="row">
+                                            <div class="col-md-3">
+                                                <label for="BirthDate" class="placeholder">Birth Date</label>
+                                            </div>
+                                            <div class="col-md-9">
+                                                <input type="date" class="form-control" id="BirthDate" required="">
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                                 <div class="col-md-6">
@@ -88,17 +94,17 @@
                 </div>
                 <div class="col-md-4">
                     <div class="card card-profile">
-                        <div class="card-header" style="background-image: url('https://via.placeholder.com/150')">
-                            <div class="profile-picture">
-                                <div class="avatar avatar-xl">
-                                    <img src="https://via.placeholder.com/50" alt="..." class="avatar-img rounded-circle">
-                                </div>
+                        <div class="col-lg-5 col-md-5 col-sm-12 ml-auto mr-auto">
+                            <div class="input-file input-file-image">
+                                <img class="img-upload-preview img-circle" width="100" height="100" src="http://placehold.it/100x100" alt="preview">
+                                <input type="file" class="form-control form-control-file" id="uploadImg" name="uploadImg" accept="image/*" required="">
+                                <label for="uploadImg" class="btn btn-primary btn-round btn-lg">Image<i class="fas fa-upload"></i></label>
                             </div>
                         </div>
-                        <div class="card-body">
+                        <div class="card-body" style="padding: 17px;">
                             <div class="user-profile text-center">
-                                <div class="name">Hizrian, 19</div>
-                                <div class="job">Frontend Developer</div>
+                                <div class="name" id="ProfileLogoName">Hizrian</div>
+                                <div class="job">Verified <i id="VerifiedLogo" class="far fa-check-circle"></i><i id="UnverifiedLogo" class="far fa-times-circle"></i></div>
                                 <div class="desc"></div>
                             </div>
                         </div>
@@ -110,101 +116,138 @@
                 <div class="col-md-12">
                     <div class="card">
                         <div class="card-header">
-                            <div class="card-title">Social Networks</div>
-                        </div>
+                            <div class="card-title">Social Networks&nbsp;&nbsp;&nbsp;<span><button id="Socialnetwork_Add" class="btn btn-secondary btn-round">ADD&nbsp;<i class="fa fa-plus"></i></button></span></div>
+                        </div>                       
                         <div class="card-body">
-                            <div class="row">
-                                <div class="col-md-1">
-                                    <button type="button" class="btn btn-icon btn-round btn-danger">
-                                        <i class="fab fa-instagram"></i>
-                                    </button>
-                                </div>
-                                <div class="col-md-7">
-                                    <div class="form-group form-floating-label">
-                                        <input id="InstaLink" type="text" class="form-control" required="">
-                                        <label for="InstaLink" class="placeholder">Instagram Link</label>
-                                    </div>
-                                </div>
-                                <div class="col-md-4">
-                                    <div class="form-group form-floating-label">
-                                        <input id="InstaCount" type="number" class="form-control" required="">
-                                        <label for="InstaCount" class="placeholder">Followers Count</label>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-md-1">
-                                    <button type="button" class="btn btn-icon btn-round btn-danger">
-                                        <i class="fab fa-youtube"></i>
-                                    </button>
-                                </div>
-                                <div class="col-md-7">
-                                    <div class="form-group form-floating-label">
-                                        <input id="YouTubeLink" type="text" class="form-control" required="">
-                                        <label for="YouTubeLink" class="placeholder">YouTube Link</label>
-                                    </div>
-                                </div>
-                                <div class="col-md-4">
-                                    <div class="form-group form-floating-label">
-                                        <input id="YouTubeCount" type="number" class="form-control" required="">
-                                        <label for="YouTubeCount" class="placeholder">Followers Count</label>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-md-1">
-                                    <button type="button" class="btn btn-icon btn-round btn-primary">
-                                        <i class="fab fa-facebook"></i>
-                                    </button>
-                                </div>
-                                <div class="col-md-7">
-                                    <div class="form-group form-floating-label">
-                                        <input id="FBLink" type="text" class="form-control" required="">
-                                        <label for="FBLink" class="placeholder">Facebook Link</label>
-                                    </div>
-                                </div>
-                                <div class="col-md-4">
-                                    <div class="form-group form-floating-label">
-                                        <input id="FBCount" type="number" class="form-control" required="">
-                                        <label for="FBCount" class="placeholder">Followers Count</label>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-md-1">
-                                    <button type="button" class="btn btn-icon btn-round btn-info">
-                                        <i class="fab fa-twitter"></i>
-                                    </button>
-                                </div>
-                                <div class="col-md-7">
-                                    <div class="form-group form-floating-label">
-                                        <input id="TwitterLink" type="text" class="form-control" required="">
-                                        <label for="TwitterLink" class="placeholder">Twitter Link</label>
-                                    </div>
-                                </div>
-                                <div class="col-md-4">
-                                    <div class="form-group form-floating-label">
-                                        <input id="TwitterCount" type="number" class="form-control" required="">
-                                        <label for="TwitterCount" class="placeholder">Followers Count</label>
-                                    </div>
-                                </div>
-                            </div>
-
+                            <table id="SocialNetworkingTable" class="table table-responsive">
+                                <thead>
+                                    <tr>
+                                        <th style="width:10%; text-align:center">Site</th>
+                                        <th style="width: 60%; text-align:center">Profile Link</th>
+                                        <th style="width: 30%; text-align: center">Count</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>
+                                            <button type="button" class="btn btn-icon btn-round btn-danger">
+                                                <i class="fab fa-instagram"></i>
+                                            </button>
+                                        </td>
+                                        <td>
+                                            <div class="form-group">
+                                                <input id="InstaLink" type="url" class="form-control" required="">
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="form-group">
+                                                <div class="input-group">
+                                                    <input type="number" class="form-control" aria-label="Text input with dropdown button">
+                                                    <div class="input-group-append">
+                                                        <button class="btn btn-primary btn-border dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Followers</button>
+                                                        <div class="dropdown-menu" x-placement="bottom-start" style="position: absolute; transform: translate3d(225px, 43px, 0px); top: 0px; left: 0px; will-change: transform;">
+                                                            <a class="dropdown-item">K</a>
+                                                            <a class="dropdown-item">M</a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <button type="button" class="btn btn-icon btn-round btn-danger">
+                                                <i class="fab fa-youtube"></i>
+                                            </button>
+                                        </td>
+                                        <td>
+                                            <div class="form-group">
+                                                <input id="YouTubeLink" type="url" class="form-control" required="">
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="form-group">
+                                                <div class="input-group">
+                                                    <input type="number" class="form-control" aria-label="Text input with dropdown button">
+                                                    <div class="input-group-append">
+                                                        <button class="btn btn-primary btn-border dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Followers</button>
+                                                        <div class="dropdown-menu" x-placement="bottom-start" style="position: absolute; transform: translate3d(225px, 43px, 0px); top: 0px; left: 0px; will-change: transform;">
+                                                            <a class="dropdown-item">K</a>
+                                                            <a class="dropdown-item">M</a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <button type="button" class="btn btn-icon btn-round btn-primary">
+                                                <i class="fab fa-facebook"></i>
+                                            </button>
+                                        </td>
+                                        <td>
+                                            <div class="form-group">
+                                                <input id="FBLink" type="url" class="form-control" required="">
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="form-group">
+                                                <div class="input-group">
+                                                    <input type="number" class="form-control" aria-label="Text input with dropdown button">
+                                                    <div class="input-group-append">
+                                                        <button class="btn btn-primary btn-border dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Followers</button>
+                                                        <div class="dropdown-menu" x-placement="bottom-start" style="position: absolute; transform: translate3d(225px, 43px, 0px); top: 0px; left: 0px; will-change: transform;">
+                                                            <a class="dropdown-item">K</a>
+                                                            <a class="dropdown-item">M</a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <button type="button" class="btn btn-icon btn-round btn-info">
+                                                <i class="fab fa-twitter"></i>
+                                            </button>
+                                        </td>
+                                        <td>
+                                            <div class="form-group">
+                                                <input id="TwitterLink" type="url" class="form-control" required="">
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="form-group">
+                                                <div class="input-group">
+                                                    <input type="number" class="form-control" aria-label="Text input with dropdown button">
+                                                    <div class="input-group-append">
+                                                        <button class="btn btn-primary btn-border dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Followers</button>
+                                                        <div class="dropdown-menu" x-placement="bottom-start" style="position: absolute; transform: translate3d(225px, 43px, 0px); top: 0px; left: 0px; will-change: transform;">
+                                                            <a class="dropdown-item">K</a>
+                                                            <a class="dropdown-item">M</a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
                         </div>
                         <div class="card-footer">
-
                             <div class="text-right mt-3 mb-3">
                                 <button class="btn btn-success btn-round">
+                                    Save&nbsp;
                                     <span class="btn-label">
                                         <i class="fa fa-check"></i>
                                     </span>
-                                    Save
                                 </button>
                                 <button class="btn btn-danger btn-round">
+                                    Cancel&nbsp;
                                     <span class="btn-label">
                                         <i class="fa fa-times"></i>
                                     </span>
-                                    Cancel
                                 </button>
                             </div>
                         </div>

@@ -13,7 +13,8 @@
             <!-- Uncomment below if you prefer to use an image logo -->
             <!-- <a href="index.html" class="logo me-auto"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
         </div>
-    </header><!-- End Header -->
+    </header>
+    <!-- End Header -->
     <div class="wrapper wrapper-login">
         <!-- ======= Sign up START ======= -->
         <div class="container container-login animated fadeIn">
@@ -36,8 +37,8 @@
                     <label for="email_Influencers" class="placeholder">Email</label>
                 </div>
                 <div class="form-group form-floating-label">
-                    <input id="passwordsignin_Influencers" name="passwordsignin_Influencers" type="password" class="form-control input-border-bottom" required="">
-                    <label for="passwordsignin_Influencers" class="placeholder">Password</label>
+                    <input id="passwordsignup_Influencers" name="passwordsignup_Influencers" type="password" class="form-control input-border-bottom" required="">
+                    <label for="passwordsignup_Influencers" class="placeholder">Password</label>
                     <div class="show-password">
                         <i class="icon-eye"></i>
                     </div>
@@ -56,7 +57,7 @@
                     </div>
                 </div>
                 <div class="form-action">
-                    <a asp-controller="User" asp-action="Influencer" class="btn btn-primary btn-rounded btn-login">Sign Up</a>
+                    <a asp-controller="User" asp-action="Influencer" id="signup_Influencers" class="btn btn-primary btn-rounded btn-login">Sign Up</a>
                     <a asp-controller="User" asp-action="Login" id="show-signin" class="btn btn-danger btn-link btn-login mr-3">Cancel</a>
                 </div>
             </div>
