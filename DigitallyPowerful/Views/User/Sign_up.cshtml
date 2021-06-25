@@ -56,12 +56,12 @@
                                     <label for="BrandContact_Project">Project Type</label>
                                     <select class="form-control form-control" id="BrandContact_Project">
                                         <option>Influencer Marketing</option>
-                                        <option>Others</option>                      
+                                        <option>Others</option>
                                     </select>
                                 </div>
                             </div>
                             <div class="col-md-6">
-                                <div class="form-group">
+                                <div class="form-group" id="BrandContact_Categorycol" style="display:none">
                                     <label for="BrandContact_Category">Category</label>
                                     <input type="email" class="form-control" id="BrandContact_Category" placeholder="Enter Category">
                                 </div>
@@ -73,11 +73,11 @@
                                     <label for="BrandContact_message">Message</label>
                                     <textarea id="BrandContact_message" class="form-control" name="BrandContact_message" rows="8" required></textarea>
                                 </div>
-                            </div>                           
+                            </div>
                         </div>
                         <div class="row">
                             <div class="col-md-4 ml-auto mr-auto">
-                                <button class="btn btn-success btn-round">
+                                <button class="btn btn-success btn-round" id="BrandContact_send">
                                     <span class="btn-label">
                                         <i class="far fa-paper-plane"></i>
                                     </span>
@@ -110,8 +110,8 @@
                         <label for="email_Brand" class="placeholder">Email</label>
                     </div>
                     <div class="form-group form-floating-label">
-                        <input id="passwordsignin_Brand" name="passwordsignin_Brand" type="password" class="form-control input-border-bottom" required="">
-                        <label for="passwordsignin_Brand" class="placeholder">Password</label>
+                        <input id="passwordsignup_Brand" name="passwordsignup_Brand" type="password" class="form-control input-border-bottom" required="">
+                        <label for="passwordsignup_Brand" class="placeholder">Password</label>
                         <div class="show-password">
                             <i class="icon-eye"></i>
                         </div>
@@ -130,7 +130,7 @@
                         </div>
                     </div>
                     <div class="form-action">
-                        <a asp-controller="User" asp-action="Influencer" class="btn btn-primary btn-rounded btn-login">Sign Up</a>
+                        <a asp-controller="User" asp-action="Influencer" id="signup_Brand" class="btn btn-primary btn-rounded btn-login">Sign Up</a>
                         <a asp-controller="User" asp-action="Login" id="show-signin" class="btn btn-danger btn-link btn-login mr-3">Cancel</a>
                     </div>
                 </div>
