@@ -22,20 +22,20 @@ namespace DigitallyPowerful.Controllers.Api
         }
 
         [HttpGet("influencerprofile")]
-        public async Task<string> GetInfluencerProfile(long userId = 0)
+        public async Task<List<InfluencerDetails>> GetInfluencerProfile(long userId = 0)
         {
             using (var connection = this.DatabaseContext.Connection)
             {
                 if (userId > 0)
                 {
-                    var result = await userService.GetInfluencerProfile(connection, userId);
+                    return await userService.GetInfluencerProfile(connection, userId);
                 }
                 else
                 {
-                    var result = await userService.GetInfluencerProfile(connection);
+                    return await userService.GetInfluencerProfile(connection);
                 }
             }
-            return "value";
+            return null;
         }
 
 

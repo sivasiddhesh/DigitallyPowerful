@@ -99,11 +99,30 @@ namespace DigitallyPowerful.Services
             return null;
         }
 
-        public async Task<string> GetInfluencerProfile(MySqlConnection connection, long userId)
+        public async Task<List<InfluencerDetails>> GetInfluencerProfile(MySqlConnection connection, long userId)
         {
             try
             {
-
+                var sqlQuery = $"select u.Id as UserId, "+
+                                $"u.EmailAddress as EmailAddress, "+
+                                $"u.FirstName as FirstName, " +
+                                $"u.LastName as LastName, " +
+                                $"u.PhoneNumber as PhoneNumber, " +
+                                $"pd.DOB as DOB, " +
+                                $"pd.Gender as Gender " +
+                                $"from `User` u " +
+                                $"left Join PersonalDetails pd on u.Id = pd.UserId " +
+                                $"where u.RoleTypeId = 3 and u.Id = @ReqUserId";
+                var result = await connection.QueryAsync<InfluencerDetails>(sqlQuery, new { ReqUserId = userId });
+                var data = result.ToList();
+                if (data != null)
+                {
+                    for(var i=0; i < data.Count; i++)
+                    {
+                        data[i].SocialMedia = await GetSocialMedia(connection, data[i].UserId);
+                    }
+                }
+                return data;
             }
             catch (Exception ex)
             {
@@ -111,13 +130,42 @@ namespace DigitallyPowerful.Services
             }
             return null;
         }
-
-        public async Task<string> GetInfluencerProfile(MySqlConnection connection)
+        public async Task<List<SocialMedia>> GetSocialMedia(MySqlConnection connection, long userId)
+        {
+            var sqlQuery = $"select SocialMediaTypeId as SocialMediaTypeId, "+
+                                $"OtherTypeName as SocialMediaTypeName, "+
+                                $"URL as SocialMediaLink, " +
+                                $"FollowersCount as FollowersCount, " +
+                                $"CountTypeId as CountTypeId " +
+                                $"from SocialMedia sm " +
+                                $"where UserId = @ReqUserId";
+            var result = await connection.QueryAsync<SocialMedia>(sqlQuery, new { ReqUserId = userId });
+            return result.ToList();
+        }
+        public async Task<List<InfluencerDetails>> GetInfluencerProfile(MySqlConnection connection)
         {
             try
             {
-                
-                
+                var sqlQuery = $"select u.Id as UserId, " +
+                                $"u.EmailAddress as EmailAddress, " +
+                                $"u.FirstName as FirstName, " +
+                                $"u.LastName as LastName, " +
+                                $"u.PhoneNumber as PhoneNumber, " +
+                                $"pd.DOB as DOB, " +
+                                $"pd.Gender as Gender " +
+                                $"from `User` u " +
+                                $"left Join PersonalDetails pd on u.Id = pd.UserId " +
+                                $"where u.RoleTypeId = 3 ";
+                var result = await connection.QueryAsync<InfluencerDetails>(sqlQuery);
+                var data = result.ToList();
+                if (data != null)
+                {
+                    for (var i = 0; i < data.Count; i++)
+                    {
+                        data[i].SocialMedia = await GetSocialMedia(connection, data[i].UserId);
+                    }
+                }
+                return data;
             }
             catch (Exception ex)
             {
@@ -169,12 +217,13 @@ namespace DigitallyPowerful.Services
                         });
                     foreach (var item in request.SocialMedia)
                     {
-                        var SocialMediaSqlQuery = $"INSERT INTO SocialMedia (SocialMediaTypeId, UserId, URL, FollowersCount, CountTypeId, CreatedOn, UpdatedOn) VALUES " +
-                            $"(@ReqSocialMediaTypeId, @ReqUserId, @ReqUrl, @ReqFollowersCount, @ReqCountTypeId, @ReqCreatedOn, @ReqUpdatedOn)";
+                        var SocialMediaSqlQuery = $"INSERT INTO SocialMedia (SocialMediaTypeId,OtherTypeName, UserId, URL, FollowersCount, CountTypeId, CreatedOn, UpdatedOn) VALUES " +
+                            $"(@ReqSocialMediaTypeId, @ReqOtherTypeName, @ReqUserId, @ReqUrl, @ReqFollowersCount, @ReqCountTypeId, @ReqCreatedOn, @ReqUpdatedOn)";
                         await connection.ExecuteAsync(SocialMediaSqlQuery,
                             new
                             {
                                 ReqSocialMediaTypeId = item.SocialMediaTypeId,
+                                ReqOtherTypeName = item.SocialMediaTypeName,
                                 ReqUserId = request.UserId,
                                 ReqUrl = item.SocialMediaLink,
                                 ReqFollowersCount = item.FollowersCount,
