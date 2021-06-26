@@ -98,7 +98,23 @@ namespace DigitallyPowerful.Services
             }
             return null;
         }
-
+        public async Task<bool> UpdateLogOn(MySqlConnection connection, string emailAddress)
+        {
+            try
+            {
+                var sqlQuery = "Update User set LastLogOn = @ReqLastLogOn where EmailAddress = @ReqEmailAddress";
+                await connection.ExecuteAsync(sqlQuery, new
+                {
+                    ReqLastLogOn = DateTime.UtcNow,
+                    ReqEmailAddress = emailAddress
+                });
+                return true;
+            }
+            catch(Exception ex)
+            {
+            }
+            return false;
+        }
         public async Task<List<InfluencerDetails>> GetInfluencerProfile(MySqlConnection connection, long userId)
         {
             try

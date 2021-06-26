@@ -89,6 +89,7 @@ namespace DigitallyPowerful.Controllers.Api
                         var userdetails = await userService.GetLoginDetails(connection, emailAddress.ToLower().Trim(), password);
                         if (userdetails != null)
                         {
+                            await userService.UpdateLogOn(connection, emailAddress.ToLower().Trim());
                             return new Acknowledgement("Login Successful", userdetails.Id, userdetails.RoleTypeId, await userService.GetRoleTypeName(connection, userdetails.RoleTypeId));
                         }
                         else
