@@ -28,7 +28,6 @@ namespace DigitallyPowerful.Services
             }
             return true;
         }
-
         public async Task<bool> SaveUser(MySqlConnection connection, SignUpRequest request)
         {
             try
@@ -53,7 +52,6 @@ namespace DigitallyPowerful.Services
             }
             return false;
         }
-
         public async Task<string> GetRoleTypeName(MySqlConnection connection, long roleTypeId)
         {
             try
@@ -68,7 +66,6 @@ namespace DigitallyPowerful.Services
             }
             return null;
         }
-
         public async Task<long> GetUserId(MySqlConnection connection, string emailAddress)
         {
             try
@@ -83,7 +80,6 @@ namespace DigitallyPowerful.Services
             }
             return 0;
         }
-
         public async Task<LoginResponse> GetLoginDetails(MySqlConnection connection, string emailAddress, string password)
         {
             try
@@ -189,7 +185,6 @@ namespace DigitallyPowerful.Services
             }
             return null;
         }
-
         public async Task<bool> PostInfluencerProfile(MySqlConnection connection, InfluencerDetails request)
         {
             try
@@ -257,7 +252,6 @@ namespace DigitallyPowerful.Services
             }
             return false;
         }
-
         public async Task<List<BrandDetails>> GetBrandDetails(MySqlConnection connection, long userId)
         {
             try
@@ -308,7 +302,6 @@ namespace DigitallyPowerful.Services
             }
             return null;
         }
-        
         public async Task<bool> PostBrandDetails(MySqlConnection connection, BrandDetails request)
         {
             try

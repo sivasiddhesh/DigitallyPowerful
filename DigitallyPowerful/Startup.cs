@@ -1,4 +1,5 @@
-﻿using DigitallyPowerful.Services.Database;
+﻿using DigitallyPowerful.Services.Configuration;
+using DigitallyPowerful.Services.Database;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
@@ -24,6 +25,8 @@ namespace DigitallyPowerful
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddTransient<DatabaseContext>(_ => new DatabaseContext(Configuration["ConnectionStrings:Default"]));
+            services.AddOptions();
+            services.Configure<MailConfig>(Configuration.GetSection("Mail"));
             services.AddMvc();
         }
 
