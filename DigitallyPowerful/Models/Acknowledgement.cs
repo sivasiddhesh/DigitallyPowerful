@@ -24,5 +24,10 @@ namespace DigitallyPowerful.Models
             RoleTypeName = roleTypeName;
             IsSuccess = true;
         }
+        public Acknowledgement(string message, bool isSuccess)
+        {
+            Message = message;
+            IsSuccess = isSuccess;
+        }
     }
 }

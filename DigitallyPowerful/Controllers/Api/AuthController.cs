@@ -19,7 +19,7 @@ namespace DigitallyPowerful.Controllers.Api
         public AuthController(DatabaseContext databaseContext)
         {
             this.DatabaseContext = databaseContext;
-            userService = new UserService(databaseContext);
+            userService = new UserService();
         }
         
         [HttpGet("{id}")]
