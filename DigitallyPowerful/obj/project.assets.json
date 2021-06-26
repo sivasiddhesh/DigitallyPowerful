@@ -13323,23 +13323,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\User1\\.nuget\\packages\\": {},
+    "C:\\Users\\pganesan\\.nuget\\packages\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\User1\\Desktop\\Siva\\DigitallyPowerful\\DigitallyPowerful\\DigitallyPowerful.csproj",
+      "projectUniqueName": "C:\\Users\\pganesan\\Documents\\GitHub\\Digitallypowerful\\DigitallyPowerful\\DigitallyPowerful.csproj",
       "projectName": "DigitallyPowerful",
-      "projectPath": "C:\\Users\\User1\\Desktop\\Siva\\DigitallyPowerful\\DigitallyPowerful\\DigitallyPowerful.csproj",
-      "packagesPath": "C:\\Users\\User1\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\User1\\Desktop\\Siva\\DigitallyPowerful\\DigitallyPowerful\\obj\\",
+      "projectPath": "C:\\Users\\pganesan\\Documents\\GitHub\\Digitallypowerful\\DigitallyPowerful\\DigitallyPowerful.csproj",
+      "packagesPath": "C:\\Users\\pganesan\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\pganesan\\Documents\\GitHub\\Digitallypowerful\\DigitallyPowerful\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\User1\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\pganesan\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -13402,7 +13402,7 @@
         ],
         "assetTargetFallback": true,
         "warn": true,
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.301\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.104\\RuntimeIdentifierGraph.json"
       }
     }
   },
