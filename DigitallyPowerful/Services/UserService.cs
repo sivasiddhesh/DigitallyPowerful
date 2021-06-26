@@ -2,6 +2,7 @@
 using DigitallyPowerful.Models;
 using DigitallyPowerful.Services.Database;
 using MySqlConnector;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,8 +12,10 @@ namespace DigitallyPowerful.Services
 {
     public class UserService
     {
+        public LogService logService { get; set; }
         public UserService()
         {
+            logService = new LogService();
         }
         public async Task<bool> EmailExists(MySqlConnection connection, string EmailAddress)
         {
@@ -24,7 +27,7 @@ namespace DigitallyPowerful.Services
             }
             catch(Exception ex)
             {
-
+                await logService.SaveLog(connection, "EmailExists", JsonConvert.SerializeObject(EmailAddress), JsonConvert.SerializeObject(ex));
             }
             return true;
         }
@@ -48,7 +51,7 @@ namespace DigitallyPowerful.Services
             }
             catch (Exception ex)
             {
-
+                await logService.SaveLog(connection, "SaveUser", JsonConvert.SerializeObject(request), JsonConvert.SerializeObject(ex));
             }
             return false;
         }
@@ -62,7 +65,7 @@ namespace DigitallyPowerful.Services
             }
             catch (Exception ex)
             {
-
+                await logService.SaveLog(connection, "GetRoleTypeName", JsonConvert.SerializeObject(roleTypeId), JsonConvert.SerializeObject(ex));
             }
             return null;
         }
@@ -76,7 +79,7 @@ namespace DigitallyPowerful.Services
             }
             catch (Exception ex)
             {
-
+                await logService.SaveLog(connection, "GetUserId", JsonConvert.SerializeObject(emailAddress), JsonConvert.SerializeObject(ex));
             }
             return 0;
         }
@@ -90,7 +93,7 @@ namespace DigitallyPowerful.Services
             }
             catch (Exception ex)
             {
-
+                await logService.SaveLog(connection, "GetLoginDetails", JsonConvert.SerializeObject(emailAddress + " " + password), JsonConvert.SerializeObject(ex));
             }
             return null;
         }
@@ -108,6 +111,8 @@ namespace DigitallyPowerful.Services
             }
             catch(Exception ex)
             {
+                await logService.SaveLog(connection, "UpdateLogOn", JsonConvert.SerializeObject(emailAddress), JsonConvert.SerializeObject(ex));
+
             }
             return false;
         }
@@ -138,21 +143,29 @@ namespace DigitallyPowerful.Services
             }
             catch (Exception ex)
             {
-
+                await logService.SaveLog(connection, "GetInfluencerProfile", JsonConvert.SerializeObject(userId), JsonConvert.SerializeObject(ex));
             }
             return null;
         }
         public async Task<List<SocialMedia>> GetSocialMedia(MySqlConnection connection, long userId)
         {
-            var sqlQuery = $"select SocialMediaTypeId as SocialMediaTypeId, "+
-                                $"OtherTypeName as SocialMediaTypeName, "+
-                                $"URL as SocialMediaLink, " +
-                                $"FollowersCount as FollowersCount, " +
-                                $"CountTypeId as CountTypeId " +
-                                $"from SocialMedia sm " +
-                                $"where UserId = @ReqUserId";
-            var result = await connection.QueryAsync<SocialMedia>(sqlQuery, new { ReqUserId = userId });
-            return result.ToList();
+            try
+            {
+                var sqlQuery = $"select SocialMediaTypeId as SocialMediaTypeId, " +
+                                    $"OtherTypeName as SocialMediaTypeName, " +
+                                    $"URL as SocialMediaLink, " +
+                                    $"FollowersCount as FollowersCount, " +
+                                    $"CountTypeId as CountTypeId " +
+                                    $"from SocialMedia sm " +
+                                    $"where UserId = @ReqUserId";
+                var result = await connection.QueryAsync<SocialMedia>(sqlQuery, new { ReqUserId = userId });
+                return result.ToList();
+            }
+            catch(Exception ex)
+            {
+                await logService.SaveLog(connection, "GetSocialMedia", JsonConvert.SerializeObject(userId), JsonConvert.SerializeObject(ex));
+            }
+            return null;
         }
         public async Task<List<InfluencerDetails>> GetInfluencerProfile(MySqlConnection connection)
         {
@@ -181,7 +194,7 @@ namespace DigitallyPowerful.Services
             }
             catch (Exception ex)
             {
-
+                await logService.SaveLog(connection, "GetInfluencerProfile", JsonConvert.SerializeObject(""), JsonConvert.SerializeObject(ex));
             }
             return null;
         }
@@ -248,7 +261,7 @@ namespace DigitallyPowerful.Services
             }
             catch(Exception ex)
             {
-
+                await logService.SaveLog(connection, "PostInfluencerProfile", JsonConvert.SerializeObject(request), JsonConvert.SerializeObject(ex));
             }
             return false;
         }
@@ -273,7 +286,7 @@ namespace DigitallyPowerful.Services
             }
             catch (Exception ex)
             {
-
+                await logService.SaveLog(connection, "GetBrandDetails", JsonConvert.SerializeObject(userId), JsonConvert.SerializeObject(ex));
             }
             return null;
         }
@@ -298,7 +311,7 @@ namespace DigitallyPowerful.Services
             }
             catch (Exception ex)
             {
-
+                await logService.SaveLog(connection, "GetBrandDetails", JsonConvert.SerializeObject(""), JsonConvert.SerializeObject(ex));
             }
             return null;
         }
@@ -341,7 +354,7 @@ namespace DigitallyPowerful.Services
             }
             catch (Exception ex)
             {
-
+                await logService.SaveLog(connection, "PostBrandDetails", JsonConvert.SerializeObject(request), JsonConvert.SerializeObject(ex));
             }
             return false;
         }

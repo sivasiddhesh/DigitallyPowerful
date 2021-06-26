@@ -1,5 +1,7 @@
 ﻿using DigitallyPowerful.Models;
 using DigitallyPowerful.Services.Configuration;
+using MySqlConnector;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,11 +14,13 @@ namespace DigitallyPowerful.Services
     public class MailService
     {
         public MailConfig MailConfig { get; set; }
+        private LogService logService { get; set; }
         public MailService(MailConfig config)
         {
             MailConfig = config;
+            logService = new LogService();
         }
-        public bool SendMail(MailRequest request)
+        public bool SendMail(MySqlConnection connection, MailRequest request)
         {
             try
             {
@@ -38,7 +42,7 @@ namespace DigitallyPowerful.Services
             }
             catch(Exception ex)
             {
-
+                logService.SaveLogSync(connection, "SendMail", JsonConvert.SerializeObject(request), JsonConvert.SerializeObject(ex));
             }
             return true;
         }
