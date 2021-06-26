@@ -241,5 +241,100 @@ namespace DigitallyPowerful.Services
             }
             return false;
         }
+
+        public async Task<List<BrandDetails>> GetBrandDetails(MySqlConnection connection, long userId)
+        {
+            try
+            {
+                var sqlQuery = $"select u.Id as UserId, " +
+                                $"u.EmailAddress as EmailAddress, " +
+                                $"u.FirstName as FirstName, " +
+                                $"u.LastName as LastName, " +
+                                $"u.PhoneNumber as PhoneNumber, " +
+                                $"b.ProjectTypeId as ProjectTypeId, " +
+                                $"b.BrandDescription as BrandDescription , " +
+                                $"b.ProjectName as ProjectName " +
+                                $"from `User` u " +
+                                $"left join Brand b on u.Id  = b.UserId  " +
+                                $"where u.RoleTypeId = 2 and u.Id = @ReqUserId";
+                var result = await connection.QueryAsync<BrandDetails>(sqlQuery, new { ReqUserId = userId });
+                var data = result.ToList();
+                return data;
+            }
+            catch (Exception ex)
+            {
+
+            }
+            return null;
+        }
+        public async Task<List<BrandDetails>> GetBrandDetails(MySqlConnection connection)
+        {
+            try
+            {
+                var sqlQuery = $"select u.Id as UserId, " +
+                                $"u.EmailAddress as EmailAddress, " +
+                                $"u.FirstName as FirstName, " +
+                                $"u.LastName as LastName, " +
+                                $"u.PhoneNumber as PhoneNumber, " +
+                                $"b.ProjectTypeId as ProjectTypeId, "+
+                                $"b.BrandDescription as BrandDescription , " +
+                                $"b.ProjectName as ProjectName " +
+                                $"from `User` u " +
+                                $"left join Brand b on u.Id  = b.UserId  " +
+                                $"where u.RoleTypeId = 2 ";
+                var result = await connection.QueryAsync<BrandDetails>(sqlQuery);
+                var data = result.ToList();
+                return data;
+            }
+            catch (Exception ex)
+            {
+
+            }
+            return null;
+        }
+        
+        public async Task<bool> PostBrandDetails(MySqlConnection connection, BrandDetails request)
+        {
+            try
+            {
+                var isExistQuery = $"Select * from Brand where UserId = @ReqUserId";
+                var isExist = await connection.QueryAsync(isExistQuery, new { ReqUserId = request.UserId });
+                if (!isExist.ToList().Any())
+                {
+                    var InsertSqlQuery = $"INSERT INTO Brand (UserId, ProjectTypeId, ProjectName, BrandDescription, CreatedOn, UpdatedOn) VALUES " +
+                            $"(@ReqUserId, @ReqProjectTypeId, @ReqProjectName, @ReqBrandDescription, @ReqCreatedOn, @ReqUpdatedOn)";
+                    var result = await connection.ExecuteAsync(InsertSqlQuery,
+                            new
+                            {
+                                ReqUserId = request.UserId,
+                                ReqProjectTypeId = request.ProjectTypeId,
+                                ReqProjectName = request.ProjectName,
+                                ReqBrandDescription = request.BrandDescription,
+                                ReqCreatedOn = DateTime.UtcNow,
+                                ReqUpdatedOn = DateTime.UtcNow
+                            });
+                    return result > 0;
+                }
+                else
+                {
+                    var UpdateSqlQuery = $"Update Brand Set ProjectTypeId = @ReqProjectTypeId, ProjectName = @ReqProjectName, BrandDescription = @ReqBrandDescription ,UpdatedOn = @ReqUpdatedOn where UserId = @ReqUserId";
+                    var result = await connection.ExecuteAsync(UpdateSqlQuery,
+                            new
+                            {
+                                ReqUserId = request.UserId,
+                                ReqProjectTypeId = request.ProjectTypeId,
+                                ReqProjectName = request.ProjectName,
+                                ReqBrandDescription = request.BrandDescription,
+                                ReqUpdatedOn = DateTime.UtcNow
+                            });
+                    return result > 0;
+                }
+            }
+            catch (Exception ex)
+            {
+
+            }
+            return false;
+        }
     }
 }
