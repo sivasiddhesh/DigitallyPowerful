@@ -14,22 +14,6 @@ D:\Prabhakar G\Projects\DigitallyPowerful\DigitallyPowerful\obj\Debug\netcoreapp
 D:\Prabhakar G\Projects\DigitallyPowerful\DigitallyPowerful\obj\Debug\netcoreapp2.0\DigitallyPowerful.pdb
 D:\Prabhakar G\Projects\DigitallyPowerful\DigitallyPowerful\obj\Debug\netcoreapp2.0\DigitallyPowerful.genruntimeconfig.cache
 D:\Prabhakar G\Projects\DigitallyPowerful\DigitallyPowerful\obj\Debug\netcoreapp2.0\UserSecretsAssemblyInfo.cs
-C:\Users\User1\Desktop\Siva\Digitallypowerful\DigitallyPowerful\bin\Debug\netcoreapp2.0\appsettings.Development.json
-C:\Users\User1\Desktop\Siva\Digitallypowerful\DigitallyPowerful\bin\Debug\netcoreapp2.0\appsettings.json
-C:\Users\User1\Desktop\Siva\Digitallypowerful\DigitallyPowerful\bin\Debug\netcoreapp2.0\bundleconfig.json
-C:\Users\User1\Desktop\Siva\Digitallypowerful\DigitallyPowerful\bin\Debug\netcoreapp2.0\DigitallyPowerful.deps.json
-C:\Users\User1\Desktop\Siva\Digitallypowerful\DigitallyPowerful\bin\Debug\netcoreapp2.0\DigitallyPowerful.runtimeconfig.json
-C:\Users\User1\Desktop\Siva\Digitallypowerful\DigitallyPowerful\bin\Debug\netcoreapp2.0\DigitallyPowerful.runtimeconfig.dev.json
-C:\Users\User1\Desktop\Siva\Digitallypowerful\DigitallyPowerful\bin\Debug\netcoreapp2.0\DigitallyPowerful.dll
-C:\Users\User1\Desktop\Siva\Digitallypowerful\DigitallyPowerful\bin\Debug\netcoreapp2.0\DigitallyPowerful.pdb
-C:\Users\User1\Desktop\Siva\Digitallypowerful\DigitallyPowerful\obj\Debug\netcoreapp2.0\DigitallyPowerful.csproj.AssemblyReference.cache
-C:\Users\User1\Desktop\Siva\Digitallypowerful\DigitallyPowerful\obj\Debug\netcoreapp2.0\DigitallyPowerful.AssemblyInfoInputs.cache
-C:\Users\User1\Desktop\Siva\Digitallypowerful\DigitallyPowerful\obj\Debug\netcoreapp2.0\DigitallyPowerful.AssemblyInfo.cs
-C:\Users\User1\Desktop\Siva\Digitallypowerful\DigitallyPowerful\obj\Debug\netcoreapp2.0\DigitallyPowerful.csproj.CoreCompileInputs.cache
-C:\Users\User1\Desktop\Siva\Digitallypowerful\DigitallyPowerful\obj\Debug\netcoreapp2.0\UserSecretsAssemblyInfo.cs
-C:\Users\User1\Desktop\Siva\Digitallypowerful\DigitallyPowerful\obj\Debug\netcoreapp2.0\DigitallyPowerful.dll
-C:\Users\User1\Desktop\Siva\Digitallypowerful\DigitallyPowerful\obj\Debug\netcoreapp2.0\DigitallyPowerful.pdb
-C:\Users\User1\Desktop\Siva\Digitallypowerful\DigitallyPowerful\obj\Debug\netcoreapp2.0\DigitallyPowerful.genruntimeconfig.cache
 C:\Users\pganesan\Documents\GitHub\Digitallypowerful\DigitallyPowerful\bin\Debug\netcoreapp2.0\appsettings.Development.json
 C:\Users\pganesan\Documents\GitHub\Digitallypowerful\DigitallyPowerful\bin\Debug\netcoreapp2.0\appsettings.json
 C:\Users\pganesan\Documents\GitHub\Digitallypowerful\DigitallyPowerful\bin\Debug\netcoreapp2.0\bundleconfig.json
@@ -46,3 +30,18 @@ C:\Users\pganesan\Documents\GitHub\Digitallypowerful\DigitallyPowerful\obj\Debug
 C:\Users\pganesan\Documents\GitHub\Digitallypowerful\DigitallyPowerful\obj\Debug\netcoreapp2.0\DigitallyPowerful.dll
 C:\Users\pganesan\Documents\GitHub\Digitallypowerful\DigitallyPowerful\obj\Debug\netcoreapp2.0\DigitallyPowerful.pdb
 C:\Users\pganesan\Documents\GitHub\Digitallypowerful\DigitallyPowerful\obj\Debug\netcoreapp2.0\DigitallyPowerful.genruntimeconfig.cache
+C:\Users\User1\Desktop\Siva\DigitallyPowerful\DigitallyPowerful\bin\Debug\netcoreapp2.0\appsettings.Development.json
+C:\Users\User1\Desktop\Siva\DigitallyPowerful\DigitallyPowerful\bin\Debug\netcoreapp2.0\appsettings.json
+C:\Users\User1\Desktop\Siva\DigitallyPowerful\DigitallyPowerful\bin\Debug\netcoreapp2.0\bundleconfig.json
+C:\Users\User1\Desktop\Siva\DigitallyPowerful\DigitallyPowerful\bin\Debug\netcoreapp2.0\DigitallyPowerful.deps.json
+C:\Users\User1\Desktop\Siva\DigitallyPowerful\DigitallyPowerful\bin\Debug\netcoreapp2.0\DigitallyPowerful.runtimeconfig.json
+C:\Users\User1\Desktop\Siva\DigitallyPowerful\DigitallyPowerful\bin\Debug\netcoreapp2.0\DigitallyPowerful.runtimeconfig.dev.json
+C:\Users\User1\Desktop\Siva\DigitallyPowerful\DigitallyPowerful\bin\Debug\netcoreapp2.0\DigitallyPowerful.dll
+C:\Users\User1\Desktop\Siva\DigitallyPowerful\DigitallyPowerful\bin\Debug\netcoreapp2.0\DigitallyPowerful.pdb
+C:\Users\User1\Desktop\Siva\DigitallyPowerful\DigitallyPowerful\obj\Debug\netcoreapp2.0\DigitallyPowerful.AssemblyInfoInputs.cache
+C:\Users\User1\Desktop\Siva\DigitallyPowerful\DigitallyPowerful\obj\Debug\netcoreapp2.0\DigitallyPowerful.AssemblyInfo.cs
+C:\Users\User1\Desktop\Siva\DigitallyPowerful\DigitallyPowerful\obj\Debug\netcoreapp2.0\DigitallyPowerful.csproj.CoreCompileInputs.cache
+C:\Users\User1\Desktop\Siva\DigitallyPowerful\DigitallyPowerful\obj\Debug\netcoreapp2.0\UserSecretsAssemblyInfo.cs
+C:\Users\User1\Desktop\Siva\DigitallyPowerful\DigitallyPowerful\obj\Debug\netcoreapp2.0\DigitallyPowerful.dll
+C:\Users\User1\Desktop\Siva\DigitallyPowerful\DigitallyPowerful\obj\Debug\netcoreapp2.0\DigitallyPowerful.pdb
+C:\Users\User1\Desktop\Siva\DigitallyPowerful\DigitallyPowerful\obj\Debug\netcoreapp2.0\DigitallyPowerful.genruntimeconfig.cache

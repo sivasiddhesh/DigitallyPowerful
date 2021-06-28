@@ -7,11 +7,9 @@
 <html lang="en">
 
 <body class="login">
-    <header id="header" class="fixed-top " style="background: #36517e">
+    <header id="header" class="fixed-top " style="background: #f9fbfd">
         <div class="container d-flex align-items-center">
-            <h1 class="logo me-auto"><a asp-controller="Home" asp-action="Index">Digitally Powerful</a></h1>
-            <!-- Uncomment below if you prefer to use an image logo -->
-            <!-- <a href="index.html" class="logo me-auto"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
+             <a asp-controller="Home" asp-action="Index" class="logo me-auto"><img src="~/images/DigitallyPowerful.png" alt="Digitally Powerful" class="img-fluid"></a>
         </div>
     </header>
     <!-- End Header -->
@@ -22,7 +20,7 @@
             <div class="login-form">
                 <div class="form-group form-floating-label">
                     <input id="Firstname_Influencers" name="Firstname_Influencers" type="text" class="form-control input-border-bottom" required="">
-                    <label for="Firstname_Influencers" class="placeholder">First Name</label>
+                    <label for="Firstname_Influencers" class="placeholder">First Name *</label>
                 </div>
                 <div class="form-group form-floating-label">
                     <input id="Lastname_Influencers" name="Lastname_Influencers" type="text" class="form-control input-border-bottom" required="">
@@ -30,11 +28,11 @@
                 </div>
                 <div class="form-group form-floating-label">
                     <input id="Mobile_Influencers" name="Mobile_Influencers" type="tel" class="form-control input-border-bottom" required="">
-                    <label for="Mobile_Influencers" class="placeholder">Mobile</label>
+                    <label for="Mobile_Influencers" class="placeholder">Mobile *</label>
                 </div>
                 <div class="form-group form-floating-label">
                     <input id="email_Influencers" name="email_Influencers" type="email" class="form-control input-border-bottom" required="">
-                    <label for="email_Influencers" class="placeholder">Email</label>
+                    <label for="email_Influencers" class="placeholder">Email *</label>
                 </div>
                 <div class="form-group form-floating-label">
                     <input id="passwordsignup_Influencers" name="passwordsignup_Influencers" type="password" class="form-control input-border-bottom" required="">
@@ -53,11 +51,11 @@
                 <div class="row form-sub m-0">
                     <div class="custom-control custom-checkbox">
                         <input type="checkbox" class="custom-control-input" name="agree_Influencers" id="agree_Influencers">
-                        <label class="custom-control-label" for="agree_Influencers">I Agree to the terms and conditions.</label>
+                        <label class="custom-control-label" for="agree_Influencers">I Agree to the terms and conditions. *</label>
                     </div>
                 </div>
                 <div class="form-action">
-                    <a asp-controller="User" asp-action="Influencer" id="signup_Influencers" class="btn btn-primary btn-rounded btn-login">Sign Up</a>
+                    <button id="signup_Influencers" class="btn btn-primary btn-rounded btn-login">Sign Up</button>
                     <a asp-controller="User" asp-action="Login" id="show-signin" class="btn btn-danger btn-link btn-login mr-3">Cancel</a>
                 </div>
             </div>

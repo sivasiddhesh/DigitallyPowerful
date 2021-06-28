@@ -3,11 +3,9 @@
     Layout = "~/Views/Shared/_UserLayout.cshtml";
 }
 <body>
-    <header id="header" class="fixed-top " style="background: #36517e">
+    <header id="header" class="fixed-top " style="background: #f9fbfd">
         <div class="container d-flex align-items-center">
-            <h1 class="logo me-auto"><a asp-controller="Home" asp-action="Index">Digitally Powerful</a></h1>
-            <!-- Uncomment below if you prefer to use an image logo -->
-            <!-- <a href="index.html" class="logo me-auto"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
+            <a asp-controller="Home" asp-action="Index" class="logo me-auto"><img src="~/images/DigitallyPowerful.png" alt="Digitally Powerful" class="img-fluid"></a>
         </div>
     </header><!-- End Header -->
     <div class="container">
@@ -66,18 +64,18 @@
                     </div>
                 </div>
                 <div class="col-md-4">
-                    <div class="card card-profile">
-                        <div class="card-header" style="background-image: url('https://via.placeholder.com/150')">
-                            <div class="profile-picture">
-                                <div class="avatar avatar-xl">
-                                    <img src="https://via.placeholder.com/50" alt="..." class="avatar-img rounded-circle">
-                                </div>
+                    <div class="card card-profile" style="height: 90%;">
+                        <div class="col-lg-5 col-md-5 col-sm-12 ml-auto mr-auto">
+                            <div class="input-file input-file-image">
+                                <img class="img-upload-preview img-circle" width="100" height="100" src="~/images/favicon.png" alt="preview">
+                                <input type="file" class="form-control form-control-file" id="uploadImg" name="uploadImg" accept="image/*" required="">
+                                <label for="uploadImg" class="btn btn-primary btn-round btn-lg" style="display:none">Image<i class="fas fa-upload"></i></label>
                             </div>
                         </div>
-                        <div class="card-body">
+                        <div class="card-body" style="padding: 17px;">
                             <div class="user-profile text-center">
-                                <div class="name">Hizrian, 19</div>
-                                <div class="job">Frontend Developer</div>
+                                <div class="name" id="ProfileLogoName">Hizrian</div>
+                                <div class="job">Verified <i id="VerifiedLogo" class="far fa-check-circle"></i><i id="UnverifiedLogo" class="far fa-times-circle"></i></div>
                                 <div class="desc"></div>
                             </div>
                         </div>

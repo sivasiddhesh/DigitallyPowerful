@@ -29,14 +29,62 @@ $(document).ready(function () {
             $.notify(content, { type: "warning", placement: { from: "top", align: "right" }, });
         }
     });
+
     $("#signup_Brand").click(function () {
         if ($("#passwordsignup_Brand").val() == $("#confirmpassword_Brand").val()) {
             if ($("#agree_Brand").prop("checked") == true) {
-                //AJAX
+                if (validateEmail($("#email_Brand").val())) {
+                    $.ajax({
+                        method: "POST",
+                        data: {
+                            EmailAddress: $("#email_Brand").val(),
+                            Password: $("#passwordsignup_Brand").val(),
+                            FirstName: $("#Brandname_Brand").val(),
+                            LastName: $("#Contactname_Brand").val(),
+                            RoleTypeId: "2",
+                            PhoneNumber: $("#Mobile_Brand").val()
+                        },
+                        url: "http://localhost:51638/Api/Auth/signup",
+                        success: function (data) {
+                            if (data.message == "Saved Successfully") {
+                                var content = {};
+                                content.message = "Registration Successful";
+                                content.title = 'Digitally Powerful';
+                                content.icon = 'fa fa-check';
+                                $.notify(content, { type: "success", placement: { from: "top", align: "right" }, });
+                            } else if (data.message == "Email Address Exists") {
+                                var content = {};
+                                content.message = "Entered Email Address Exists";
+                                content.title = 'Digitally Powerful';
+                                content.icon = 'fa fa-exclamation';
+                                $.notify(content, { type: "warning", placement: { from: "top", align: "right" }, });
+                            } else {
+                                var content = {};
+                                content.message = "Kindly check the details";
+                                content.title = 'Digitally Powerful';
+                                content.icon = 'fa fa-exclamation';
+                                $.notify(content, { type: "warning", placement: { from: "top", align: "right" }, });
+                            }
+                        },
+                        error: function (data) {
+                            var content = {};
+                            content.message = "Kindly try again later";
+                            content.title = 'Digitally Powerful';
+                            content.icon = 'fa fa-exclamation';
+                            $.notify(content, { type: "error", placement: { from: "top", align: "right" }, });
+                        }
+                    });
+                } else {
+                    var content = {};
+                    content.message = "Kindly enter a valid Email";
+                    content.title = 'Digitally Powerful';
+                    content.icon = 'fa fa-exclamation';
+                    $.notify(content, { type: "warning", placement: { from: "top", align: "right" }, });
+                }
             } else {
                 var content = {};
                 content.message = "Kindly agree to the terms and conditions";
-                content.title = 'Cars Notification';
+                content.title = 'Digitally Powerful';
                 content.icon = 'fa fa-exclamation';
                 $.notify(content, { type: "warning", placement: { from: "top", align: "right" }, });
             }
@@ -45,7 +93,7 @@ $(document).ready(function () {
             $("#confirmpassword_Brand").val("");
             var content = {};
             content.message = "Password Mismatch";
-            content.title = 'Cars Notification';
+            content.title = 'Digitally Powerful';
             content.icon = 'fa fa-exclamation';
             $.notify(content, { type: "warning", placement: { from: "top", align: "right" }, });
         }
@@ -53,13 +101,61 @@ $(document).ready(function () {
 
     //INFLUENCERS SIGNUP
     $("#signup_Influencers").click(function () {
-        if ($("#passwordsignup_Influencers").val() == $("#confirmpassword_Influencers").val()) {
+        if ($("#passwordsignup_Influencers").val() == $("#confirmpassword_Influencers").val() && $("#passwordsignup_Influencers").val() != "" && $("#confirmpassword_Influencers").val() != "") {
             if ($("#agree_Influencers").prop("checked") == true) {
-                //AJAX
+                if (validateEmail($("#email_Influencers").val())) {
+                    $.ajax({
+                        method: "POST",
+                       // data: data,
+                        data: {
+                            EmailAddress: $("#email_Influencers").val(),
+                            Password: $("#passwordsignup_Influencers").val(),
+                            FirstName: $("#Firstname_Influencers").val(),
+                            LastName: $("#Lastname_Influencers").val(),
+                            RoleTypeId: "3",
+                            PhoneNumber: $("#Mobile_Influencers").val()
+                        },
+                        url: "http://localhost:51638/Api/Auth/signup",
+                        success: function (data) {
+                            if (data.message == "Saved Successfully") {
+                                var content = {};
+                                content.message = "Registration Successful";
+                                content.title = 'Digitally Powerful';
+                                content.icon = 'fa fa-check';
+                                $.notify(content, { type: "success", placement: { from: "top", align: "right" }, });
+                            } else if (data.message == "Email Address Exists") {
+                                var content = {};
+                                content.message = "Entered Email Address Exists";
+                                content.title = 'Digitally Powerful';
+                                content.icon = 'fa fa-exclamation';
+                                $.notify(content, { type: "warning", placement: { from: "top", align: "right" }, });
+                            } else {
+                                var content = {};
+                                content.message = "Kindly check the details";
+                                content.title = 'Digitally Powerful';
+                                content.icon = 'fa fa-exclamation';
+                                $.notify(content, { type: "warning", placement: { from: "top", align: "right" }, });
+                            }
+                        },
+                        error: function (data) {
+                            var content = {};
+                            content.message = "Kindly try again later";
+                            content.title = 'Digitally Powerful';
+                            content.icon = 'fa fa-exclamation';
+                            $.notify(content, { type: "error", placement: { from: "top", align: "right" }, });
+                        }
+                    });
+                } else {
+                    var content = {};
+                    content.message = "Kindly enter a valid Email";
+                    content.title = 'Digitally Powerful';
+                    content.icon = 'fa fa-exclamation';
+                    $.notify(content, { type: "warning", placement: { from: "top", align: "right" }, });
+                }
             } else {
                 var content = {};
                 content.message = "Kindly agree to the terms and conditions";
-                content.title = 'Cars Notification';
+                content.title = 'Digitally Powerful';
                 content.icon = 'fa fa-exclamation';
                 $.notify(content, { type: "warning", placement: { from: "top", align: "right" }, });
             }
@@ -67,24 +163,55 @@ $(document).ready(function () {
             $("#passwordsignup_Influencers").val("");
             $("#confirmpassword_Influencers").val("");
             var content = {};
-            content.message = "Password Mismatch";
-            content.title = 'Cars Notification';
+            content.message = "Kindly check the Password";
+            content.title = 'Digitally Powerful';
             content.icon = 'fa fa-exclamation';
             $.notify(content, { type: "warning", placement: { from: "top", align: "right" }, });
         }
     });
-    //INFLUENCERS PROFILE
-    $("#Socialnetwork_Add").click(function () {
-        var table = $('#SocialNetworkingTable');
-        var tr = $('<tr></tr>');
-        tr.append("<td><button type='button' class='btn btn-icon btn-round btn-danger'><i class='fab fa-instagram'></i></button></td>")
-        tr.append("<td><div class='form-group'><input id='InstaLink' type='url' class='form-control' required=''></div></td>")
-        tr.append("<td><div class='form-group'><div class='input-group'><input type='number' class='form-control' aria-label='Text input with dropdown button'><div class='input-group-append'><button class='btn btn-primary btn-border dropdown-toggle' type='button' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false'>Followers</button><div class='dropdown-menu' x-placement='bottom-start' style='position: absolute; transform: translate3d(225px, 43px, 0px); top: 0px; left: 0px; will-change: transform;'><a class='dropdown-item'>K</a><a class='dropdown-item'>M</a></div></div ></div ></div ></td>")
-        $(table).find('tbody').append(tr);
-    });
+
     //LOGIN
     $("#signin").click(function () {
-        //AJAX
+        if (validateEmail($("#Login_username").val())) {
+            $.ajax({
+                method: "GET",
+                data: {
+                    EmailAddress: $("#Login_username").val(),
+                    Password: $("#Login_password").val()
+                },
+                url: "http://localhost:51638/Api/Auth/login",
+                success: function (data) {
+                    if (data.message == "Login Successful") {
+                        setAuthCookie("Id", data.userId);
+                        if (data.roleTypeId == 3)
+                            window.location.href = "http://localhost:51638/user/Influencer";
+                        else if (data.roleTypeId == 2)
+                            window.location.href = "http://localhost:51638/user/Brand";
+                        else if (data.roleTypeId == 1)
+                            window.location.href = "http://localhost:51638/user/Influencer";                                  
+                    } else {
+                        var content = {};
+                        content.message = data.message;
+                        content.title = 'Digitally Powerful';
+                        content.icon = 'fa fa-exclamation';
+                        $.notify(content, { type: "warning", placement: { from: "top", align: "right" }, });
+                    }
+                },
+                error: function (data) {
+                    var content = {};
+                    content.message = "Please try again later";
+                    content.title = 'Digitally Powerful';
+                    content.icon = 'fa fa-exclamation';
+                    $.notify(content, { type: "error", placement: { from: "top", align: "right" }, });
+                }
+            });
+        } else {
+            var content = {};
+            content.message = "Kindly enter a valid Email";
+            content.title = 'Digitally Powerful';
+            content.icon = 'fa fa-exclamation';
+            $.notify(content, { type: "warning", placement: { from: "top", align: "right" }, });
+        }
     });
 
     //CONTACT US
@@ -99,11 +226,67 @@ $(document).ready(function () {
         } else {
             var content = {};
             content.message = "Kindly fill all the details";
-            content.title = 'Cars Notification';
+            content.title = 'Digitally Powerful';
             content.icon = 'fa fa-exclamation';
             $.notify(content, { type: "warning", placement: { from: "top", align: "right" }, });
         }
     });
 });
+
+function validateEmail(email) {
+    const re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    return re.test(String(email).toLowerCase());
+}
+
+function getCookie(cname) {
+    var name = cname + "=";
+    var ca = document.cookie.split(";");
+    for (var i = 0; i < ca.length; i++) {
+        var c = ca[i];
+        while (c.charAt(0) === " ") {
+            c = c.substring(1);
+        }
+        if (c.indexOf(name) === 0) {
+            return c.substring(name.length, c.length);
+        }
+    }
+    return "";
+}
+
+function setAuthCookie(key, data) {
+    document.cookie = key + "=" + data + "; path=/; expires=Fri, 31 Dec 9999 23:59:59 GMT";
+}
+
+function deleteCookie(key) {
+    var cookies = document.cookie.split(";");
+    deleteAllCookies();
+    for (var i = 0; i < cookies.length; i++) {
+        var name = cookies[i].split("=")[0];
+        var data = cookies[i].split(name + "=")[1];
+        if (!cookies[i].includes(key)) {
+            document.cookie = name + "=" + data + "; path=/; expires=Fri, 31 Dec 9999 23:59:59 GMT";
+        }
+    }
+}
+
+function deleteAllCookies() {
+    var cookies = document.cookie.split(";");
+
+    for (var i = 0; i < cookies.length; i++) {
+        var cookie = cookies[i];
+        var eqPos = cookie.indexOf("=");
+        var name = eqPos > -1 ? cookie.substr(0, eqPos) : cookie;
+
+        if (name.trim() === "token") {
+            document.cookie = name + "=; Path=/; Expires=Thu, 01 Jan 1970 00:00:01 GMT;";
+            document.cookie = name + "=; Path=/Home; Expires=Thu, 01 Jan 1970 00:00:01 GMT;";
+        } else if (name.trim() === "AppraisalId") {
+            document.cookie = name + "=; Path=/; Expires=Thu, 01 Jan 1970 00:00:01 GMT;";
+            document.cookie = name + "=; Path=/Appraisal; Expires=Thu, 01 Jan 1970 00:00:01 GMT;";
+        } else {
+            document.cookie = name + "=; Path=/; Expires=Thu, 01 Jan 1970 00:00:01 GMT;";
+        }
+    }
+}
 
 /*JS End*/

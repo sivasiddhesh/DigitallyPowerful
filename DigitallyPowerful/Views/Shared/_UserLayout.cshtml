@@ -45,9 +45,10 @@
 
     <link href="~/css/site.css" rel="stylesheet" asp-append-version="true" />
     <link href="~/css/Influencer.css" rel="stylesheet" asp-append-version="true" />
+   
 </head>
 <body>
-
+    <script src="~/lib/jquery/dist/jquery.js"></script>
     <div>
         @RenderBody()
         <hr />
@@ -57,7 +58,7 @@
                 <div class="container">
                     <div class="row">
 
-                        <div class="col-lg-3 col-md-6 footer-contact">
+                        <div class="col-lg-4 col-md-7 footer-contact">
                             <h3>Digitally Powerful</h3>
                             <p>
                                 291, Alapakkam <br />
@@ -71,12 +72,11 @@
                         <div class="col-lg-3 col-md-6">
                             <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d242.9251646957934!2d80.17026672125154!3d13.048231311570767!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a52613c729c67f3%3A0x64ce58d3fdb23306!2s10th%20St%2C%20Ashtalakshmi%20Nagar%2C%20Chennai%2C%20Tamil%20Nadu%20600087!5e0!3m2!1sen!2sin!4v1624207173906!5m2!1sen!2sin" frameborder="0" style="border:0; width: 100%; height: 230px;" allowfullscreen></iframe>
                         </div>
-                        <div class="col-lg-3 col-md-6 footer-links">
+                        <div class="col-lg-2 col-md-5 footer-links">
                             <h4>Useful Links</h4>
                             <ul>
                                 <li><i class="bx bx-chevron-right"></i> <a asp-controller="Home" asp-action="Index">Home</a></li>
                                 <li><i class="bx bx-chevron-right"></i> <a href="#">About us</a></li>
-                                <li><i class="bx bx-chevron-right"></i> <a href="#">Services</a></li>
                                 <li><i class="bx bx-chevron-right"></i> <a href="#">Terms of service</a></li>
                                 <li><i class="bx bx-chevron-right"></i> <a href="#">Privacy policy</a></li>
                             </ul>
@@ -114,7 +114,6 @@
     </div>
 
     <environment include="Development">
-        <script src="~/lib/jquery/dist/jquery.js"></script>
         <script src="~/lib/bootstrap/dist/js/bootstrap.js"></script>
         <script src="~/js/site.js" asp-append-version="true"></script>
     </environment>
