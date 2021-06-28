@@ -10,48 +10,53 @@ function login_influencer() {
             },
             url: "http://localhost:51638/Api/Influencer/influencerprofile",
             success: function (data) {
-                $("#ProfileLogoName").html("Welcome back " + data[0].firstName + " !");
-                $("#ProfileName").html("Influencer");
-                $("#FirstName").val(data[0].firstName);
-                $("#LastName").val(data[0].lastName);
-                $("#Email").val(data[0].emailAddress);
-                $("#Mobile").val(data[0].phoneNumber);
-                $("#BirthDate").val((new Date(data[0].dob)).toISOString().substr(0, 10));
-                if (data[0].gender == "Female")
-                    $("#Female").prop("checked", true);
-                else if (data[0].gender == "Male")
-                    $("#Male").prop("checked", true);
-                else if (data[0].gender == "Transgender")
-                    $("#Transgender").prop("checked", true);
-                else
-                    $("#PreferNotToSay").prop("checked", true);
-                if (data[0].socialMedia.length > 0) {
-                    for (var a = 0; a < data[0].socialMedia.length; a++) {
-                        if (data[0].socialMedia[a].socialMediaTypeName == "Instagram") {
-                            $("#InstaLink").val(data[0].socialMedia[a].socialMediaLink);
-                            $("#InstaCount").val(data[0].socialMedia[a].followersCount);
-                            $("#InstaVal").val(data[0].socialMedia[a].countTypeId);
-                        } else if (data[0].socialMedia[a].socialMediaTypeName == "YouTube") {
-                            $("#YouTubeLink").val(data[0].socialMedia[a].socialMediaLink);
-                            $("#YouTubeCount").val(data[0].socialMedia[a].followersCount);
-                            $("#YouTubeVal").val(data[0].socialMedia[a].countTypeId);
-                        } else if (data[0].socialMedia[a].socialMediaTypeName == "Facebook") {
-                            $("#FBLink").val(data[0].socialMedia[a].socialMediaLink);
-                            $("#FBCount").val(data[0].socialMedia[a].followersCount);
-                            $("#FBVal").val(data[0].socialMedia[a].countTypeId);
-                        } else if (data[0].socialMedia[a].socialMediaTypeName == "Twitter") {
-                            $("#TwitterLink").val(data[0].socialMedia[a].socialMediaLink);
-                            $("#TwitterCount").val(data[0].socialMedia[a].followersCount);
-                            $("#TwitterVal").val(data[0].socialMedia[a].countTypeId);
-                        } else {
-                            $("#Socialnetwork_Add").click();
-                            SocialTemp_count = SocialTemp_count + 1;
-                            $("#OtherName" + SocialTemp_count).val(data[0].socialMedia[a].socialMediaTypeName);
-                            $("#OtherLink" + SocialTemp_count).val(data[0].socialMedia[a].socialMediaLink);
-                            $("#OtherCount" + SocialTemp_count).val(data[0].socialMedia[a].followersCount);
-                            $("#OtherVal" + SocialTemp_count).val(data[0].socialMedia[a].countTypeId);
+                if (data.length > 0) {
+                    $("#ProfileLogoName").html("Welcome back " + data[0].firstName + " !");
+                    $("#ProfileName").html("Influencer");
+                    $("#FirstName").val(data[0].firstName);
+                    $("#LastName").val(data[0].lastName);
+                    $("#Email").val(data[0].emailAddress);
+                    $("#Mobile").val(data[0].phoneNumber);
+                    $("#BirthDate").val((new Date(data[0].dob)).toISOString().substr(0, 10));
+                    if (data[0].gender == "Female")
+                        $("#Female").prop("checked", true);
+                    else if (data[0].gender == "Male")
+                        $("#Male").prop("checked", true);
+                    else if (data[0].gender == "Transgender")
+                        $("#Transgender").prop("checked", true);
+                    else
+                        $("#PreferNotToSay").prop("checked", true);
+                    if (data[0].socialMedia.length > 0) {
+                        for (var a = 0; a < data[0].socialMedia.length; a++) {
+                            if (data[0].socialMedia[a].socialMediaTypeName == "Instagram") {
+                                $("#InstaLink").val(data[0].socialMedia[a].socialMediaLink);
+                                $("#InstaCount").val(data[0].socialMedia[a].followersCount);
+                                $("#InstaVal").val(data[0].socialMedia[a].countTypeId);
+                            } else if (data[0].socialMedia[a].socialMediaTypeName == "YouTube") {
+                                $("#YouTubeLink").val(data[0].socialMedia[a].socialMediaLink);
+                                $("#YouTubeCount").val(data[0].socialMedia[a].followersCount);
+                                $("#YouTubeVal").val(data[0].socialMedia[a].countTypeId);
+                            } else if (data[0].socialMedia[a].socialMediaTypeName == "Facebook") {
+                                $("#FBLink").val(data[0].socialMedia[a].socialMediaLink);
+                                $("#FBCount").val(data[0].socialMedia[a].followersCount);
+                                $("#FBVal").val(data[0].socialMedia[a].countTypeId);
+                            } else if (data[0].socialMedia[a].socialMediaTypeName == "Twitter") {
+                                $("#TwitterLink").val(data[0].socialMedia[a].socialMediaLink);
+                                $("#TwitterCount").val(data[0].socialMedia[a].followersCount);
+                                $("#TwitterVal").val(data[0].socialMedia[a].countTypeId);
+                            } else {
+                                $("#Socialnetwork_Add").click();
+                                SocialTemp_count = SocialTemp_count + 1;
+                                $("#OtherName" + SocialTemp_count).val(data[0].socialMedia[a].socialMediaTypeName);
+                                $("#OtherLink" + SocialTemp_count).val(data[0].socialMedia[a].socialMediaLink);
+                                $("#OtherCount" + SocialTemp_count).val(data[0].socialMedia[a].followersCount);
+                                $("#OtherVal" + SocialTemp_count).val(data[0].socialMedia[a].countTypeId);
+                            }
                         }
                     }
+                } else {
+                    deleteAllCookies();
+                    window.location.href = "http://localhost:51638/user/login";
                 }
             },
             error: function (data) {
@@ -137,7 +142,7 @@ $("#Influencer_save").click(function () {
         success: function (data) {
             if (data.message == "Saved Successfully") {
                 var content = {};
-                content.message = "Registration Successful";
+                content.message = data.message;
                 content.title = 'Digitally Powerful';
                 content.icon = 'fa fa-check';
                 $.notify(content, { type: "success", placement: { from: "top", align: "right" }, });
