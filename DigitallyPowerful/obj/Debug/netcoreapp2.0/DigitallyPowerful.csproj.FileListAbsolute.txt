@@ -45,3 +45,4 @@ C:\Users\User1\Desktop\Siva\DigitallyPowerful\DigitallyPowerful\obj\Debug\netcor
 C:\Users\User1\Desktop\Siva\DigitallyPowerful\DigitallyPowerful\obj\Debug\netcoreapp2.0\DigitallyPowerful.dll
 C:\Users\User1\Desktop\Siva\DigitallyPowerful\DigitallyPowerful\obj\Debug\netcoreapp2.0\DigitallyPowerful.pdb
 C:\Users\User1\Desktop\Siva\DigitallyPowerful\DigitallyPowerful\obj\Debug\netcoreapp2.0\DigitallyPowerful.genruntimeconfig.cache
+C:\Users\User1\Desktop\Siva\DigitallyPowerful\DigitallyPowerful\obj\Debug\netcoreapp2.0\DigitallyPowerful.csproj.AssemblyReference.cache
