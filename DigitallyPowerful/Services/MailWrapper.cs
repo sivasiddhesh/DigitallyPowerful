@@ -17,13 +17,12 @@ namespace DigitallyPowerful.Services
                 case MailTemplate.ForgotPassword:
                     {
                         result.Subject = "Forgot Password Request";
-                        result.Message = "Your Reseted Password = @ReqResetedPassword";
+                        result.Message = $"<div><h3>Your Password has been reset successfully.</h3><span>Your Password is </span><span style=\"background - color: bisque; \">@ReqResetedPassword</span><br><span>Kindly <a href=\"http://digitallypowerful.com/\" target=\"_blank\">click here</a> to navigate to DigitallyPowerful site.</span><a></a><h5></h5></div>";
                         return result;
                     }
                 default:
                     return null;
             }
-            return null;
         }
     }
 }
