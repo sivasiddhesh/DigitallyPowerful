@@ -1,11 +1,12 @@
 ﻿using DigitallyPowerful.Services.Database;
 using Microsoft.AspNetCore.Mvc;
-using System.Collections.Generic;
 using System.Threading.Tasks;
 using Dapper;
 using DigitallyPowerful.Models;
 using System;
 using DigitallyPowerful.Services;
+using Microsoft.Extensions.Options;
+using DigitallyPowerful.Services.Configuration;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -15,11 +16,19 @@ namespace DigitallyPowerful.Controllers.Api
     public class AuthController : ControllerBase
     {
         private DatabaseContext DatabaseContext { get; set; }
+        private readonly IOptions<MailConfig> Config;
         private UserService userService { get; set; }
-        public AuthController(DatabaseContext databaseContext)
+        private CommonService commonService { get; set; }
+        private MailService mailService { get; set; }
+        private MailWrapper mailWrapper { get; set; }
+        public AuthController(DatabaseContext databaseContext, IOptions<MailConfig> config)
         {
             this.DatabaseContext = databaseContext;
             userService = new UserService();
+            commonService = new CommonService();
+            Config = config;
+            mailWrapper = new MailWrapper();
+            mailService = new MailService(Config.Value);
         }
         
         [HttpGet("{id}")]
@@ -90,11 +99,76 @@ namespace DigitallyPowerful.Controllers.Api
                         if (userdetails != null)
                         {
                             await userService.UpdateLogOn(connection, emailAddress.ToLower().Trim());
-                            return new Acknowledgement("Login Successful", userdetails.Id, userdetails.RoleTypeId, await userService.GetRoleTypeName(connection, userdetails.RoleTypeId));
+                            return new Acknowledgement("Login Successful", userdetails.Id, userdetails.RoleTypeId, await userService.GetRoleTypeName(connection, userdetails.RoleTypeId), userdetails.IsResetPassword);
                         }
                         else
                         {
                             return new Acknowledgement("Password Incorrect");
+                        }
+                    }
+                }
+            }
+        }
+
+        [HttpPost("forgotpassword")]
+        public async Task<Acknowledgement> ForgotPassword(string emailAddress)
+        {
+            if (String.IsNullOrEmpty(emailAddress))
+            {
+                return new Acknowledgement("Request is Invalid");
+            }
+            else
+            {
+                using (var connection = this.DatabaseContext.Connection)
+                {
+                    if (!await userService.EmailExists(connection, emailAddress.ToLower().Trim()))
+                    {
+                        return new Acknowledgement("Email Address Not Exists");
+                    }
+                    else
+                    {
+                        var tempPassword = commonService.RandomString(12);
+                        var sqlResult = await userService.ForgotPassword(connection, emailAddress.ToLower().Trim(), tempPassword);
+                        var mailContent = mailWrapper.GenerateMail(EnumContainer.MailTemplate.ForgotPassword);
+                        var emailResult = mailService.SendMail(connection, new CustomMailRequest(emailAddress, mailContent.Subject, mailContent.Message.Replace("@ReqResetedPassword", tempPassword)));
+                        if (emailResult && sqlResult)
+                        {
+                            return new Acknowledgement("Mail sent Successful", true);
+                        }
+                        else
+                        {
+                            return new Acknowledgement("Failure");
+                        }
+                    }
+                }
+            }
+        }
+
+        [HttpPost("changepassword")]
+        public async Task<Acknowledgement> ChangePassword(string emailAddress, string password)
+        {
+            if (String.IsNullOrEmpty(emailAddress))
+            {
+                return new Acknowledgement("Request is Invalid");
+            }
+            else
+            {
+                using (var connection = this.DatabaseContext.Connection)
+                {
+                    if (!await userService.EmailExists(connection, emailAddress.ToLower().Trim()))
+                    {
+                        return new Acknowledgement("Email Address Not Exists");
+                    }
+                    else
+                    {
+                        var sqlResult = await userService.ChangePassword(connection, emailAddress.ToLower().Trim(), password);
+                        if (sqlResult)
+                        {
+                            return new Acknowledgement("Password Changed", true);
+                        }
+                        else
+                        {
+                            return new Acknowledgement("Failure");
                         }
                     }
                 }

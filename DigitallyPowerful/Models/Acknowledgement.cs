@@ -11,17 +11,19 @@ namespace DigitallyPowerful.Models
         public long UserId { get; set; }
         public long RoleTypeId { get; set; }
         public string RoleTypeName { get; set; }
+        public bool IsResetPassword { get; set; }
         public bool IsSuccess { get; set; }
         public Acknowledgement(string message)
         {
             Message = message;
         }
-        public Acknowledgement(string message, long userId, long roleTypeId, string roleTypeName)
+        public Acknowledgement(string message, long userId, long roleTypeId, string roleTypeName, bool isResetPassword = false)
         {
             Message = message;
             UserId = userId;
             RoleTypeId = roleTypeId;
             RoleTypeName = roleTypeName;
+            IsResetPassword = isResetPassword;
             IsSuccess = true;
         }
         public Acknowledgement(string message, bool isSuccess)

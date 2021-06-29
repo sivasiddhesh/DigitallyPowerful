@@ -1,6 +1,5 @@
 ﻿using Dapper;
 using DigitallyPowerful.Models;
-using DigitallyPowerful.Services.Database;
 using MySqlConnector;
 using Newtonsoft.Json;
 using System;
@@ -87,7 +86,7 @@ namespace DigitallyPowerful.Services
         {
             try
             {
-                var sqlQuery = $"select Id as Id,RoleTypeId as RoleTypeId from User where EmailAddress = @ReqEmailAddress and Password = @ReqPassword";
+                var sqlQuery = $"select Id as Id,RoleTypeId as RoleTypeId, IsResetPassword as IsResetPassword from User where EmailAddress = @ReqEmailAddress and Password = @ReqPassword";
                 var result = await connection.QueryAsync<LoginResponse>(sqlQuery, new { ReqEmailAddress = emailAddress, ReqPassword = password });
                 return result.FirstOrDefault();
             }
@@ -355,6 +354,36 @@ namespace DigitallyPowerful.Services
             catch (Exception ex)
             {
                 await logService.SaveLog(connection, "PostBrandDetails", JsonConvert.SerializeObject(request), JsonConvert.SerializeObject(ex));
+            }
+            return false;
+        }
+
+        public async Task<bool> ForgotPassword(MySqlConnection connection, string emailAddress, string password)
+        {
+            try
+            {
+                var sqlQuery = $"Update User set Password = @ReqPassword, IsResetPassword = @ReqIsResetPassword, UpdatedOn = @ReqUpdatedOn where EmailAddress = @ReqEmailAddress";
+                var result = await connection.ExecuteAsync(sqlQuery, new { ReqPassword = password, ReqIsResetPassword = 1, ReqUpdatedOn = DateTime.UtcNow, ReqEmailAddress = emailAddress });
+                return result > 0;
+            }
+            catch (Exception ex)
+            {
+                await logService.SaveLog(connection, "ForgotPassword", JsonConvert.SerializeObject(emailAddress + " " + password), JsonConvert.SerializeObject(ex));
+            }
+            return false;
+        }
+
+        public async Task<bool> ChangePassword(MySqlConnection connection, string emailAddress, string password)
+        {
+            try
+            {
+                var sqlQuery = $"Update User set Password = @ReqPassword, IsResetPassword = @ReqIsResetPassword, UpdatedOn = @ReqUpdatedOn where EmailAddress = @ReqEmailAddress";
+                var result = await connection.ExecuteAsync(sqlQuery, new { ReqPassword = password, ReqIsResetPassword = 0, ReqUpdatedOn = DateTime.UtcNow, ReqEmailAddress = emailAddress });
+                return result > 0;
+            }
+            catch (Exception ex)
+            {
+                await logService.SaveLog(connection, "ChangePassword", JsonConvert.SerializeObject(emailAddress + " " + password), JsonConvert.SerializeObject(ex));
             }
             return false;
         }
