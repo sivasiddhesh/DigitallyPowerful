@@ -7,6 +7,25 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="wwwroot\css\Atlantis\**" />
+    <Compile Remove="wwwroot\fonts\**" />
+    <Compile Remove="wwwroot\js\Atlantis\**" />
+    <Compile Remove="wwwroot\scss\**" />
+    <Content Remove="wwwroot\css\Atlantis\**" />
+    <Content Remove="wwwroot\fonts\**" />
+    <Content Remove="wwwroot\js\Atlantis\**" />
+    <Content Remove="wwwroot\scss\**" />
+    <EmbeddedResource Remove="wwwroot\css\Atlantis\**" />
+    <EmbeddedResource Remove="wwwroot\fonts\**" />
+    <EmbeddedResource Remove="wwwroot\js\Atlantis\**" />
+    <EmbeddedResource Remove="wwwroot\scss\**" />
+    <None Remove="wwwroot\css\Atlantis\**" />
+    <None Remove="wwwroot\fonts\**" />
+    <None Remove="wwwroot\js\Atlantis\**" />
+    <None Remove="wwwroot\scss\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Dapper" Version="2.0.90" />
     <PackageReference Include="Microsoft.AspNet.WebApi.Core" Version="5.2.7" />
     <PackageReference Include="Microsoft.AspNetCore.All" Version="2.0.9" />
@@ -20,11 +39,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="wwwroot\css\Atlantis\" />
-    <Folder Include="wwwroot\fonts\" />
     <Folder Include="wwwroot\images\Influencers\" />
-    <Folder Include="wwwroot\js\Atlantis\" />
-    <Folder Include="wwwroot\scss\" />
   </ItemGroup>
 
 </Project>

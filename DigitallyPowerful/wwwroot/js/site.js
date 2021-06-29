@@ -1,6 +1,15 @@
 ﻿/*JS Start*/
 
 $(document).ready(function () {
+    //INDEX 
+    $("#Index_Brand").click(function () {
+        window.location.href = "http://localhost:51638/user/Sign_up";
+    });
+
+    $("#Index_Influencer").click(function () {
+        window.location.href = "http://localhost:51638/user/Signup";
+    });
+
     //BRAND SIGNUP
     $("#BrandContact_Project").change(function () {
         if ($("#BrandContact_Project").val() == "Others") {
@@ -217,7 +226,34 @@ $(document).ready(function () {
     //CONTACT US
     $("#Contact_usbtn").click(function () {
         if ($("#Contact_subject").val() != "" && $("#Contact_name").val() != "" && $("#Contact_email").val() != "" && $("#Contact_message").val() != "") {
-            //AJAX
+            $.ajax({
+                method: "GET",
+                data: {
+                    Email: $("#Contact_name").val(),
+                    Name: $("#Contact_email").val(),
+                    Subject: $("#Contact_subject").val(),
+                    Message: $("#Contact_message").val()
+                },
+                url: "http://localhost:51638/Api/Mail/mail",
+                success: function (data) {
+                   // if (data.message == "Login Successful") {
+                        console.log(data);
+                    //} else {
+                    //    var content = {};
+                    //    content.message = data.message;
+                    //    content.title = 'Digitally Powerful';
+                    //    content.icon = 'fa fa-exclamation';
+                    //    $.notify(content, { type: "warning", placement: { from: "top", align: "right" }, });
+                    //}
+                },
+                error: function (data) {
+                    var content = {};
+                    content.message = "Please try again later";
+                    content.title = 'Digitally Powerful';
+                    content.icon = 'fa fa-exclamation';
+                    $.notify(content, { type: "error", placement: { from: "top", align: "right" }, });
+                }
+            });
             $("#Contact_name").val("");
             $("#Contact_email").val("");
             $("#Contact_subject").val("");

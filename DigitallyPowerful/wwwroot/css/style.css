@@ -9,8 +9,8 @@
 # General
 --------------------------------------------------------------*/
 body {
-  font-family: "Open Sans", sans-serif;
-  color: #444444;
+    font-family: "Jost";
+    color: #444444;
 }
 
 a {
@@ -24,7 +24,7 @@ a:hover {
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: "Jost", sans-serif;
+  font-family: cursive;
 }
 
 /*--------------------------------------------------------------
@@ -1700,7 +1700,7 @@ section {
   font-size: 14px;
   line-height: 24px;
   margin-bottom: 0;
-  font-family: "Jost", sans-serif;
+  font-family: cursive;
   color: #5e5e5e;
 }
 
@@ -1803,4 +1803,58 @@ section {
   #footer .credits {
     padding-top: 4px;
   }
+}
+
+
+.button-two{
+    text-align: center;
+    cursor: pointer;
+    margin: 0 0 20px 0;
+}
+
+/*Button Two*/
+.button-two {
+    border-radius: 6px;
+    background: #46b3e4;
+    border: none;
+    padding: 17px;
+    width: 200px;
+    transition: all 0.5s;
+}
+
+.button-two span {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+    font-weight: 500;
+}
+
+.button-two span:after {
+    content: '>>';
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -20px;
+    transition: 0.5s;
+}
+
+.button-two:hover span {
+    padding-right: 25px;
+}
+
+.button-two:hover span:after {
+    opacity: 1;
+    right: 0;
+}
+
+.button-two:hover {
+    background: linear-gradient(90deg, #b3ffab 0%,#12fff7 100% );
+}
+
+#Index_Brand {
+    width: 150px
+}
+Index_Influencer {
+    width: 180px;
 }
