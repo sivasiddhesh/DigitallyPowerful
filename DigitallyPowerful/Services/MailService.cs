@@ -17,7 +17,7 @@ namespace DigitallyPowerful.Services
             MailConfig = config;
             logService = new LogService();
         }
-        public bool SendMail(MySqlConnection connection, MailRequest request)
+        public bool SendMail(MySqlConnection connection, MailTemplateGenerated request)
         {
             try
             {
@@ -25,7 +25,7 @@ namespace DigitallyPowerful.Services
                 {
                     mail.From = new MailAddress(MailConfig.EmailAddress);
                     mail.To.Add(MailConfig.ReceiverEmail);
-                    mail.Subject = request.Subject + " ( From Email : "+request.Email+", Name : "+request.Name +" )";
+                    mail.Subject = request.Subject ;
                     mail.Body = request.Message;
                     mail.IsBodyHtml = true;
                     using (SmtpClient smtp = new SmtpClient("smtp.gmail.com", 587))

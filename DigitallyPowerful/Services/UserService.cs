@@ -123,7 +123,7 @@ namespace DigitallyPowerful.Services
                                 $"u.EmailAddress as EmailAddress, "+
                                 $"u.FirstName as FirstName, " +
                                 $"u.LastName as LastName, " +
-                                $"u.PhoneNumber as PhoneNumber, " +
+                                $"CONCAT('XXXXXXXX',RIGHT(u.PhoneNumber ,2)) as PhoneNumber, " +
                                 $"pd.DOB as DOB, " +
                                 $"pd.Gender as Gender " +
                                 $"from `User` u " +
@@ -174,7 +174,7 @@ namespace DigitallyPowerful.Services
                                 $"u.EmailAddress as EmailAddress, " +
                                 $"u.FirstName as FirstName, " +
                                 $"u.LastName as LastName, " +
-                                $"u.PhoneNumber as PhoneNumber, " +
+                                $"CONCAT('XXXXXXXX',RIGHT(u.PhoneNumber ,2)) as PhoneNumber, " +
                                 $"pd.DOB as DOB, " +
                                 $"pd.Gender as Gender " +
                                 $"from `User` u " +
@@ -272,7 +272,7 @@ namespace DigitallyPowerful.Services
                                 $"u.EmailAddress as EmailAddress, " +
                                 $"u.FirstName as FirstName, " +
                                 $"u.LastName as LastName, " +
-                                $"u.PhoneNumber as PhoneNumber, " +
+                                $"CONCAT('XXXXXXXX',RIGHT(u.PhoneNumber ,2)) as PhoneNumber, " +
                                 $"b.ProjectTypeId as ProjectTypeId, " +
                                 $"b.BrandDescription as BrandDescription , " +
                                 $"b.ProjectName as ProjectName " +
@@ -297,7 +297,7 @@ namespace DigitallyPowerful.Services
                                 $"u.EmailAddress as EmailAddress, " +
                                 $"u.FirstName as FirstName, " +
                                 $"u.LastName as LastName, " +
-                                $"u.PhoneNumber as PhoneNumber, " +
+                                $"CONCAT('XXXXXXXX',RIGHT(u.PhoneNumber ,2)) as PhoneNumber, " +
                                 $"b.ProjectTypeId as ProjectTypeId, "+
                                 $"b.BrandDescription as BrandDescription , " +
                                 $"b.ProjectName as ProjectName " +
@@ -386,6 +386,21 @@ namespace DigitallyPowerful.Services
                 await logService.SaveLog(connection, "ChangePassword", JsonConvert.SerializeObject(emailAddress + " " + password), JsonConvert.SerializeObject(ex));
             }
             return false;
+        }
+
+        public async Task<List<ContactDetails>> GetContactDetails(MySqlConnection connection)
+        {
+            try
+            {
+                var sqlQuery = $"select FirstName, LastName, EmailAddress, RoleTypeName as Role, PhoneNumber from `User` u join RoleType rt on rt.Id = u.RoleTypeId ";
+                var result = await connection.QueryAsync<ContactDetails>(sqlQuery);
+                return result.ToList();
+            }
+            catch (Exception ex)
+            {
+                await logService.SaveLog(connection, "GetContactDetails", JsonConvert.SerializeObject(""), JsonConvert.SerializeObject(ex));
+            }
+            return null;
         }
     }
 }

@@ -9,7 +9,9 @@ namespace DigitallyPowerful.Models
     {
         public enum MailTemplate
         {
-            ForgotPassword
+            ForgotPassword,
+            CustomMail,
+            ContactMail
         }
     }
 }
