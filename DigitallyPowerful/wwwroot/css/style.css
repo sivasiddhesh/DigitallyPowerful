@@ -9,7 +9,7 @@
 # General
 --------------------------------------------------------------*/
 body {
-    font-family: "Jost";
+    font-family: "Open Sans", sans-serif;
     color: #444444;
 }
 
@@ -24,7 +24,7 @@ a:hover {
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: cursive;
+    font-family: "Jost", sans-serif;
 }
 
 /*--------------------------------------------------------------
@@ -500,7 +500,7 @@ h1, h2, h3, h4, h5, h6 {
 # Sections General
 --------------------------------------------------------------*/
 section {
-  padding: 60px 0;
+  padding: 30px 0;
   overflow: hidden;
 }
 
@@ -562,7 +562,6 @@ section {
   transition: all 0.4s ease-in-out;
   display: inline-block;
   padding: 15px 0;
-  filter: grayscale(100);
 }
 
 .cliens img:hover {
@@ -1848,13 +1847,15 @@ section {
     right: 0;
 }
 
-.button-two:hover {
-    background: linear-gradient(90deg, #b3ffab 0%,#12fff7 100% );
-}
+    .button-two:hover {
+        background: linear-gradient(90deg, #46b3e4 0%,#3f51b5 100% );
+    }
 
 #Index_Brand {
-    width: 150px
+    width: 150px;
+    border-radius:10px;
 }
 Index_Influencer {
     width: 180px;
+    border-radius: 10px;
 }
