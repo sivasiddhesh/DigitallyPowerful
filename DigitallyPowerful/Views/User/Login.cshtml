@@ -8,8 +8,8 @@
 
 <body class="login">
     <header id="header" class="fixed-top " style="background: #36517e">
-        <div class="container d-flex align-items-center">           
-             <a asp-controller="Home" asp-action="Index" class="logo me-auto"><img src="~/images/DigitallyPowerful.png" alt="Digitally Powerful" class="img-fluid"></a>
+        <div class="container d-flex align-items-center">
+            <a asp-controller="Home" asp-action="Index" class="logo me-auto"><img src="~/images/DigitallyPowerful.png" alt="Digitally Powerful" class="img-fluid"></a>
         </div>
     </header><!-- End Header -->
     <div class="wrapper wrapper-login">
@@ -19,7 +19,7 @@
             <div class="login-form">
                 <div class="form-group form-floating-label">
                     <input id="Login_username" name="Login_username" type="text" class="form-control input-border-bottom" required>
-                    <label for="Login_username" class="placeholder">Username</label>
+                    <label for="Login_username" class="placeholder">Email</label>
                 </div>
                 <div class="form-group form-floating-label">
                     <input id="Login_password" name="Login_password" type="password" class="form-control input-border-bottom" required>
@@ -29,18 +29,21 @@
                     </div>
                 </div>
                 <div class="row form-sub m-0">
-                    <div class="custom-control custom-checkbox">
-                        <input type="checkbox" class="custom-control-input" id="rememberme">
-                        <label class="custom-control-label" for="rememberme">Remember Me</label>
+                    <div class="custom-control custom-checkbox" >
+                        <input type="checkbox" class="custom-control-input" id="rememberme" style="display:none">
+                        <label class="custom-control-label" for="rememberme" style="display:none">Remember Me</label>
                     </div>
-                    <a asp-controller="User" asp-action="Brand" class="link float-right">Forgot Password ?</a>
+                    <button id="forgot_password" class="btn btn-link float-right" data-toggle="modal" data-target="#forgotpasswordModal">Forgot Password ?</button>
                 </div>
-                <div class="form-action mb-3">
-                    <button class="btn btn-primary btn-rounded btn-login" id="signin">Sign In</button>
+                <div class="row mb-3">
+                    <div class="col-md-12 text-center">
+                        <button class="btn btn-primary btn-rounded btn-login" id="signin">Sign In</button>
+                    </div>
                 </div>
                 <div class="login-account">
-                    <span class="msg">Don't have an account yet ?</span>
-                    <a asp-controller="User" asp-action="Signup" id="signup" class="link">Sign Up</a>
+                    <span class="msg">Don't have an account yet ? Sign up as</span><br />
+                    <a asp-controller="User" asp-action="Sign_up" id="signup" class="link">Brand</a><br />
+                    <a asp-controller="User" asp-action="Signup" id="sign_up" class="link">Influencer</a>
                 </div>
             </div>
         </div>
@@ -50,3 +53,37 @@
 </body>
 
 </html>
+
+<!-- Modal -->
+<div class="modal" id="forgotpasswordModal" tabindex="-1" role="dialog" aria-labelledby="forgotpasswordModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="forgotpasswordModalLabel">Forgot Password ?</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-md-12">
+                        <label>That's okay, it happens! Enter your Registered Email and click Submit to receive the Reset link.</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="form-group form-floating-label">
+                            <input id="ForgotPassword_email" type="email" class="form-control" required="">
+                            <label for="ForgotPassword_email" class="placeholder">Registered Email</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12 text-center">
+                        <button class="btn btn-round btn-primary" id="ForgotPassword_Confirm">Submit</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

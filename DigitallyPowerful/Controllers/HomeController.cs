@@ -1,5 +1,6 @@
 ﻿using DigitallyPowerful.Models;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Configuration;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -10,6 +11,7 @@ namespace DigitallyPowerful.Controllers
 {
     public class HomeController : Controller
     {
+
         public IActionResult home()
         {
             return View();

@@ -63,32 +63,33 @@
                     </div>
 
                     <div class="col-lg-7 mt-5 mt-lg-0 d-flex align-items-stretch">
-                        <form action="forms/contact.php" method="post" role="form" class="php-email-form">
+                        <div class="php-email-form">
                             <div class="row">
                                 <div class="form-group col-md-6">
-                                    <label for="Contact_name">Name</label>
+                                    <label for="Contact_name">Name *</label>
                                     <input type="text" name="Contact_name" class="form-control" id="Contact_name" required>
                                 </div>
                                 <div class="form-group col-md-6">
-                                    <label for="Contact_email">Email</label>
+                                    <label for="Contact_email">Email *</label>
                                     <input type="email" class="form-control" name="Contact_email" id="Contact_email" required>
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label for="Contact_subject">Subject</label>
+                                <label for="Contact_subject">Subject *</label>
                                 <input type="text" class="form-control" name="Contact_subject" id="Contact_subject" required>
                             </div>
                             <div class="form-group">
-                                <label for="Contact_message">Message</label>
+                                <label for="Contact_message">Message *</label>
                                 <textarea class="form-control" name="Contact_message" id="Contact_message" rows="8" required></textarea>
                             </div>
                             <div class="my-3">
-                                <div class="loading">Loading</div>
-                                <div class="error-message"></div>
-                                <div class="sent-message">Your message has been sent. Thank you!</div>
+                                <div class="loading"></div>
+                                <div class="error-message" id="Sentmessage_errorFlag">Please Try again</div>
+                                <div class="sent-message" id="Sentmessage_successFlag">Your message has been sent. Thank you!</div>
                             </div>
                             <div class="text-center"><button type="submit" id="Contact_usbtn">Send Message</button></div>
-                        </form>
+                            <div class="text-center"><button type="submit" id="Contact_usbtnloading">Sending...</button></div>
+                        </div>
                     </div>
 
                 </div>
@@ -121,7 +122,9 @@
     <script src="~/vendor/waypoints/noframework.waypoints.js"></script>
 
     <!-- Template Main JS File -->
+    <script src="~/lib/jquery/dist/jquery.js"></script>
     <script src="~/js/main.js"></script>
+    <script src="~/js/Contact.js" asp-append-version="true"></script>
 </body>
 
 </html>

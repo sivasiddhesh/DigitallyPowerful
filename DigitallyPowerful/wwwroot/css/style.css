@@ -1852,10 +1852,8 @@ section {
     }
 
 #Index_Brand {
-    width: 150px;
     border-radius:10px;
 }
-Index_Influencer {
-    width: 180px;
+#Index_Influencer {
     border-radius: 10px;
 }

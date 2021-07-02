@@ -44,5 +44,11 @@ namespace DigitallyPowerful.Controllers
         {
             return View();
         }
+
+        // GET: UserController/Admin
+        public ActionResult Admin()
+        {
+            return View();
+        }
     }
 }
