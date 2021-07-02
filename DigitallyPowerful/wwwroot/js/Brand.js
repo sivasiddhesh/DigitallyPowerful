@@ -110,11 +110,11 @@ $("#BrandProfile_Cancel").click(function () {
 });
 
 $("#BrandProfile_Project").change(function () {
-    if ($("#BrandProfile_Project").val() == "Others") {
-        $("#BrandProfile_Category").show();
+    if ($("#BrandProfile_Project").val() == "2") {
+        $("#BrandProfile_Categoryflag").show();
     } else {
-        $("#BrandProfile_Project").val("");
-        $("#BrandProfile_Category").hide();
+        $("#BrandProfile_Categoryflag").val("");
+        $("#BrandProfile_Categoryflag").hide();
     }
 });
 
