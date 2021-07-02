@@ -25,7 +25,7 @@ $(document).ready(function () {
         if ($("#BrandContact_Brand").val() != "" && validateEmail($("#BrandContact_Email").val()) && $("#BrandContact_message").val() != "") {
             var data = {
                 Email: $("#BrandContact_Email").val(),
-                Name: $("#BrandContact_BrandName").val(),
+                Name: "<h3> Brand :" + $("#BrandContact_Brand").val() + " Name :" + $("#BrandContact_Name").val() + "(" + $("#BrandContact_Mobile").val()+")</h3>",
                 Subject: $("#BrandContact_Project").val() + " " + $("#BrandContact_Category").val(),
                 Message: $("#BrandContact_message").val()
             };
@@ -39,6 +39,17 @@ $(document).ready(function () {
                     content.title = 'Digitally Powerful';
                     content.icon = 'fa fa-bell';
                     $.notify(content, { type: "success", placement: { from: "top", align: "right" }, });
+                    $("#BrandContact_Brand").val("");
+                    $("#BrandContact_Name").val("");
+                    $("#BrandContact_Email").val("");
+                    $("#BrandContact_Mobile").val("");
+                    $("#BrandContact_Project").val("Influencer Marketing");
+                    $("#BrandContact_Category").val("");
+                    $("#BrandContact_message").val("");
+                    $("#BrandContact_Email").css('border-color', '');
+                    $("#BrandContact_Brand").css('border-color', '');
+                    $("#BrandContact_Project").css('border-color', '');
+                    $("#BrandContact_message").css('border-color', '');
                 },
                 error: function (data) {
                     var content = {};
@@ -48,17 +59,7 @@ $(document).ready(function () {
                     $.notify(content, { type: "danger", placement: { from: "top", align: "right" }, });
                 }
             });
-            $("#BrandContact_Brand").val("");
-            $("#BrandContact_Name").val("");
-            $("#BrandContact_Email").val("");
-            $("#BrandContact_Mobile").val("");
-            $("#BrandContact_Project").val("Influencer Marketing");
-            $("#BrandContact_Category").val("");
-            $("#BrandContact_message").val("");
-            $("#BrandContact_Email").css('border-color', '');
-            $("#BrandContact_Brand").css('border-color', '');
-            $("#BrandContact_Project").css('border-color', '');
-            $("#BrandContact_message").css('border-color', '');
+            
         } else {
             $("#BrandContact_Brand").val() == "" ? $("#BrandContact_Brand").css('border-color', 'red') : $("#BrandContact_Brand").css('border-color', '');
             $("#BrandContact_Email").val() == "" ? $("#BrandContact_Email").css('border-color', 'red') : $("#BrandContact_Email").css('border-color', '');
