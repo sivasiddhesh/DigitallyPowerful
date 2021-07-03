@@ -145,7 +145,7 @@ namespace DigitallyPowerful.Controllers.Api
         }
 
         [HttpPost("changepassword")]
-        public async Task<Acknowledgement> ChangePassword(string emailAddress, string password)
+        public async Task<Acknowledgement> ChangePassword(string emailAddress, string oldPassword ,string password)
         {
             if (String.IsNullOrEmpty(emailAddress))
             {
@@ -161,7 +161,12 @@ namespace DigitallyPowerful.Controllers.Api
                     }
                     else
                     {
-                        var sqlResult = await userService.ChangePassword(connection, emailAddress.ToLower().Trim(), password);
+                        var userdetails = await userService.GetLoginDetails(connection, emailAddress.ToLower().Trim(), oldPassword);
+                        if (userdetails == null)
+                        {
+                            return new Acknowledgement("Password Incorrect");
+                        }
+                            var sqlResult = await userService.ChangePassword(connection, emailAddress.ToLower().Trim(), password);
                         if (sqlResult)
                         {
                             return new Acknowledgement("Password Changed", true);
