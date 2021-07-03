@@ -14,3 +14,5 @@ D:\Prabhakar G\Projects\DigitallyPowerful\DigitallyPowerful\obj\Release\netcorea
 D:\Prabhakar G\Projects\DigitallyPowerful\DigitallyPowerful\obj\Release\netcoreapp2.0\win-x64\DigitallyPowerful.dll
 D:\Prabhakar G\Projects\DigitallyPowerful\DigitallyPowerful\obj\Release\netcoreapp2.0\win-x64\DigitallyPowerful.pdb
 D:\Prabhakar G\Projects\DigitallyPowerful\DigitallyPowerful\obj\Release\netcoreapp2.0\win-x64\DigitallyPowerful.genruntimeconfig.cache
+C:\Users\User1\Desktop\Siva\DigitallyPowerful\DigitallyPowerful\obj\Release\netcoreapp2.0\win-x64\DigitallyPowerful.dll
+C:\Users\User1\Desktop\Siva\DigitallyPowerful\DigitallyPowerful\obj\Release\netcoreapp2.0\win-x64\DigitallyPowerful.pdb

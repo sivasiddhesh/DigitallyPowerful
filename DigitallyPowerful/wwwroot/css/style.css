@@ -1695,13 +1695,13 @@ section {
   color: #37517e;
 }
 
-#footer .footer-top .footer-contact p {
-  font-size: 14px;
-  line-height: 24px;
-  margin-bottom: 0;
-  font-family: cursive;
-  color: #5e5e5e;
-}
+    #footer .footer-top .footer-contact p {
+        font-size: 14px;
+        line-height: 24px;
+        margin-bottom: 0;
+        font-family: "Jost", sans-serif;        
+        color: #5e5e5e;
+    }
 
 #footer .footer-top h4 {
   font-size: 16px;

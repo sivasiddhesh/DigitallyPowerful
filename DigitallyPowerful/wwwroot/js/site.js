@@ -50,6 +50,8 @@ $(document).ready(function () {
                     $("#BrandContact_Brand").css('border-color', '');
                     $("#BrandContact_Project").css('border-color', '');
                     $("#BrandContact_message").css('border-color', '');
+                    $("#BrandContact_Name").css('border-color', '');
+                    $("#BrandContact_Mobile").css('border-color', '');
                 },
                 error: function (data) {
                     var content = {};
@@ -66,6 +68,8 @@ $(document).ready(function () {
             $("#BrandContact_message").val() == "" ? $("#BrandContact_message").css('border-color', 'red') : $("#BrandContact_message").css('border-color', '');
             $("#BrandContact_Project").val() == "" ? $("#BrandContact_Project").css('border-color', 'red') : $("#BrandContact_Project").css('border-color', '');
             $("#BrandContact_Category").val() == "" ? $("#BrandContact_Category").css('border-color', 'red') : $("#BrandContact_Category").css('border-color', '');
+            $("#BrandContact_Name").val() == "" ? $("#BrandContact_Name").css('border-color', 'red') : $("#BrandContact_Name").css('border-color', '');
+            $("#BrandContact_Mobile").val() == "" ? $("#BrandContact_Mobile").css('border-color', 'red') : $("#BrandContact_Mobile").css('border-color', '');
             var content = {};
             content.message = "Kindly fill the details";
             content.title = 'Cars Notification';
@@ -75,9 +79,9 @@ $(document).ready(function () {
     });
 
     $("#signup_Brand").click(function () {
-        if ($("#passwordsignup_Brand").val() == $("#confirmpassword_Brand").val()) {
-            if ($("#agree_Brand").prop("checked") == true) {
-                if (validateEmail($("#email_Brand").val()) && $("#passwordsignup_Brand").val() != "" && $("#Brandname_Brand").val() != "" && $("#Mobile_Brand").val() != "" && $("#confirmpassword_Brand").val()!="") {
+        if ($("#passwordsignup_Brand").val() == $("#confirmpassword_Brand").val() && ($("#passwordsignup_Brand").val()).length > 6) {
+            if (validateEmail($("#email_Brand").val()) && $("#passwordsignup_Brand").val() != "" && $("#Brandname_Brand").val() != "" && $("#Mobile_Brand").val() != "" && $("#confirmpassword_Brand").val() != "") {
+                if ($("#agree_Brand").prop("checked") == true) {
                     $.ajax({
                         method: "POST",
                         data: {
@@ -121,42 +125,51 @@ $(document).ready(function () {
                         }
                     });
                 } else {
-                    $("#Brandname_Brand").val() == "" ? $("#Brandname_Brand").css('border-color', 'red') : $("#Brandname_Brand").css('border-color', '');
-                    $("#passwordsignup_Brand").val() == "" ? $("#passwordsignup_Brand").css('border-color', 'red') : $("#passwordsignup_Brand").css('border-color', '');
-                    $("#email_Brand").val() == "" ? $("#email_Brand").css('border-color', 'red') : $("#email_Brand").css('border-color', '');
-                    $("#Mobile_Brand").val() == "" ? $("#Mobile_Brand").css('border-color', 'red') : $("#Mobile_Brand").css('border-color', '');
-                    $("#confirmpassword_Brand").val() == "" ? $("#confirmpassword_Brand").css('border-color', 'red') : $("#confirmpassword_Brand").css('border-color', '');
                     var content = {};
-                    content.message = "Kindly enter valid Details";
+                    content.message = "Kindly agree to the terms and conditions";
                     content.title = 'Digitally Powerful';
                     content.icon = 'fa fa-bell';
                     $.notify(content, { type: "warning", placement: { from: "top", align: "right" }, });
                 }
             } else {
+                $("#Brandname_Brand").val() == "" ? $("#Brandname_Brand").css('border-color', 'red') : $("#Brandname_Brand").css('border-color', '');
+                $("#passwordsignup_Brand").val() == "" ? $("#passwordsignup_Brand").css('border-color', 'red') : $("#passwordsignup_Brand").css('border-color', '');
+                $("#email_Brand").val() == "" ? $("#email_Brand").css('border-color', 'red') : $("#email_Brand").css('border-color', '');
+                $("#Mobile_Brand").val() == "" ? $("#Mobile_Brand").css('border-color', 'red') : $("#Mobile_Brand").css('border-color', '');
+                $("#confirmpassword_Brand").val() == "" ? $("#confirmpassword_Brand").css('border-color', 'red') : $("#confirmpassword_Brand").css('border-color', '');
                 var content = {};
-                content.message = "Kindly agree to the terms and conditions";
+                content.message = "Kindly enter valid Details";
                 content.title = 'Digitally Powerful';
                 content.icon = 'fa fa-bell';
                 $.notify(content, { type: "warning", placement: { from: "top", align: "right" }, });
             }
+
         } else {
-            $("#passwordsignup_Brand").val("");
-            $("#confirmpassword_Brand").val("");
             $("#passwordsignup_Brand").css('border-color', 'red');
             $("#confirmpassword_Brand").css('border-color', 'red');
-            var content = {};
-            content.message = "Password Mismatch";
-            content.title = 'Digitally Powerful';
-            content.icon = 'fa fa-bell';
-            $.notify(content, { type: "warning", placement: { from: "top", align: "right" }, });
+            if (($("#passwordsignup_Brand").val()).length > 6) {
+                $("#passwordsignup_Brand").val("");
+                $("#confirmpassword_Brand").val("");                
+                var content = {};
+                content.message = "Password & Confirm Password Mismatch";
+                content.title = 'Digitally Powerful';
+                content.icon = 'fa fa-bell';
+                $.notify(content, { type: "warning", placement: { from: "top", align: "right" }, });
+            } else {
+                var content = {};
+                content.message = "Password should be minimum of 6 characters";
+                content.title = 'Digitally Powerful';
+                content.icon = 'fa fa-bell';
+                $.notify(content, { type: "warning", placement: { from: "top", align: "right" }, });
+            }
         }
     });
 
     //INFLUENCERS SIGNUP
     $("#signup_Influencers").click(function () {
-        if ($("#passwordsignup_Influencers").val() == $("#confirmpassword_Influencers").val()) {
-            if ($("#agree_Influencers").prop("checked") == true) {
-                if (validateEmail($("#email_Influencers").val()) && $("#passwordsignup_Influencers").val() != "" && $("#confirmpassword_Influencers").val() != "" && $("#Firstname_Influencers").val() != "" && $("#Mobile_Influencers").val() != "") {
+        if ($("#passwordsignup_Influencers").val() == $("#confirmpassword_Influencers").val() && ($("#passwordsignup_Influencers").val()).length > 6) {
+            if (validateEmail($("#email_Influencers").val()) && $("#passwordsignup_Influencers").val() != "" && $("#confirmpassword_Influencers").val() != "" && $("#Firstname_Influencers").val() != "" && $("#Mobile_Influencers").val() != "") {
+                if ($("#agree_Influencers").prop("checked") == true) {
                     $.ajax({
                         method: "POST",
                         data: {
@@ -197,21 +210,22 @@ $(document).ready(function () {
                             $.notify(content, { type: "danger", placement: { from: "top", align: "right" }, });
                         }
                     });
-                } else {
-                    $("#passwordsignup_Influencers").val() == "" ? $("#passwordsignup_Influencers").css('border-color', 'red') : $("#passwordsignup_Influencers").css('border-color', '');
-                    $("#confirmpassword_Influencers").val() == "" ? $("#confirmpassword_Influencers").css('border-color', 'red') : $("#confirmpassword_Influencers").css('border-color', '');
-                    $("#Firstname_Influencers").val() == "" ? $("#Firstname_Influencers").css('border-color', 'red') : $("#Firstname_Influencers").css('border-color', '');
-                    $("#email_Influencers").val() == "" ? $("#email_Influencers").css('border-color', 'red') : $("#email_Influencers").css('border-color', '');
-                    $("#Mobile_Influencers").val() == "" ? $("#Mobile_Influencers").css('border-color', 'red') : $("#Mobile_Influencers").css('border-color', '');
+                }
+                else {
                     var content = {};
-                    content.message = "Kindly enter valid details";
+                    content.message = "Kindly agree to the terms and conditions";
                     content.title = 'Digitally Powerful';
                     content.icon = 'fa fa-bell';
                     $.notify(content, { type: "warning", placement: { from: "top", align: "right" }, });
                 }
             } else {
+                $("#passwordsignup_Influencers").val() == "" ? $("#passwordsignup_Influencers").css('border-color', 'red') : $("#passwordsignup_Influencers").css('border-color', '');
+                $("#confirmpassword_Influencers").val() == "" ? $("#confirmpassword_Influencers").css('border-color', 'red') : $("#confirmpassword_Influencers").css('border-color', '');
+                $("#Firstname_Influencers").val() == "" ? $("#Firstname_Influencers").css('border-color', 'red') : $("#Firstname_Influencers").css('border-color', '');
+                $("#email_Influencers").val() == "" ? $("#email_Influencers").css('border-color', 'red') : $("#email_Influencers").css('border-color', '');
+                $("#Mobile_Influencers").val() == "" ? $("#Mobile_Influencers").css('border-color', 'red') : $("#Mobile_Influencers").css('border-color', '');
                 var content = {};
-                content.message = "Kindly agree to the terms and conditions";
+                content.message = "Kindly enter valid details";
                 content.title = 'Digitally Powerful';
                 content.icon = 'fa fa-bell';
                 $.notify(content, { type: "warning", placement: { from: "top", align: "right" }, });
@@ -219,11 +233,21 @@ $(document).ready(function () {
         } else {
             $("#passwordsignup_Influencers").css('border-color', 'red');
             $("#confirmpassword_Influencers").css('border-color', 'red');
-            var content = {};
-            content.message = "Kindly check the Password";
-            content.title = 'Digitally Powerful';
-            content.icon = 'fa fa-bell';
-            $.notify(content, { type: "warning", placement: { from: "top", align: "right" }, });
+            if (($("#passwordsignup_Influencers").val()).length > 6) {
+                $("#passwordsignup_Influencers").val("");
+                $("#confirmpassword_Influencers").val("");
+                var content = {};
+                content.message = "Password & Confirm Password Mismatch";
+                content.title = 'Digitally Powerful';
+                content.icon = 'fa fa-bell';
+                $.notify(content, { type: "warning", placement: { from: "top", align: "right" }, });
+            } else {
+                var content = {};
+                content.message = "Password should be minimum of 6 characters";
+                content.title = 'Digitally Powerful';
+                content.icon = 'fa fa-bell';
+                $.notify(content, { type: "warning", placement: { from: "top", align: "right" }, });
+            }
         }
     });
 
@@ -263,8 +287,10 @@ $(document).ready(function () {
                 }
             });
         } else {
-            $("#Login_username").css('border-color', 'red');
-            $("#Login_password").css('border-color', 'red');
+            if (validateEmail($("#Login_username").val()) == false)
+                $("#Login_username").css('border-color', 'red');
+            if ($("#Login_password").val() == "")
+                $("#Login_password").css('border-color', 'red');            
             var content = {};
             content.message = "Kindly enter valid Details!";
             content.title = 'Digitally Powerful';
@@ -303,11 +329,12 @@ $(document).ready(function () {
     });
 });
 
-$("document").ready(function () {
+$(window).on('load', function () {
     setTimeout(function () {
         $('#portfolio-flters li:nth-child(1)').click();
-    }, 50);
+    }, 150);
 });
+
 
 function validateEmail(email) {
     const re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
@@ -358,12 +385,9 @@ function deleteAllCookies() {
         var eqPos = cookie.indexOf("=");
         var name = eqPos > -1 ? cookie.substr(0, eqPos) : cookie;
 
-        if (name.trim() === "token") {
+        if (name.trim() === "Id") {
             document.cookie = name + "=; Path=/; Expires=Thu, 01 Jan 1970 00:00:01 GMT;";
-            document.cookie = name + "=; Path=/Home; Expires=Thu, 01 Jan 1970 00:00:01 GMT;";
-        } else if (name.trim() === "AppraisalId") {
-            document.cookie = name + "=; Path=/; Expires=Thu, 01 Jan 1970 00:00:01 GMT;";
-            document.cookie = name + "=; Path=/Appraisal; Expires=Thu, 01 Jan 1970 00:00:01 GMT;";
+            document.cookie = name + "=; Path=/Index; Expires=Thu, 01 Jan 1970 00:00:01 GMT;";
         } else {
             document.cookie = name + "=; Path=/; Expires=Thu, 01 Jan 1970 00:00:01 GMT;";
         }
