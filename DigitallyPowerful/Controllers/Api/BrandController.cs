@@ -50,6 +50,7 @@ namespace DigitallyPowerful.Controllers
             {
                 if(await userService.PostBrandDetails(connection, request))
                 {
+                    await userService.UpdatePhoneNumber(connection, request.PhoneNumber, request.UserId);
                     return new Acknowledgement("Saved Successfully",true);
                 }
                 else

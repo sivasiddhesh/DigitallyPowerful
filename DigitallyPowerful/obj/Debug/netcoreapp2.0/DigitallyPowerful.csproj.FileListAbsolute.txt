@@ -22,7 +22,6 @@ C:\Users\pganesan\Documents\GitHub\Digitallypowerful\DigitallyPowerful\bin\Debug
 C:\Users\pganesan\Documents\GitHub\Digitallypowerful\DigitallyPowerful\bin\Debug\netcoreapp2.0\DigitallyPowerful.runtimeconfig.dev.json
 C:\Users\pganesan\Documents\GitHub\Digitallypowerful\DigitallyPowerful\bin\Debug\netcoreapp2.0\DigitallyPowerful.dll
 C:\Users\pganesan\Documents\GitHub\Digitallypowerful\DigitallyPowerful\bin\Debug\netcoreapp2.0\DigitallyPowerful.pdb
-C:\Users\pganesan\Documents\GitHub\Digitallypowerful\DigitallyPowerful\obj\Debug\netcoreapp2.0\DigitallyPowerful.csprojAssemblyReference.cache
 C:\Users\pganesan\Documents\GitHub\Digitallypowerful\DigitallyPowerful\obj\Debug\netcoreapp2.0\DigitallyPowerful.AssemblyInfoInputs.cache
 C:\Users\pganesan\Documents\GitHub\Digitallypowerful\DigitallyPowerful\obj\Debug\netcoreapp2.0\DigitallyPowerful.AssemblyInfo.cs
 C:\Users\pganesan\Documents\GitHub\Digitallypowerful\DigitallyPowerful\obj\Debug\netcoreapp2.0\DigitallyPowerful.csproj.CoreCompileInputs.cache
@@ -46,3 +45,4 @@ C:\Users\User1\Desktop\Siva\DigitallyPowerful\DigitallyPowerful\obj\Debug\netcor
 C:\Users\User1\Desktop\Siva\DigitallyPowerful\DigitallyPowerful\obj\Debug\netcoreapp2.0\DigitallyPowerful.pdb
 C:\Users\User1\Desktop\Siva\DigitallyPowerful\DigitallyPowerful\obj\Debug\netcoreapp2.0\DigitallyPowerful.genruntimeconfig.cache
 C:\Users\User1\Desktop\Siva\DigitallyPowerful\DigitallyPowerful\obj\Debug\netcoreapp2.0\DigitallyPowerful.csproj.AssemblyReference.cache
+C:\Users\pganesan\Documents\GitHub\Digitallypowerful\DigitallyPowerful\obj\Debug\netcoreapp2.0\DigitallyPowerful.csproj.AssemblyReference.cache

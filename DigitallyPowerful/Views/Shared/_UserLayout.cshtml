@@ -7,7 +7,8 @@
     <title>Digitally Powerful</title>
     <meta content="" name="description">
     <meta content="" name="keywords">
-
+    <!-- Template Main CSS File -->
+    <link href="~/css/style.css" rel="stylesheet">
     <!-- Favicons -->
     <link href="~/images/favicon.png" rel="icon">
     <link href="~/images/apple-touch-icon.png" rel="apple-touch-icon">
@@ -23,8 +24,7 @@
     <link href="~/vendor/remixicon/remixicon.css" rel="stylesheet">
     <link href="~/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
 
-    <!-- Template Main CSS File -->
-    <link href="~/css/style.css" rel="stylesheet">
+
 
     <!-- Fonts and icons -->
     <script src="~/assets/js/plugin/webfont/webfont.min.js"></script>
@@ -43,11 +43,24 @@
     <link href="~/assets/css/bootstrap.min.css" rel="stylesheet" />
     <link href="~/assets/css/atlantis.css" rel="stylesheet" />
 
-    <link href="~/css/site.css" rel="stylesheet" asp-append-version="true" />   
+    <link href="~/css/site.css" rel="stylesheet" asp-append-version="true" />
 </head>
 <body>
+    <header id="header" class="fixed-top " style="background: #37517e">
+        <div class="container d-flex align-items-center">
+            <a asp-controller="Home" asp-action="Index" class="logo me-auto"><img src="~/images/DigitallyPowerful.png" alt="Digitally Powerful" class="img-fluid"></a>
+            <nav id="navbar" class="navbar1 ml-auto" >
+                <ul>
+                    <li><a class="nav-link scrollto" href="#team">Change Password</a></li>
+                    <li><a class="getstarted scrollto" href="/User/Login">Logout</a></li>
+                </ul>
+                <i class="bi bi-list mobile-nav-toggle"></i>
+            </nav>
+        </div>
+        
+    </header><!-- End Header -->
     <script src="~/lib/jquery/dist/jquery.js"></script>
-    <div>
+    <div style="padding-top:50px;">
         @RenderBody()
         <hr />
         <!-- ======= Footer ======= -->

@@ -25,7 +25,7 @@ namespace DigitallyPowerful.Services
                 case MailTemplate.ContactMail:
                     {
                         result.Subject = "Contact Details - "+DateTime.UtcNow.ToString("dd/MM/yyyy");
-                        result.Message = "<html><head><style>tr:nth-child(even) {  background - color: #dddddd;}</style></head><body><h2>Contact Details</h2><table style=\"font-family: arial, sans-serif; border-collapse: collapse; width: 100 %; \">  <tr>    <th style=\"border: 1px solid #dddddd;  text-align: left;  padding: 8px;\">First Name</th>    <th style=\"border: 1px solid #dddddd;  text-align: left;  padding: 8px;\">Last Name</th>    <th style=\"border: 1px solid #dddddd;  text-align: left;  padding: 8px;\">Email Address</th> <th style=\"border: 1px solid #dddddd;  text-align: left;  padding: 8px;\">Role</th> <th style=\"border: 1px solid #dddddd;  text-align: left;  padding: 8px;\">Phone Number</th>   </tr> @Data </table></body></html>";
+                        result.Message = "<html><head><style>tr:nth-child(even) {  background - color: #dddddd;}</style></head><body><h2>Contact Details</h2><table style=\"font-family: arial, sans-serif; border-collapse: collapse; width: 100 %; \">  <tr>    <th style=\"border: 1px solid #dddddd;  text-align: left;  padding: 8px;\">First Name</th>    <th style=\"border: 1px solid #dddddd;  text-align: left;  padding: 8px;\">Last Name</th>    <th style=\"border: 1px solid #dddddd;  text-align: left;  padding: 8px;\">Email Address</th> <th style=\"border: 1px solid #dddddd;  text-align: left;  padding: 8px;\">DOB</th> <th style=\"border: 1px solid #dddddd;  text-align: left;  padding: 8px;\">Gender</th> <th style=\"border: 1px solid #dddddd;  text-align: left;  padding: 8px;\">Role</th> <th style=\"border: 1px solid #dddddd;  text-align: left;  padding: 8px;\">Phone Number</th>   </tr> @Data </table></body></html>";
                         return result;
                     }
                 case MailTemplate.CustomMail:
@@ -44,7 +44,8 @@ namespace DigitallyPowerful.Services
             var result = "";
             foreach(var item in details)
             {
-                result = result + "<tr><td style=\"border: 1px solid #dddddd;  text-align: left;  padding: 8px;\">" + item.FirstName + "</td><td style=\"border: 1px solid #dddddd;  text-align: left;  padding: 8px;\">" + item.LastName + "</td><td style=\"border: 1px solid #dddddd;  text-align: left;  padding: 8px;\">" + item.EmailAddress + "</td><td style=\"border: 1px solid #dddddd;  text-align: left;  padding: 8px;\">" + item.Role + "</td><td style=\"border: 1px solid #dddddd;  text-align: left;  padding: 8px;\">" + item.PhoneNumber + "</td></tr>";
+                var date = item.DOB == null ? "" : ((DateTime)item.DOB).ToString("dd-MM-yyyy");
+                result = result + "<tr><td style=\"border: 1px solid #dddddd;  text-align: left;  padding: 8px;\">" + item.FirstName + "</td><td style=\"border: 1px solid #dddddd;  text-align: left;  padding: 8px;\">" + item.LastName + "</td><td style=\"border: 1px solid #dddddd;  text-align: left;  padding: 8px;\">" + item.EmailAddress + "</td><td style=\"border: 1px solid #dddddd;  text-align: left;  padding: 8px;\">"+ date +  "</td><td style=\"border: 1px solid #dddddd;  text-align: left;  padding: 8px;\">" +item.Gender+ "</td><td style=\"border: 1px solid #dddddd;  text-align: left;  padding: 8px;\">" + item.Role + "</td><td style=\"border: 1px solid #dddddd;  text-align: left;  padding: 8px;\">" + item.PhoneNumber + "</td></tr>";
             }
             mailContent.Message = mailContent.Message.Replace("@Data", result);
             return mailContent;
