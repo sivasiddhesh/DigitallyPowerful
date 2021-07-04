@@ -11,6 +11,9 @@ namespace DigitallyPowerful.Models
         public string LastName { get; set; }
         public string EmailAddress { get; set; }
         public string Role { get; set; }
+        public DateTime? DOB { get; set; }
+        public string Gender { get; set; }
         public string PhoneNumber { get; set; }
+        
     }
 }

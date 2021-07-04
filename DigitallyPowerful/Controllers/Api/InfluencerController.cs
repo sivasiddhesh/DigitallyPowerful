@@ -52,6 +52,7 @@ namespace DigitallyPowerful.Controllers.Api
                 {
                     if(await userService.PostInfluencerProfile(connection, request))
                     {
+                        await userService.UpdatePhoneNumber(connection, request.PhoneNumber, request.UserId);
                         return new Acknowledgement("Saved Successfully", true);
                     }
                     else

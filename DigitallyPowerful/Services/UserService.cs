@@ -392,7 +392,7 @@ namespace DigitallyPowerful.Services
         {
             try
             {
-                var sqlQuery = $"select FirstName, LastName, EmailAddress, RoleTypeName as Role, PhoneNumber from `User` u join RoleType rt on rt.Id = u.RoleTypeId ";
+                var sqlQuery = $"select FirstName, LastName, EmailAddress, RoleTypeName as Role, PhoneNumber, pd.DOB as DOB, pd.Gender as Gender from `User` u join RoleType rt on rt.Id = u.RoleTypeId left join PersonalDetails pd  on pd.UserId = u.Id ";
                 var result = await connection.QueryAsync<ContactDetails>(sqlQuery);
                 return result.ToList();
             }
@@ -401,6 +401,30 @@ namespace DigitallyPowerful.Services
                 await logService.SaveLog(connection, "GetContactDetails", JsonConvert.SerializeObject(""), JsonConvert.SerializeObject(ex));
             }
             return null;
+        }
+
+        public async Task<bool> UpdatePhoneNumber(MySqlConnection connection, string phoneNumber, long userId)
+        {
+            try
+            {
+                if(string.IsNullOrEmpty(phoneNumber))
+                {
+                    return false;
+                }
+                var UpdateSqlQuery = $"Update User Set PhoneNumber = @ReqPhoneNumber where Id = @ReqUserId";
+                var result = await connection.ExecuteAsync(UpdateSqlQuery,
+                        new
+                        {
+                            ReqUserId = userId,
+                            ReqPhoneNumber = phoneNumber
+                        });
+                return result > 0;
+            }
+            catch(Exception ex)
+            {
+                await logService.SaveLog(connection, "UpdatePhoneNumber", JsonConvert.SerializeObject(phoneNumber + " " + userId), JsonConvert.SerializeObject(ex));
+            }
+            return false;
         }
     }
 }
