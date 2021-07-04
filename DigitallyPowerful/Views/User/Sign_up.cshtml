@@ -7,11 +7,6 @@
 <html lang="en">
 
 <body class="login">
-    <header id="header" class="fixed-top " style="background: #f9fbfd">
-        <div class="container d-flex align-items-center">
-             <a asp-controller="Home" asp-action="Index" class="logo me-auto"><img src="~/images/DigitallyPowerful.png" alt="Digitally Powerful" class="img-fluid"></a>
-        </div>
-    </header><!-- End Header -->
 
     <div class="wrapper wrapper-login wrapper-login-full p-0" style="top:20px !important">
         <div class="login-aside w-50 d-flex flex-column align-items-center text-center" style="background: linear-gradient( 90deg, #74ebd5 0%,#acb6e5 100% );">
@@ -44,7 +39,7 @@
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label for="BrandContact_Mobile">Mobile</label>
-                                    <input type="tel" class="form-control" id="BrandContact_Mobile" placeholder="Enter Mobile Number">
+                                    <input type="tel" class="form-control" id="BrandContact_Mobile" placeholder="Enter Mobile Number" maxlength="10">
                                 </div>
                             </div>
                         </div>
@@ -53,7 +48,9 @@
                                 <div class="form-group">
                                     <label for="BrandContact_Project">Project Type</label>
                                     <select class="form-control form-control" id="BrandContact_Project">
-                                        <option>Influencer Marketing</option>
+                                        <option>Digital Marketing</option>
+                                        <option>Profile Management</option>
+                                        <option>Web Designing</option>
                                         <option>Others</option>
                                     </select>
                                 </div>
@@ -100,7 +97,7 @@
                         <label for="Contactname_Brand" class="placeholder">Your Name</label>
                     </div>
                     <div class="form-group form-floating-label">
-                        <input id="Mobile_Brand" name="Mobile_Brand" type="tel" class="form-control input-border-bottom" required="">
+                        <input id="Mobile_Brand" name="Mobile_Brand" type="tel" class="form-control input-border-bottom" required="" maxlength="10">
                         <label for="Mobile_Brand" class="placeholder">Mobile *</label>
                     </div>
                     <div class="form-group form-floating-label">

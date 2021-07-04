@@ -4,11 +4,7 @@
 }
 
 <body onload="login_admin()">
-    <header id="header" class="fixed-top " style="background: #f9fbfd">
-        <div class="container d-flex align-items-center">
-            <a asp-controller="Home" asp-action="Index" class="logo me-auto"><img src="~/images/DigitallyPowerful.png" alt="Digitally Powerful" class="img-fluid"></a>
-        </div>
-    </header><!-- End Header -->
+
     <div class="container">
         <div class="page-inner">
             <div class="row">
@@ -16,7 +12,7 @@
                     <h4 class="page-title">Welcome Admin</h4>
                 </div>
                 <div class="col-md-2">
-                    <button class="btn btn-round btn-primary" id="ExportBtn">Export&nbsp;<i class="fas fa-download"></i></button>
+                    <button class="btn btn-round btn-primary" id="ExportBtn">Send to Mail&nbsp;&nbsp;<i class="fas fa-share"></i></button>
 
                 </div>
             </div>
@@ -97,7 +93,7 @@
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title" id="detailModalLabel">Influencer Details</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <button type="button" class="close" onclick="closeInfluencermodal()" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
@@ -129,7 +125,7 @@
                         </div>
                     </div>
                 </div>
-            </div>           
+            </div>
         </div>
     </div>
 </div>

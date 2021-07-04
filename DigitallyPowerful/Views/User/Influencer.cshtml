@@ -3,11 +3,7 @@
     Layout = "~/Views/Shared/_UserLayout.cshtml";
 }
 <body onload="login_influencer()">
-    <header id="header" class="fixed-top " style="background: #f9fbfd">
-        <div class="container d-flex align-items-center">
-            <a asp-controller="Home" asp-action="Index" class="logo me-auto"><img src="~/images/DigitallyPowerful.png" alt="Digitally Powerful" class="img-fluid"></a>
-        </div>
-    </header><!-- End Header -->
+
     <div class="container">
         <div class="page-inner">
             <h4 class="page-title">Profile</h4>
@@ -39,7 +35,7 @@
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label for="Mobile">Mobile</label>
-                                        <input type="tel" class="form-control" id="Mobile" required="">
+                                        <input type="tel" class="form-control" id="Mobile" required="" maxlength="10">
                                     </div>
                                 </div>
                             </div>
@@ -95,7 +91,7 @@
                         <div class="col-lg-5 col-md-5 col-sm-12 ml-auto mr-auto">
                             <div class="input-file input-file-image">
                                 <img class="img-upload-preview" style="border-radius: 15px;" @*img-circle*@ width="100" height="100" src="~/images/favicon.png" alt="preview">
-                                <input type="file" class="form-control form-control-file" id="uploadImg" name="uploadImg" accept="image/*"  required="">
+                                <input type="file" class="form-control form-control-file" id="uploadImg" name="uploadImg" accept="image/*" required="">
                                 <label for="uploadImg" class="btn btn-primary btn-round btn-lg" style="display:none">Image<i class="fas fa-upload"></i></label>
                             </div>
                         </div>
@@ -121,9 +117,9 @@
                                 <table id="SocialNetworkingTable" class="table table-head-bg-primary">
                                     <thead>
                                         <tr>
-                                            <th style="width:10%; text-align:center">Site</th>
-                                            <th style="width: 60%; text-align:center">Profile Link</th>
-                                            <th style="width: 30%; text-align: center">Count</th>
+                                            <th style="text-align:center">Site</th>
+                                            <th style="text-align:center">Profile Link</th>
+                                            <th style="text-align: center">Count</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -135,11 +131,11 @@
                                             </td>
                                             <td>
                                                 <div class="form-group">
-                                                    <input id="InstaLink" type="url" class="form-control" required="">
+                                                    <input id="InstaLink" type="url" class="form-control" style="width:500px" required="">
                                                 </div>
                                             </td>
                                             <td>
-                                                <div class="form-group">
+                                                <div class="form-group" style="width:200px">
                                                     <div class="input-group">
                                                         <input type="number" id="InstaCount" class="form-control" aria-label="Text input with dropdown button">
                                                         <div class="input-group-append">

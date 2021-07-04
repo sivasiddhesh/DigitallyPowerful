@@ -25,7 +25,7 @@ $(document).ready(function () {
         if ($("#BrandContact_Brand").val() != "" && validateEmail($("#BrandContact_Email").val()) && $("#BrandContact_message").val() != "") {
             var data = {
                 Email: $("#BrandContact_Email").val(),
-                Name: "<h3> Brand :" + $("#BrandContact_Brand").val() + " Name :" + $("#BrandContact_Name").val() + "(" + $("#BrandContact_Mobile").val()+")</h3>",
+                Name: "<h3> Brand :" + $("#BrandContact_Brand").val() + " Name :" + $("#BrandContact_Name").val() + "(" + $("#BrandContact_Mobile").val() + ")</h3>",
                 Subject: $("#BrandContact_Project").val() + " " + $("#BrandContact_Category").val(),
                 Message: $("#BrandContact_message").val()
             };
@@ -61,7 +61,7 @@ $(document).ready(function () {
                     $.notify(content, { type: "danger", placement: { from: "top", align: "right" }, });
                 }
             });
-            
+
         } else {
             $("#BrandContact_Brand").val() == "" ? $("#BrandContact_Brand").css('border-color', 'red') : $("#BrandContact_Brand").css('border-color', '');
             $("#BrandContact_Email").val() == "" ? $("#BrandContact_Email").css('border-color', 'red') : $("#BrandContact_Email").css('border-color', '');
@@ -75,7 +75,7 @@ $(document).ready(function () {
             content.title = 'Cars Notification';
             content.icon = 'fa fa-bell';
             $.notify(content, { type: "warning", placement: { from: "top", align: "right" }, });
-        }                   
+        }
     });
 
     $("#signup_Brand").click(function () {
@@ -100,6 +100,7 @@ $(document).ready(function () {
                                 content.title = 'Digitally Powerful';
                                 content.icon = 'fa fa-bell';
                                 $.notify(content, { type: "success", placement: { from: "top", align: "right" }, });
+                                window.location.href = "/user/login";
                             } else if (data.message == "Email Address Exists") {
                                 $("#email_Brand").val("");
                                 $("#email_Brand").css('border-color', 'red');
@@ -149,7 +150,7 @@ $(document).ready(function () {
             $("#confirmpassword_Brand").css('border-color', 'red');
             if (($("#passwordsignup_Brand").val()).length > 6) {
                 $("#passwordsignup_Brand").val("");
-                $("#confirmpassword_Brand").val("");                
+                $("#confirmpassword_Brand").val("");
                 var content = {};
                 content.message = "Password & Confirm Password Mismatch";
                 content.title = 'Digitally Powerful';
@@ -188,6 +189,7 @@ $(document).ready(function () {
                                 content.title = 'Digitally Powerful';
                                 content.icon = 'fa fa-bell';
                                 $.notify(content, { type: "success", placement: { from: "top", align: "right" }, });
+                                window.location.href = "/user/login"
                             } else if (data.message == "Email Address Exists") {
                                 var content = {};
                                 content.message = "Email Address Already Exists";
@@ -269,7 +271,7 @@ $(document).ready(function () {
                         else if (data.roleTypeId == 2)
                             window.location.href = "/user/Brand";
                         else if (data.roleTypeId == 1)
-                            window.location.href = "/user/Admin";                                  
+                            window.location.href = "/user/Admin";
                     } else {
                         var content = {};
                         content.message = data.message;
@@ -290,7 +292,7 @@ $(document).ready(function () {
             if (validateEmail($("#Login_username").val()) == false)
                 $("#Login_username").css('border-color', 'red');
             if ($("#Login_password").val() == "")
-                $("#Login_password").css('border-color', 'red');            
+                $("#Login_password").css('border-color', 'red');
             var content = {};
             content.message = "Kindly enter valid Details!";
             content.title = 'Digitally Powerful';
@@ -327,6 +329,55 @@ $(document).ready(function () {
             $("#ForgotPassword_email").css('border-color', 'red');
         }
     });
+});
+
+if ((window.location.pathname).toLowerCase() != "/home/index" && (window.location.pathname).toLowerCase() != "/" && getCookie("Id") == "") {
+    $("#navbar").hide();
+}
+
+$("#Submit_Password").click(function () {
+    if (validateEmail($("#changepassword_username").val()) && $("#changepassword_password").val() != "" && $("#changepassword_confirmpassword").val() != "") {
+        if ($("#changepassword_password").val() != $("#changepassword_confirmpassword").val()) {
+            $.ajax({
+                method: "POST",
+                data: {
+                    emailAddress: $("#changepassword_username").val(),
+                    oldPassword: $("#changepassword_password").val(),
+                    password: $("#changepassword_confirmpassword").val()
+                },
+                url: "/Api/Auth/changepassword",
+                success: function (data) {
+                    $("#changepassword_username").val("");
+                    $("#changepassword_confirmpassword").val("");
+                    $("#changepassword_password").val("");
+                    var content = {};
+                    content.message = data.message;
+                    content.title = 'Digitally Powerful';
+                    content.icon = 'fa fa-bell';
+                    $.notify(content, { type: "success", placement: { from: "top", align: "right" }, });
+                },
+                error: function (data) {
+                    var content = {};
+                    content.message = "Please try again later";
+                    content.title = 'Digitally Powerful';
+                    content.icon = 'fa fa-bell';
+                    $.notify(content, { type: "error", placement: { from: "top", align: "right" }, });
+                }
+            });
+        } else {
+            var content = {};
+            content.message = "New Password cannot be same as the Old Password!";
+            content.title = 'Digitally Powerful';
+            content.icon = 'fa fa-bell';
+            $.notify(content, { type: "warning", placement: { from: "top", align: "right" }, });
+        }
+    } else {
+        var content = {};
+        content.message = "Kindly enter valid details";
+        content.title = 'Digitally Powerful';
+        content.icon = 'fa fa-bell';
+        $.notify(content, { type: "warning", placement: { from: "top", align: "right" }, });
+    }
 });
 
 $(window).on('load', function () {
@@ -378,20 +429,12 @@ function deleteCookie(key) {
 }
 
 function deleteAllCookies() {
-    var cookies = document.cookie.split(";");
+    document.cookie = 'Id' + '=; Path=/; Expires=Thu, 01 Jan 1970 00:00:01 GMT;';
+    window.location.href = "/home/Index";
+}
 
-    for (var i = 0; i < cookies.length; i++) {
-        var cookie = cookies[i];
-        var eqPos = cookie.indexOf("=");
-        var name = eqPos > -1 ? cookie.substr(0, eqPos) : cookie;
-
-        if (name.trim() === "Id") {
-            document.cookie = name + "=; Path=/; Expires=Thu, 01 Jan 1970 00:00:01 GMT;";
-            document.cookie = name + "=; Path=/Index; Expires=Thu, 01 Jan 1970 00:00:01 GMT;";
-        } else {
-            document.cookie = name + "=; Path=/; Expires=Thu, 01 Jan 1970 00:00:01 GMT;";
-        }
-    }
+function clearCookies() {
+    document.cookie = 'Id' + '=; Path=/; Expires=Thu, 01 Jan 1970 00:00:01 GMT;';
 }
 
 /*JS End*/

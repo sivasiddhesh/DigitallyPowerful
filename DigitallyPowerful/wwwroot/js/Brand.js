@@ -45,6 +45,10 @@ $("#BrandProfile_Save").click(function () {
     $('#BrandProfile_Save').prop('disabled', true);
     if ($("#BrandProfile_Name").val() != "" && $("#BrandProfile_Mobile").val() != "" && $("#BrandProfile_Description").val()!="" && $("#BrandProfile_Email").val() != "") {
         if (brandMobile_change_flag == 0 || validateMobile($("#BrandProfile_Mobile").val())) {
+            var mobilenumber = "";
+            if (brandMobile_change_flag == 1) {
+                mobilenumber = $("#BrandProfile_Mobile").val();
+            }
             $.ajax({
                 method: "POST",
                 data: {
@@ -52,7 +56,7 @@ $("#BrandProfile_Save").click(function () {
                     EmailAddress: $("#BrandProfile_Email").val(),
                     FirstName: $("#BrandProfile_BrandName").val(),
                     LastName: $("#BrandProfile_Name").val(),
-                    PhoneNumber: $("#BrandProfile_Mobile").val(),
+                    PhoneNumber: mobilenumber,
                     ProjectTypeId: $("#BrandProfile_Project").val(),
                     ProjectName: $("#BrandProfile_Category").val(),
                     BrandDescription: $("#BrandProfile_Description").val()

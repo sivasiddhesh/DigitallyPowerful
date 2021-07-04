@@ -1,26 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\pganesan\\Documents\\GitHub\\Digitallypowerful\\DigitallyPowerful\\DigitallyPowerful.csproj": {}
+    "C:\\Users\\User1\\Desktop\\Siva\\DigitallyPowerful\\DigitallyPowerful\\DigitallyPowerful.csproj": {}
   },
   "projects": {
-    "C:\\Users\\pganesan\\Documents\\GitHub\\Digitallypowerful\\DigitallyPowerful\\DigitallyPowerful.csproj": {
+    "C:\\Users\\User1\\Desktop\\Siva\\DigitallyPowerful\\DigitallyPowerful\\DigitallyPowerful.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\pganesan\\Documents\\GitHub\\Digitallypowerful\\DigitallyPowerful\\DigitallyPowerful.csproj",
+        "projectUniqueName": "C:\\Users\\User1\\Desktop\\Siva\\DigitallyPowerful\\DigitallyPowerful\\DigitallyPowerful.csproj",
         "projectName": "DigitallyPowerful",
-        "projectPath": "C:\\Users\\pganesan\\Documents\\GitHub\\Digitallypowerful\\DigitallyPowerful\\DigitallyPowerful.csproj",
-        "packagesPath": "C:\\Users\\pganesan\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\pganesan\\Documents\\GitHub\\Digitallypowerful\\DigitallyPowerful\\obj\\",
+        "projectPath": "C:\\Users\\User1\\Desktop\\Siva\\DigitallyPowerful\\DigitallyPowerful\\DigitallyPowerful.csproj",
+        "packagesPath": "C:\\Users\\User1\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\User1\\Desktop\\Siva\\DigitallyPowerful\\DigitallyPowerful\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\",
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\pganesan\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+          "C:\\Users\\User1\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp2.0"

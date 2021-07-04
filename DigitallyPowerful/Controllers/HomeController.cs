@@ -37,9 +37,14 @@ namespace DigitallyPowerful.Controllers
             return View();
         }
 
+        public ActionResult PrivacyPolicy()
+        {
+            return View();
+        }
+
         public IActionResult Error()
         {
-            return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+            return RedirectToAction("Index", "home");
         }
     }
 }

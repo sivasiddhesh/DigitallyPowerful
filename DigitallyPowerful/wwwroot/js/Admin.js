@@ -55,7 +55,7 @@ function LoadbrandTable(id) {
                         {
                             "data": "Project Type",
                             "render": function (data, type, full, meta) {
-                                return full.projectTypeId == 1 ? "Influencer Marketing" : full.projectTypeId == 2 ? "Other - " + full.projectName:'';
+                                return full.projectTypeId == 1 ? "Influencer Marketing" : full.projectTypeId == 2 ? "Other - " + full.projectName : '';
                             }
                         }
                     ],
@@ -228,11 +228,17 @@ function LoadInfluencerdetail(id) {
     });
 }
 
+function closeInfluencermodal() {
+    $("#detailModal").modal("hide");
+}
+
 $("#ExportBtn").click(function () {
+    $("#ExportBtn").prop('disabled', true);
     $.ajax({
-        method: "get",
+        method: "POST",
         url: "/Api/Mail/contactmail",
         success: function (data) {
+            $("#ExportBtn").prop('disabled', false);
             var content = {};
             content.message = "Kindly check your mail!!";
             content.title = 'Digitally Powerful';
@@ -240,6 +246,7 @@ $("#ExportBtn").click(function () {
             $.notify(content, { type: "success", placement: { from: "top", align: "right" }, });
         },
         error: function (data) {
+            $("#ExportBtn").prop('disabled', false);
             var content = {};
             content.message = "Kindly try again later";
             content.title = 'Digitally Powerful';

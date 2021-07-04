@@ -3,7 +3,7 @@
     Layout = "~/Views/Shared/_UserLayout.cshtml";
 }
 <body onload="login_brand()">
-    
+
     <div class="container">
         <div class="page-inner">
             <h4 class="page-title">Profile</h4>
@@ -35,7 +35,7 @@
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label for="BrandProfile_Mobile">Mobile</label>
-                                        <input type="text" class="form-control" id="BrandProfile_Mobile" required="">
+                                        <input type="text" class="form-control" id="BrandProfile_Mobile" required="" maxlength="10">
                                     </div>
                                 </div>
                             </div>
@@ -44,14 +44,16 @@
                                     <div class="form-group">
                                         <label for="BrandProfile_Project">Project Type</label>
                                         <select class="form-control form-control" id="BrandProfile_Project">
-                                            <option value="1" selected>Influencer Marketing</option>
+                                            <option value="1" selected>Digital Marketing</option>
+                                            <option value="3">Profile Management</option>
+                                            <option value="4">Web Designing</option>
                                             <option value="2">Others</option>
                                         </select>
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group" id="BrandProfile_Categoryflag" style="display:none">
-                                        <label for="BrandProfile_Category" >Category</label>
+                                        <label for="BrandProfile_Category">Category</label>
                                         <input type="text" class="form-control" id="BrandProfile_Category" placeholder="Enter Category">
                                     </div>
                                 </div>

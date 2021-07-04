@@ -140,6 +140,10 @@ $("#Influencer_save").click(function () {
                     CountTypeId: $("#OtherVal" + (a)).val()
                 });
             }
+            var mobilenumber = "";
+            if (influencerMobile_change_flag == 1) {
+                mobilenumber = $("#Mobile").val();
+            }
             $.ajax({
                 method: "POST",
                 data: {
@@ -149,7 +153,7 @@ $("#Influencer_save").click(function () {
                     FirstName: $("#FirstName").val(),
                     LastName: $("#LastName").val(),
                     DateOfBirth: $("#BirthDate").val(),
-                    PhoneNumber: $("#Mobile").val(),
+                    PhoneNumber: mobilenumber,
                     SocialMedia: Social
                 },
                 url: "/Api/Influencer/influencerprofile",

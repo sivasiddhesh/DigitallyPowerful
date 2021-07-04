@@ -36,19 +36,31 @@ namespace DigitallyPowerful.Controllers
         // GET: UserController/Influencer
         public ActionResult Influencer()
         {
-            return View();
+            string cookie = HttpContext.Request.Cookies["Id"];
+            if (!string.IsNullOrEmpty(cookie))
+                return View();
+            else
+                return RedirectToAction("Index", "home");
         }
 
         // GET: UserController/Brand
         public ActionResult Brand()
         {
-            return View();
+            string cookie = HttpContext.Request.Cookies["Id"];
+            if (!string.IsNullOrEmpty(cookie))
+                return View();
+            else
+                return RedirectToAction("Index", "home");
         }
 
         // GET: UserController/Admin
         public ActionResult Admin()
         {
-            return View();
+            string cookie = HttpContext.Request.Cookies["Id"];
+            if (!string.IsNullOrEmpty(cookie))
+                return View();
+            else
+                return RedirectToAction("Index", "home");
         }
     }
 }

@@ -8,7 +8,7 @@
     <meta content="" name="description">
     <meta content="" name="keywords">
     <!-- Template Main CSS File -->
-    <link href="~/css/style.css" rel="stylesheet">
+    <link href="~/css/style.css" asp-append-version="true" rel="stylesheet">
     <!-- Favicons -->
     <link href="~/images/favicon.png" rel="icon">
     <link href="~/images/apple-touch-icon.png" rel="apple-touch-icon">
@@ -49,15 +49,15 @@
     <header id="header" class="fixed-top " style="background: #37517e">
         <div class="container d-flex align-items-center">
             <a asp-controller="Home" asp-action="Index" class="logo me-auto"><img src="~/images/DigitallyPowerful.png" alt="Digitally Powerful" class="img-fluid"></a>
-            <nav id="navbar" class="navbar1 ml-auto" >
+            <nav id="navbar" class="navbar1 ml-auto">
                 <ul>
-                    <li><a class="nav-link scrollto" href="#team">Change Password</a></li>
-                    <li><a class="getstarted scrollto" href="/User/Login">Logout</a></li>
+                    <li><a class="nav-link scrollto" asp-controller="User" asp-action="PasswordChange" target="_blank">Change Password</a></li>
+                    <li><a class="getstarted scrollto" onclick="deleteAllCookies()">Logout</a></li>
                 </ul>
                 <i class="bi bi-list mobile-nav-toggle"></i>
             </nav>
         </div>
-        
+
     </header><!-- End Header -->
     <script src="~/lib/jquery/dist/jquery.js"></script>
     <div style="padding-top:50px;">
@@ -88,8 +88,8 @@
                             <ul>
                                 <li><i class="bx bx-chevron-right"></i> <a asp-controller="Home" asp-action="Index">Home</a></li>
                                 <li><i class="bx bx-chevron-right"></i> <a href="#">About us</a></li>
-                                <li><i class="bx bx-chevron-right"></i> <a href="#">Terms of service</a></li>
-                                <li><i class="bx bx-chevron-right"></i> <a href="#">Privacy policy</a></li>
+                                <li><i class="bx bx-chevron-right"></i> <a asp-controller="Home" asp-action="TermsandCondition" target="_blank">Terms and Conditions</a></li>
+                                <li><i class="bx bx-chevron-right"></i> <a asp-controller="Home" asp-action="PrivacyPolicy" target="_blank">Privacy policy</a></li>
                             </ul>
                         </div>
 
@@ -124,8 +124,8 @@
         <!-- End Footer -->
     </div>
 
-        <script src="~/lib/bootstrap/dist/js/bootstrap.js"></script>
-        <script src="~/js/site.js" asp-append-version="true"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
 
     <div id="preloader"></div>
     <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
