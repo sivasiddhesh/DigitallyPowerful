@@ -329,6 +329,90 @@ $(document).ready(function () {
             $("#ForgotPassword_email").css('border-color', 'red');
         }
     });
+
+    /*sticky header*/
+    $(window).scroll(function () {
+        var scroll = $(window).scrollTop();
+
+        if (scroll >= 120) {
+            $(".navbar.fixed-top").addClass("sticky-header");
+        }
+        else {
+            $(".navbar.fixed-top").removeClass("sticky-header");
+        }
+    });
+
+    $('#overlay').fadeIn().delay(3000).fadeOut();
+
+    $('#ls-items').slick({
+        dots: false,
+        infinite: true,
+        speed: 300,
+        autoplay: true,
+        autoplaySpeed: 5000,
+        slidesToShow: 6,
+        slidesToScroll: 2,
+        arrows: true,
+        responsive: [
+            {
+                breakpoint: 1601,
+                settings: {
+                    slidesToShow: 5,
+                    slidesToScroll: 2,
+                }
+            },
+            {
+                breakpoint: 1281,
+                settings: {
+                    slidesToShow: 4,
+                    slidesToScroll: 2
+                }
+            },
+            {
+                breakpoint: 1199,
+                settings: {
+                    slidesToShow: 3,
+                    slidesToScroll: 1
+                }
+            },
+            {
+                breakpoint: 575,
+                settings: {
+                    slidesToShow: 1,
+                    slidesToScroll: 1
+                }
+            }
+        ]
+    });
+
+    $('#ts-items-sec').slick({
+        dots: false,
+        infinite: true,
+        speed: 300,
+        autoplay: true,
+        autoplaySpeed: 5000,
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        arrows: true,
+        responsive: [
+            {
+                breakpoint: 991,
+                settings: {
+                    slidesToShow: 1,
+                    slidesToScroll: 1
+                }
+            },
+            {
+                breakpoint: 575,
+                settings: {
+                    slidesToShow: 1,
+                    slidesToScroll: 1
+                }
+            }
+        ]
+    });
+
+
 });
 
 if ((window.location.pathname).toLowerCase() != "/home/index" && (window.location.pathname).toLowerCase() != "/" && getCookie("Id") == "") {

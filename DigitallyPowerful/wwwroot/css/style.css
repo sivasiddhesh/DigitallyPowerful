@@ -109,7 +109,7 @@ h1, h2, h3, h4, h5, h6 {
 #header {
     transition: all 0.5s;
     z-index: 997;
-    /*padding: 15px 0;*/
+    background: rgba(40, 58, 90, 0.9);
 }
 
     #header.header-scrolled, #header.header-inner-pages {
@@ -564,7 +564,7 @@ section {
 }
 
     .cliens img {
-        max-width: 45%;
+        max-width: 52%;
         transition: all 0.4s ease-in-out;
         display: inline-block;
         padding: 15px 0;
@@ -1842,7 +1842,8 @@ section {
     }
 
         .button-two span:after {
-            content: '>>';
+            content: "\f101";
+            font-family: "Font Awesome 5 Pro";
             position: absolute;
             opacity: 0;
             top: 0;
@@ -1865,10 +1866,12 @@ section {
 
 #Index_Brand {
     border-radius: 10px;
+    font-family: "Jost", sans-serif;
 }
 
 #Index_Influencer {
     border-radius: 10px;
+    font-family: "Jost", sans-serif;
 }
 
 
@@ -2095,3 +2098,113 @@ section {
     .navbar-mobile .dropdown > .dropdown-active {
         display: block;
     }
+
+    .borderRadius{
+        border-radius:90px;
+    }
+
+    #testimonials{
+        padding:10px !important;
+    }
+
+.quotedivTestimonilas{
+    display:flex;
+}
+
+.quoteTestimonilas {
+    opacity: .1;
+    color: #171717;
+    font-size: 174px;
+    font-weight: 400;
+    margin: -60px 14px 0 0;
+    font-family: 'Font Awesome 5 Pro';
+}
+.paraTestimonials {
+    font-family: cursive;
+    font-size: xx-large;
+    line-height: 60px;
+    font-weight: 600;
+}
+
+/*slick-slider*/
+.slick-slider .slick-arrow {
+    display: flex;
+    background-color: #46b3e4;
+    width: 50px;
+    height: 50px;
+    border-radius: 10px;
+    border: 0;
+    font-size: 0;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 9;
+}
+
+    .slick-slider .slick-arrow:focus {
+        outline: 0;
+        box-shadow: none;
+    }
+
+    .slick-slider .slick-arrow.slick-prev {
+        left: -25px;
+    }
+
+    .slick-slider .slick-arrow.slick-next {
+        right: -25px;
+    }
+
+    .slick-slider .slick-arrow:after {
+        display: block;
+        content: "";
+        font-family: "Font Awesome 5 Pro";
+        font-size: 20px;
+        color: #fff;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    .slick-slider .slick-arrow.slick-prev:after {
+        content: "\f053";
+    }
+
+    .slick-slider .slick-arrow.slick-next:after {
+        content: "\f054";
+    }
+
+/*logo-sec*/
+.logo-sec {
+    position: relative;
+    display: block;
+    z-index: 1;
+}
+
+    .logo-sec .ls-items {
+        box-shadow: 0 10px 20px 0px rgba(51, 51, 51, .10);
+        border-radius: 10px;
+        background: #fff;
+        display: block;
+        position: relative;
+        min-height: 180px;
+        padding: 25px;
+    }
+
+        .logo-sec .ls-items .img {
+            min-width: 16.66%;
+        }
+
+            .logo-sec .ls-items .img img {
+                margin: 0 auto;
+            }
+
+img {
+    max-width: 100%;
+}
+
+
+/*container*/
+.container-fluid {
+    width: 66.22%;
+}
