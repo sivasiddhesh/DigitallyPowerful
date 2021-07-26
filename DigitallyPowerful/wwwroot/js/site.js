@@ -348,7 +348,7 @@ $(document).ready(function () {
         dots: false,
         infinite: true,
         speed: 300,
-        autoplay: true,
+        autoplay: false,
         autoplaySpeed: 5000,
         slidesToShow: 6,
         slidesToScroll: 2,

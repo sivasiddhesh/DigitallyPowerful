@@ -57,7 +57,7 @@ namespace DigitallyPowerful.Controllers
         public ActionResult Admin()
         {
             string cookie = HttpContext.Request.Cookies["Id"];
-            if (!string.IsNullOrEmpty(cookie))
+            if (!string.IsNullOrEmpty(cookie) && cookie=="1")
                 return View();
             else
                 return RedirectToAction("Index", "home");
