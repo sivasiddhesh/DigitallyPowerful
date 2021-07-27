@@ -19,6 +19,9 @@ function login_brand() {
                     $("#BrandProfile_Description").val(data[0].brandDescription);
                     $("#BrandProfile_Project").val(data[0].projectTypeId);
                     $("#BrandProfile_Category").val(data[0].projectName);
+                    if ($("#BrandProfile_Project").val() == "2") {
+                        $("#BrandProfile_Categoryflag").show();
+                    }
                 } else {
                     deleteAllCookies();
                     window.location.href = "/user/login";                    
