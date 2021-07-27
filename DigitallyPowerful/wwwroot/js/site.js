@@ -15,9 +15,15 @@ $(document).ready(function () {
     $("#BrandContact_Project").change(function () {
         if ($("#BrandContact_Project").val() == "Others") {
             $("#BrandContact_Categorycol").show();
+            $("#BrandContact_WebMsg").hide();
+        } else if ($("#BrandContact_Project").val() == "Web Designing") {
+            $("#BrandContact_Category").val("");
+            $("#BrandContact_Categorycol").hide();
+            $("#BrandContact_WebMsg").show();
         } else {
             $("#BrandContact_Category").val("");
             $("#BrandContact_Categorycol").hide();
+            $("#BrandContact_WebMsg").hide();
         }
     });
 
@@ -348,7 +354,7 @@ $(document).ready(function () {
         dots: false,
         infinite: true,
         speed: 300,
-        autoplay: false,
+        autoplay: true,
         autoplaySpeed: 5000,
         slidesToShow: 6,
         slidesToScroll: 2,
