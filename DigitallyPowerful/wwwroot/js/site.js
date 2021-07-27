@@ -86,7 +86,7 @@ $(document).ready(function () {
 
     $("#signup_Brand").click(function () {
         if ($("#passwordsignup_Brand").val() == $("#confirmpassword_Brand").val() && ($("#passwordsignup_Brand").val()).length > 6) {
-            if (validateEmail($("#email_Brand").val()) && $("#passwordsignup_Brand").val() != "" && $("#Brandname_Brand").val() != "" && $("#Mobile_Brand").val() != "" && $("#confirmpassword_Brand").val() != "") {
+            if (validateEmail($("#email_Brand").val()) && $("#passwordsignup_Brand").val() != "" && $("#Brandname_Brand").val() != "" && validateMobile($("#Mobile_Brand").val()) && $("#confirmpassword_Brand").val() != "") {
                 if ($("#agree_Brand").prop("checked") == true) {
                     $.ajax({
                         method: "POST",
@@ -175,7 +175,7 @@ $(document).ready(function () {
     //INFLUENCERS SIGNUP
     $("#signup_Influencers").click(function () {
         if ($("#passwordsignup_Influencers").val() == $("#confirmpassword_Influencers").val() && ($("#passwordsignup_Influencers").val()).length > 6) {
-            if (validateEmail($("#email_Influencers").val()) && $("#passwordsignup_Influencers").val() != "" && $("#confirmpassword_Influencers").val() != "" && $("#Firstname_Influencers").val() != "" && $("#Mobile_Influencers").val() != "") {
+            if (validateEmail($("#email_Influencers").val()) && $("#passwordsignup_Influencers").val() != "" && $("#confirmpassword_Influencers").val() != "" && $("#Firstname_Influencers").val() != "" && validateMobile($("#Mobile_Influencers").val())) {
                 if ($("#agree_Influencers").prop("checked") == true) {
                     $.ajax({
                         method: "POST",

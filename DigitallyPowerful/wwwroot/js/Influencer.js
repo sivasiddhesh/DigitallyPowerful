@@ -112,32 +112,37 @@ $("#Influencer_save").click(function () {
                 SocialMediaTypeName: "Instagram",
                 SocialMediaLink: $("#InstaLink").val(),
                 FollowersCount: $("#InstaCount").val(),
-                CountTypeId: $("#InstaVal").val()
+                CountTypeId: $("#InstaVal").val(),
+                SocialMediaTypeId:1
             });
             Social.push({
                 SocialMediaTypeName: "YouTube",
                 SocialMediaLink: $("#YouTubeLink").val(),
                 FollowersCount: $("#YouTubeCount").val(),
-                CountTypeId: $("#YouTubeVal").val()
+                CountTypeId: $("#YouTubeVal").val(),
+                SocialMediaTypeId: 2
             });
             Social.push({
                 SocialMediaTypeName: "Twitter",
                 SocialMediaLink: $("#TwitterLink").val(),
                 FollowersCount: $("#TwitterCount").val(),
-                CountTypeId: $("#TwitterVal").val()
+                CountTypeId: $("#TwitterVal").val(),
+                SocialMediaTypeId: 3
             });
             Social.push({
                 SocialMediaTypeName: "Facebook",
                 SocialMediaLink: $("#FBLink").val(),
                 FollowersCount: $("#FBCount").val(),
-                CountTypeId: $("#FBVal").val()
+                CountTypeId: $("#FBVal").val(),
+                SocialMediaTypeId: 4
             });
             for (var a = 1; a <= SocialMedia_count; a++) {
                 Social.push({
                     SocialMediaTypeName: $("#OtherName" + (a)).val(),
                     SocialMediaLink: $("#OtherLink" + (a)).val(),
                     FollowersCount: $("#OtherCount" + (a)).val(),
-                    CountTypeId: $("#OtherVal" + (a)).val()
+                    CountTypeId: $("#OtherVal" + (a)).val(),
+                    SocialMediaTypeId: 5
                 });
             }
             var mobilenumber = "";
