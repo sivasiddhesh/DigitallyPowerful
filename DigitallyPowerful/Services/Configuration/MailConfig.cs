@@ -11,5 +11,7 @@ namespace DigitallyPowerful.Services.Configuration
         public string Password { get; set; }
         public string ReceiverEmail { get; set; }
         public string ContactEmail { get; set; }
+        public string Host { get; set; }
+        public int Port { get; set; }
     }
 }

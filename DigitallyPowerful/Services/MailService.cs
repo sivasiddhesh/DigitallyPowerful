@@ -28,11 +28,11 @@ namespace DigitallyPowerful.Services
                     mail.Subject = request.Subject ;
                     mail.Body = request.Message;
                     mail.IsBodyHtml = true;
-                    using (SmtpClient smtp = new SmtpClient("smtp.gmail.com", 587))
+                    using (SmtpClient smtp = new SmtpClient(MailConfig.Host, MailConfig.Port))
                     {
                         smtp.UseDefaultCredentials = false;
                         smtp.Credentials = new NetworkCredential(MailConfig.EmailAddress, MailConfig.Password);
-                        smtp.EnableSsl = true;
+                        smtp.EnableSsl = false;
                         smtp.Send(mail);
                     }
                 }
@@ -56,11 +56,11 @@ namespace DigitallyPowerful.Services
                     mail.Subject = request.Subject;
                     mail.Body = request.Message;
                     mail.IsBodyHtml = true;
-                    using (SmtpClient smtp = new SmtpClient("smtp.gmail.com", 587))
+                    using (SmtpClient smtp = new SmtpClient(MailConfig.Host, MailConfig.Port))
                     {
                         smtp.UseDefaultCredentials = false;
                         smtp.Credentials = new NetworkCredential(MailConfig.EmailAddress, MailConfig.Password);
-                        smtp.EnableSsl = true;
+                        smtp.EnableSsl = false;
                         smtp.Send(mail);
                     }
                 }
