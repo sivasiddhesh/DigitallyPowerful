@@ -17,14 +17,14 @@ namespace DigitallyPowerful.Services
             MailConfig = config;
             logService = new LogService();
         }
-        public bool SendMail(MySqlConnection connection, MailTemplateGenerated request)
+        public bool SendMail(MySqlConnection connection, MailTemplateGenerated request, bool isReceiverEmail = false)
         {
             try
             {
                 using (MailMessage mail = new MailMessage())
                 {
                     mail.From = new MailAddress(MailConfig.EmailAddress);
-                    mail.To.Add(MailConfig.ReceiverEmail);
+                    mail.To.Add(isReceiverEmail ? MailConfig.ReceiverEmail : MailConfig.ContactEmail);
                     mail.Subject = request.Subject ;
                     mail.Body = request.Message;
                     mail.IsBodyHtml = true;

@@ -54,7 +54,7 @@ namespace DigitallyPowerful.Controllers.Api
             var mailContent = mailWrapper.GenerateMail(EnumContainer.MailTemplate.ContactMail);
             var finalMailContent = mailWrapper.ContactWrapper(mailContent, contactDetails);
             
-            if (mailService.SendMail(this.DatabaseContext.Connection, finalMailContent))
+            if (mailService.SendMail(this.DatabaseContext.Connection, finalMailContent, true))
             {
                 return new Acknowledgement("Mail Sent Successfully", true);
             }

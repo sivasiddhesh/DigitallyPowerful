@@ -10,5 +10,6 @@ namespace DigitallyPowerful.Services.Configuration
         public string EmailAddress { get; set; }
         public string Password { get; set; }
         public string ReceiverEmail { get; set; }
+        public string ContactEmail { get; set; }
     }
 }
