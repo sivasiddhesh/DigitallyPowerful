@@ -2207,3 +2207,13 @@ img {
 .container-fluid {
     width: 66.22%;
 }
+
+@media (max-width: 767px) {
+    .paraTestimonials {
+        font-size: large;
+        line-height: 30px;
+    }
+    .slick-list .img {
+        width: 34%;
+    }
+}
