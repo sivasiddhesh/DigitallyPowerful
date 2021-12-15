@@ -577,7 +577,7 @@ section {
 
 @media (max-width: 768px) {
     .cliens img {
-        max-width: 40%;
+        max-width: 50%;
     }
 }
 
@@ -2121,7 +2121,7 @@ section {
 }
 .paraTestimonials {
     font-size: xx-large;
-    line-height: 60px;
+    line-height: 45px;
     font-weight: 600;
 }
 
@@ -2215,5 +2215,17 @@ img {
     }
     .slick-list .img {
         width: 34%;
+    }
+    .tys-item .img {
+        margin: 8px 0px 8px 90px;
+    }
+    .tsi-bottom > h2{
+        text-align:center;
+    }
+    .tsi-bottom > h4 {
+        text-align: center;
+    }
+    .quoteTestimonilas {
+        font-weight: 400;
     }
 }

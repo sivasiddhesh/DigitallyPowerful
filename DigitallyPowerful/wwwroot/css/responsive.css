@@ -36,7 +36,7 @@
 	.btn.lg {min-width: 190px; font-size: 17px; }
 
 	/*logo-sec*/
-	.logo-sec {margin: -55.5px 0 0; }
+	.logo-sec {margin: -30.5px 0 0; }
 	.logo-sec .ls-items {padding: 40px 40px; max-width: 100%; min-height: inherit;}
 
 	
@@ -51,7 +51,7 @@
 	.btn.lg {min-width: 230px; font-size: 18px; }
 
 	/*logo-sec*/
-  	.logo-sec .ls-items {padding: 40px 30px; max-width: 90%; }
+  	.logo-sec .ls-items {padding: 20px 30px; max-width: 90%; }
 
 }
 
